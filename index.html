@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GreyForge · Descargar</title>
+    <meta
+      name="description"
+      content="GreyForge, el editor de bloques de Los Grises para programar Arduino, Teensy, ESP32, LEGO SPIKE y EV3. Descarga gratis para Windows."
+    />
+    <meta property="og:title" content="GreyForge · Programa robots con bloques" />
+    <meta property="og:description" content="Editor de bloques del equipo de robótica Los Grises. Descarga para Windows." />
+    <meta property="og:image" content="https://eduardoag33.github.io/greyforge/img/editor.png" />
+    <link rel="icon" href="img/greyforge-icono.svg" type="image/svg+xml" />
+    <style>
+      :root {
+        --bg: #17191c;
+        --bg-2: #1f2226;
+        --bg-3: #272b30;
+        --line: #353a41;
+        --text: #eef0f3;
+        --muted: #a3a9b2;
+        --grey: #c3cad5;
+        --forge: #f47a1f;
+        --forge-hover: #ff8f3a;
+        --radius: 14px;
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font:
+          16px/1.6 system-ui,
+          -apple-system,
+          'Segoe UI',
+          Roboto,
+          sans-serif;
+      }
+      a {
+        color: var(--forge);
+      }
+      .wrap {
+        width: min(1120px, 100% - 32px);
+        margin-inline: auto;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background: color-mix(in srgb, var(--bg) 88%, transparent);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--line);
+      }
+      header .wrap {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        height: 64px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 20px;
+        letter-spacing: -0.01em;
+      }
+      .brand svg {
+        width: 34px;
+        height: 34px;
+        color: var(--grey);
+      }
+      .brand b {
+        color: var(--forge);
+      }
+      nav {
+        margin-left: auto;
+        display: flex;
+        gap: 22px;
+      }
+      nav a {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 15px;
+      }
+      nav a:hover {
+        color: var(--text);
+      }
+      .hero {
+        padding: 72px 0 40px;
+        text-align: center;
+      }
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 18px;
+        padding: 4px 12px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--muted);
+        font-size: 13px;
+        letter-spacing: 0.04em;
+      }
+      h1 {
+        margin: 0 auto 16px;
+        max-width: 16ch;
+        font-size: clamp(36px, 6vw, 60px);
+        line-height: 1.08;
+        letter-spacing: -0.03em;
+      }
+      h1 em {
+        font-style: normal;
+        color: var(--forge);
+      }
+      .lead {
+        margin: 0 auto 32px;
+        max-width: 60ch;
+        color: var(--muted);
+        font-size: 18px;
+      }
+      .download {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 28px;
+        border-radius: 12px;
+        background: var(--forge);
+        color: #1b1003;
+        font-size: 18px;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 10px 30px -10px color-mix(in srgb, var(--forge) 70%, transparent);
+        transition:
+          background 0.15s,
+          transform 0.15s;
+      }
+      .download:hover {
+        background: var(--forge-hover);
+        transform: translateY(-1px);
+      }
+      .download[aria-disabled='true'] {
+        background: var(--bg-3);
+        color: var(--muted);
+        box-shadow: none;
+        pointer-events: none;
+      }
+      .download svg {
+        width: 22px;
+        height: 22px;
+      }
+      .release-line {
+        margin-top: 14px;
+        color: var(--muted);
+        font-size: 14px;
+        min-height: 1.6em;
+      }
+      .shot {
+        margin: 48px auto 0;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: 0 40px 80px -30px #000;
+      }
+      .shot img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      section {
+        padding: 64px 0;
+      }
+      section + section {
+        border-top: 1px solid var(--line);
+      }
+      h2 {
+        margin: 0 0 8px;
+        font-size: clamp(26px, 4vw, 34px);
+        letter-spacing: -0.02em;
+      }
+      .sub {
+        margin: 0 0 32px;
+        color: var(--muted);
+        max-width: 65ch;
+      }
+      .grid {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+      .card {
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--bg-2);
+      }
+      .card h3 {
+        margin: 0 0 6px;
+        font-size: 17px;
+      }
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 15px;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .chip {
+        padding: 8px 14px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--bg-2);
+        font-size: 15px;
+      }
+      .chip small {
+        color: var(--muted);
+      }
+      ol.steps {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 14px;
+        counter-reset: paso;
+      }
+      ol.steps li {
+        counter-increment: paso;
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        gap: 16px;
+        align-items: start;
+        padding: 18px 20px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--bg-2);
+      }
+      ol.steps li::before {
+        content: counter(paso);
+        display: grid;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--bg-3);
+        color: var(--forge);
+        font-weight: 800;
+      }
+      ol.steps strong {
+        display: block;
+        margin-bottom: 2px;
+      }
+      ol.steps span {
+        color: var(--muted);
+      }
+      .key {
+        display: inline-block;
+        padding: 0 7px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: var(--bg-3);
+        color: var(--text);
+        font-size: 14px;
+        white-space: nowrap;
+      }
+      .note {
+        margin-top: 20px;
+        padding: 16px 20px;
+        border-left: 3px solid var(--forge);
+        border-radius: 0 var(--radius) var(--radius) 0;
+        background: var(--bg-2);
+        color: var(--muted);
+      }
+      .note strong {
+        color: var(--text);
+      }
+      .notes {
+        padding: 8px 24px 20px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--bg-2);
+      }
+      .notes h3 {
+        margin: 18px 0 6px;
+        font-size: 17px;
+      }
+      .notes ul {
+        margin: 0;
+        padding-left: 20px;
+        color: var(--muted);
+      }
+      .notes li + li {
+        margin-top: 4px;
+      }
+      code {
+        padding: 1px 6px;
+        border-radius: 5px;
+        background: var(--bg-3);
+        font-size: 0.9em;
+      }
+      .notes-head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 8px 20px;
+        margin-bottom: 16px;
+      }
+      footer {
+        padding: 32px 0 48px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 14px;
+      }
+      footer .wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 28px;
+        justify-content: space-between;
+      }
+      @media (max-width: 640px) {
+        nav {
+          display: none;
+        }
+        .hero {
+          padding-top: 48px;
+        }
+        section {
+          padding: 48px 0;
+        }
+        ol.steps li {
+          grid-template-columns: 32px 1fr;
+          padding: 16px;
+        }
+        ol.steps li::before {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="simbolo" viewBox="-15 -28 600 600">
+        <g
+          transform="translate(8 6)"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="30"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M315,155 L315,30 A228,228 0 0 1 349.1,32.6 L354.5,72.2 A190,190 0 0 1 418.5,98.7 L450.3,74.5 A228,228 0 0 1 498.5,122.7 L474.3,154.5 A190,190 0 0 1 500.8,218.5 L540.4,223.9 A228,228 0 0 1 540.4,292.1 L500.8,297.5 A190,190 0 0 1 474.3,361.5 L498.5,393.3 A228,228 0 0 1 450.3,441.5 L418.5,417.3 A190,190 0 0 1 354.5,443.8 L349.1,483.4 A228,228 0 0 1 315,486 L315,361 A103,103 0 0 0 315,155 Z"
+          />
+          <path
+            d="M270,262 L270,72 C270,40 248,22 220,22 C192,22 172,40 166,64 C146,58 96,64 84,118 C82,140 84,152 90,162 C40,172 14,205 14,248 C14,272 22,292 40,304 C18,320 10,345 14,372 C18,402 46,424 78,424 C80,456 108,482 142,482 C152,482 160,480 166,476 C178,500 200,512 226,510 C252,508 270,486 270,456 L270,320 L188,238 L188,186"
+          />
+          <path d="M82,243 L190,243" />
+          <path d="M40,304 L120,304 C140,304 152,318 152,356" />
+          <circle cx="186" cy="160" r="24" />
+          <circle cx="154" cy="382" r="24" />
+        </g>
+      </symbol>
+      <symbol id="descarga" viewBox="0 0 24 24">
+        <path
+          d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+    </svg>
+
+    <header>
+      <div class="wrap">
+        <a class="brand" href="#inicio" aria-label="GreyForge, inicio">
+          <svg aria-hidden="true"><use href="#simbolo" /></svg>
+          <span>Grey<b>Forge</b></span>
+        </a>
+        <nav aria-label="Secciones">
+          <a href="#tarjetas">Tarjetas</a>
+          <a href="#instalar">Cómo instalar</a>
+          <a href="#actualizaciones">Actualizaciones</a>
+          <a href="#novedades">Novedades</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="inicio">
+      <div class="wrap hero">
+        <span class="eyebrow">EQUIPO DE ROBÓTICA LOS GRISES</span>
+        <h1>Programa tu robot <em>con bloques</em>.</h1>
+        <p class="lead">
+          GreyForge es el editor de bloques del equipo. Armas el programa, eliges tu tarjeta y lo cargas al robot. Si
+          quieres ver qué hay detrás, el código en C++ o Python aparece al lado mientras programas.
+        </p>
+        <a
+          class="download"
+          id="descargar"
+          href="https://github.com/EduardoAG33/greyforge/releases/latest/download/GreyForge-Windows.exe"
+        >
+          <svg aria-hidden="true"><use href="#descarga" /></svg>
+          Descargar para Windows
+        </a>
+        <p class="release-line" id="version" aria-live="polite">Windows 10 y 11 · 64 bits · gratis</p>
+        <figure class="shot">
+          <img
+            src="img/editor.png"
+            width="2880"
+            height="1720"
+            alt="GreyForge con un programa de motores para Arduino GIGA en bloques y su código C++ al lado"
+          />
+        </figure>
+      </div>
+
+      <section id="que-es">
+        <div class="wrap">
+          <h2>Qué puedes hacer</h2>
+          <p class="sub">Todo lo que necesitas para la clase y la competencia, en un solo programa.</p>
+          <div class="grid">
+            <div class="card">
+              <h3>Programar con bloques</h3>
+              <p>Eventos, control, variables, listas y tus propios bloques. Sin errores de punto y coma.</p>
+            </div>
+            <div class="card">
+              <h3>Ver el código real</h3>
+              <p>El panel «Código» muestra el C++ de Arduino o el Python que genera cada bloque.</p>
+            </div>
+            <div class="card">
+              <h3>Cargar a la tarjeta</h3>
+              <p>«Verificar» compila y «Cargar» lo manda a la tarjeta. Para Arduino no hace falta instalar Arduino IDE.</p>
+            </div>
+            <div class="card">
+              <h3>Sensores y motores</h3>
+              <p>
+                Extensiones para motores con puente H, servos, seguidor de línea QTR, ultrasónico, color, IMU y más.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tarjetas">
+        <div class="wrap">
+          <h2>Tarjetas compatibles</h2>
+          <p class="sub">Eliges la tarjeta en la parte de arriba del editor y los bloques se ajustan a sus pines.</p>
+          <div class="chips">
+            <span class="chip">Arduino UNO R3</span>
+            <span class="chip">Arduino UNO R4 Minima</span>
+            <span class="chip">Arduino Nano</span>
+            <span class="chip">Arduino GIGA R1 WiFi</span>
+            <span class="chip">Teensy 4.0</span>
+            <span class="chip">Teensy 4.1</span>
+            <span class="chip">XIAO ESP32-S3</span>
+            <span class="chip">FireBeetle ESP32 <small>· MicroPython</small></span>
+            <span class="chip">LEGO SPIKE Prime <small>· Pybricks</small></span>
+            <span class="chip">LEGO EV3 <small>· Pybricks</small></span>
+          </div>
+        </div>
+      </section>
+
+      <section id="instalar">
+        <div class="wrap">
+          <h2>Cómo instalar</h2>
+          <p class="sub">Toma un par de minutos y no pide contraseña de administrador.</p>
+          <ol class="steps">
+            <li>
+              <div>
+                <strong>Descarga el instalador</strong>
+                <span
+                  >Da clic en <span class="key">Descargar para Windows</span>. Se guarda
+                  <code>GreyForge-Windows.exe</code> en tu carpeta de Descargas.</span
+                >
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Ábrelo</strong>
+                <span>Dale doble clic al archivo descargado.</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Si Windows dice «Windows protegió tu PC»</strong>
+                <span
+                  >Da clic en <span class="key">Más información</span> y luego en
+                  <span class="key">Ejecutar de todas formas</span>.</span
+                >
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Sigue los pasos</strong>
+                <span>Al terminar se abre GreyForge y queda un acceso directo en el escritorio.</span>
+              </div>
+            </li>
+          </ol>
+          <p class="note">
+            <strong>¿Por qué sale ese aviso?</strong> Windows lo muestra con los programas que no tienen un certificado
+            de pago, como los proyectos escolares. GreyForge es del equipo y es seguro; cada actualización va firmada y
+            la app la comprueba antes de instalarla.
+          </p>
+        </div>
+      </section>
+
+      <section id="actualizaciones">
+        <div class="wrap">
+          <h2>Se actualiza solo</h2>
+          <p class="sub">
+            Solo descargas el instalador una vez. Cuando sale una versión nueva, GreyForge te avisa al abrirlo.
+          </p>
+          <div class="grid">
+            <div class="card">
+              <h3>«Hay una actualización»</h3>
+              <p>El aviso muestra qué cambió. Puedes instalarla en ese momento o elegir «Más tarde».</p>
+            </div>
+            <div class="card">
+              <h3>Tu trabajo primero</h3>
+              <p>Si tienes cambios sin guardar, el botón dice «Guardar e instalar» y primero guarda tu proyecto.</p>
+            </div>
+            <div class="card">
+              <h3>Se reinicia solo</h3>
+              <p>Descarga la versión nueva, la instala y vuelve a abrir GreyForge. Tus proyectos no se tocan.</p>
+            </div>
+          </div>
+          <p class="note">
+            <strong>¿Tenías la versión 0.6.0 o anterior?</strong> Esas no tienen el actualizador: instala esta versión
+            una vez con el botón de arriba. De ahí en adelante se actualiza solo.
+          </p>
+        </div>
+      </section>
+
+      <section id="novedades">
+        <div class="wrap">
+          <div class="notes-head">
+            <h2 id="novedades-titulo">Novedades</h2>
+            <a href="https://github.com/EduardoAG33/greyforge/releases">Todas las versiones</a>
+          </div>
+          <div class="notes" id="notas">
+            <p class="sub" style="margin: 16px 0 0">Cargando las novedades…</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <span>GreyForge · Equipo de robótica Los Grises</span>
+        <span
+          >¿Dudas o ideas? Usa el botón <strong>Sugerencias</strong> dentro de la app o pregúntale a tu profe.</span
+        >
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const repo = 'EduardoAG33/greyforge';
+        const versionLine = document.getElementById('version');
+        const notes = document.getElementById('notas');
+        const button = document.getElementById('descargar');
+        const escape = (text) =>
+          text.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+        const inline = (text) =>
+          escape(text)
+            .replace(/`([^`]+)`/g, '<code>$1</code>')
+            .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+        // Release notes come from CHANGELOG.md: «## Título» headings and «- » bullets that may wrap.
+        function render(markdown) {
+          const html = [];
+          let list = null;
+          const closeList = () => {
+            if (list) html.push('<ul>' + list.map((item) => '<li>' + inline(item) + '</li>').join('') + '</ul>');
+            list = null;
+          };
+          for (const raw of markdown.split(/\r?\n/)) {
+            const line = raw.trim();
+            if (!line) continue;
+            if (line.startsWith('#')) {
+              closeList();
+              html.push('<h3>' + inline(line.replace(/^#+\s*/, '')) + '</h3>');
+            } else if (line.startsWith('- ')) {
+              (list ??= []).push(line.slice(2));
+            } else if (list) list[list.length - 1] += ' ' + line;
+            else html.push('<p>' + inline(line) + '</p>');
+          }
+          closeList();
+          return html.join('');
+        }
+        const date = (iso) =>
+          new Date(iso).toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' });
+        fetch('https://api.github.com/repos/' + repo + '/releases/latest', {
+          headers: { Accept: 'application/vnd.github+json' },
+        })
+          .then((response) => {
+            if (response.status === 404) throw new Error('sin-version');
+            if (!response.ok) throw new Error('api');
+            return response.json();
+          })
+          .then((release) => {
+            const version = release.tag_name.replace(/^v/, '');
+            const asset = (release.assets || []).find((item) => item.name === 'GreyForge-Windows.exe');
+            const size = asset ? ' · ' + Math.round(asset.size / 1048576) + ' MB' : '';
+            versionLine.textContent =
+              'Versión ' + version + ' · ' + date(release.published_at) + ' · Windows 10 y 11, 64 bits' + size;
+            document.getElementById('novedades-titulo').textContent = 'Novedades de la ' + version;
+            notes.innerHTML = render(release.body || '') || '<p class="sub">Esta versión no tiene notas.</p>';
+          })
+          .catch((error) => {
+            if (error.message === 'sin-version') {
+              button.setAttribute('aria-disabled', 'true');
+              button.removeAttribute('href');
+              versionLine.textContent = 'La primera versión se publica muy pronto.';
+              notes.innerHTML = '<p class="sub" style="margin:16px 0 0">Todavía no hay versiones publicadas.</p>';
+            } else {
+              notes.innerHTML =
+                '<p class="sub" style="margin:16px 0 0">No se pudieron cargar las novedades. Míralas en ' +
+                '<a href="https://github.com/' +
+                repo +
+                '/releases">todas las versiones</a>.</p>';
+            }
+          });
+      })();
+    </script>
+  </body>
+</html>
