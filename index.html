@@ -9,7 +9,10 @@
       content="GreyForge, el editor de bloques de Los Grises para programar Arduino, Teensy, ESP32, LEGO SPIKE y EV3. Descarga gratis para Windows."
     />
     <meta property="og:title" content="GreyForge · Programa robots con bloques" />
-    <meta property="og:description" content="Editor de bloques del equipo de robótica Los Grises. Descarga para Windows." />
+    <meta
+      property="og:description"
+      content="Editor de bloques del equipo de robótica Los Grises. Descarga para Windows."
+    />
     <meta property="og:image" content="https://eduardoag33.github.io/greyforge/img/editor.png" />
     <link rel="icon" href="img/greyforge-icono.svg" type="image/svg+xml" />
     <style>
@@ -272,6 +275,68 @@
         font-size: 14px;
         white-space: nowrap;
       }
+      .lego {
+        scroll-margin-top: 80px;
+      }
+      .lego + .lego {
+        margin-top: 56px;
+      }
+      .lego > h3 {
+        margin: 0 0 4px;
+        font-size: 22px;
+      }
+      .lego > p {
+        margin: 0 0 18px;
+        color: var(--muted);
+        max-width: 65ch;
+      }
+      .lego h4 {
+        margin: 28px 0 12px;
+        font-size: 16px;
+        color: var(--grey);
+      }
+      ol.steps li > div {
+        min-width: 0;
+      }
+      ol.steps b {
+        color: var(--text);
+      }
+      pre {
+        margin: 10px 0 0;
+        padding: 12px 14px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: var(--bg);
+        overflow-x: auto;
+        font-size: 14px;
+      }
+      pre code {
+        padding: 0;
+        background: none;
+      }
+      details {
+        margin-top: 20px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--bg-2);
+      }
+      summary {
+        padding: 14px 20px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      details ul {
+        margin: 0;
+        padding: 0 20px 18px 40px;
+        color: var(--muted);
+        overflow-wrap: anywhere;
+      }
+      details li + li {
+        margin-top: 8px;
+      }
+      details li strong {
+        color: var(--text);
+      }
       .note {
         margin-top: 20px;
         padding: 16px 20px;
@@ -392,6 +457,7 @@
         <nav aria-label="Secciones">
           <a href="#tarjetas">Tarjetas</a>
           <a href="#instalar">Cómo instalar</a>
+          <a href="#lego">SPIKE y EV3</a>
           <a href="#actualizaciones">Actualizaciones</a>
           <a href="#novedades">Novedades</a>
         </nav>
@@ -440,7 +506,9 @@
             </div>
             <div class="card">
               <h3>Cargar a la tarjeta</h3>
-              <p>«Verificar» compila y «Cargar» lo manda a la tarjeta. Para Arduino no hace falta instalar Arduino IDE.</p>
+              <p>
+                «Verificar» compila y «Cargar» lo manda a la tarjeta. Para Arduino no hace falta instalar Arduino IDE.
+              </p>
             </div>
             <div class="card">
               <h3>Sensores y motores</h3>
@@ -465,8 +533,8 @@
             <span class="chip">Teensy 4.1</span>
             <span class="chip">XIAO ESP32-S3</span>
             <span class="chip">FireBeetle ESP32 <small>· MicroPython</small></span>
-            <span class="chip">LEGO SPIKE Prime <small>· Pybricks</small></span>
-            <span class="chip">LEGO EV3 <small>· Pybricks</small></span>
+            <span class="chip"><a href="#spike">LEGO SPIKE Prime</a> <small>· Pybricks</small></span>
+            <span class="chip"><a href="#ev3">LEGO EV3</a> <small>· Pybricks</small></span>
           </div>
         </div>
       </section>
@@ -515,6 +583,238 @@
         </div>
       </section>
 
+      <section id="lego">
+        <div class="wrap">
+          <h2>Conectar LEGO SPIKE y EV3</h2>
+          <p class="sub">
+            GreyForge los programa con Pybricks, en Python. Las dos tarjetas son experimentales: si algo no te funciona,
+            cuéntanos con el botón <strong>Sugerencias</strong> de la app.
+          </p>
+          <p class="note" style="margin: 0 0 40px">
+            <strong>Antes de empezar, pregúntale a tu profe.</strong> Preparar un SPIKE cambia su firmware, y preparar
+            una microSD para el EV3 borra todo lo que tenga. Se hace una sola vez y después puedes volver al programa de
+            LEGO.
+          </p>
+          <div class="lego" id="spike">
+            <h3>LEGO SPIKE Prime</h3>
+            <p>Se conecta sin cable, por Bluetooth. Ten a la mano el cable USB para instalar Pybricks.</p>
+            <h4>Una sola vez: instalar Pybricks en el hub</h4>
+            <ol class="steps">
+              <li>
+                <div>
+                  <strong>Abre Pybricks Code</strong
+                  ><span>En Chrome o Edge, entra a <a href="https://code.pybricks.com/">code.pybricks.com</a>.</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <strong>Instala el firmware</strong
+                  ><span
+                    >En el menú de herramientas elige <span class="key">Install Pybricks Firmware</span> y escoge
+                    <b>Prime Hub</b>.</span
+                  >
+                </div>
+              </li>
+              <li>
+                <div>
+                  <strong>Sigue los pasos de la pantalla</strong
+                  ><span
+                    >La página te enseña con un video cómo poner el hub en modo de actualización. No lo desconectes
+                    hasta que termine la barra.</span
+                  >
+                </div>
+              </li>
+            </ol>
+            <h4>Cada vez que programes</h4>
+            <ol class="steps">
+              <li>
+                <div>
+                  <strong>Enciende el hub y el Bluetooth de la computadora</strong
+                  ><span
+                    >No lo emparejes en la configuración de Windows: se conecta desde GreyForge. Si tienes abierto
+                    Pybricks Code, ciérralo.</span
+                  >
+                </div>
+              </li>
+              <li>
+                <div>
+                  <strong>Elige la tarjeta</strong
+                  ><span
+                    >Arriba en GreyForge abre <span class="key">Más tarjetas…</span> y agrega
+                    <b>SPIKE Prime / Pybricks</b>.</span
+                  >
+                </div>
+              </li>
+              <li>
+                <div>
+                  <strong>Conecta</strong
+                  ><span
+                    >Abre el menú <span class="key">Conectar hub</span>, elige <span class="key">Conectar hub</span> y
+                    escoge tu hub en la lista.</span
+                  >
+                </div>
+              </li>
+              <li>
+                <div>
+                  <strong>Carga tu programa</strong
+                  ><span
+                    >Arma tus bloques y da clic en <span class="key">Cargar</span>. El programa arranca en cuanto
+                    termina; para pararlo usa <span class="key">Detener</span>.</span
+                  >
+                </div>
+              </li>
+            </ol>
+            <details>
+              <summary>Si el SPIKE no conecta</summary>
+              <ul>
+                <li>
+                  <strong>No aparece en la lista:</strong> revisa que esté encendido, que tenga Pybricks y que no esté
+                  conectado a otra computadora o a Pybricks Code.
+                </li>
+                <li>
+                  <strong>Lo emparejaste en Windows:</strong> quítalo en Configuración → Bluetooth y dispositivos, y
+                  conéctalo desde GreyForge.
+                </li>
+                <li>
+                  <strong>«Firmware/perfil no soportado»:</strong> vuelve a instalar Pybricks desde code.pybricks.com;
+                  hace falta la versión 3.6.1 o una más nueva.
+                </li>
+                <li>
+                  <strong>Volver al programa de LEGO:</strong> en code.pybricks.com, menú de herramientas, elige
+                  <span class="key">Restore official LEGO firmware</span>.
+                </li>
+              </ul>
+            </details>
+          </div>
+          <div class="lego" id="ev3">
+            <h3>LEGO EV3</h3>
+            <p>
+              Usa una microSD con EV3 MicroPython y un cable mini-USB. GreyForge crea el archivo <code>main.py</code> y
+              tú lo copias al ladrillo.
+            </p>
+            <h4>Una sola vez: preparar la microSD</h4>
+            <ol class="steps">
+              <li>
+                <div>
+                  <strong>Consigue una microSD</strong><span>De 4 a 32 GB. Todo lo que tenga se va a borrar.</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <strong>Descarga la imagen</strong
+                  ><span
+                    >Baja «EV3 MicroPython microSD card image» de
+                    <a href="https://pybricks.com/install/mindstorms-ev3/installation/">la guía de Pybricks</a>. No la
+                    descomprimas.</span
+                  >
+                </div>
+              </li>
+              <li>
+                <div>
+                  <strong>Grábala</strong
+                  ><span
+                    >Usa un programa como <a href="https://etcher.balena.io/">Etcher</a>: elige la imagen, elige la
+                    microSD y no la saques hasta que termine.</span
+                  >
+                </div>
+              </li>
+              <li>
+                <div>
+                  <strong>Enciende el EV3 con la tarjeta</strong
+                  ><span
+                    >Métela con el EV3 apagado y enciéndelo. La luz naranja parpadea mientras arranca (puede tardar
+                    varios minutos) y se pone verde cuando está listo.</span
+                  >
+                </div>
+              </li>
+            </ol>
+            <h4>Cada vez que programes</h4>
+            <ol class="steps">
+              <li>
+                <div>
+                  <strong>Elige la tarjeta y arma tus bloques</strong
+                  ><span
+                    >Arriba en GreyForge abre <span class="key">Más tarjetas…</span> y agrega
+                    <b>EV3 / microSD Pybricks 2.0</b>.</span
+                  >
+                </div>
+              </li>
+              <li>
+                <div>
+                  <strong>Descarga tu programa</strong
+                  ><span
+                    >Abre el panel <span class="key">Código</span> y da clic en
+                    <span class="key">Descargar archivo</span>. Si ya tenías un <code>main.py</code> en Descargas,
+                    bórralo antes para que el nuevo no se llame <code>main (1).py</code>.</span
+                  >
+                </div>
+              </li>
+              <li>
+                <div>
+                  <strong>Conecta el EV3</strong
+                  ><span
+                    >Con el EV3 encendido, conecta el cable mini-USB y espera unos segundos a que Windows lo
+                    reconozca.</span
+                  >
+                </div>
+              </li>
+              <li>
+                <div>
+                  <strong>Copia el archivo</strong
+                  ><span
+                    >Abre PowerShell desde el menú Inicio, pega esta línea y pulsa Enter. La primera vez escribe
+                    <code>yes</code>; después escribe la contraseña <code>maker</code> (no se ve mientras
+                    escribes).</span
+                  >
+                  <pre><code>scp "$HOME\Downloads\main.py" robot@ev3dev.local:/home/robot/main.py</code></pre>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <strong>Dale permiso de ejecutarse</strong
+                  ><span>Pega esta otra línea y escribe otra vez la contraseña.</span>
+                  <pre><code>ssh robot@ev3dev.local "chmod +x /home/robot/main.py"</code></pre>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <strong>Ejecútalo en el EV3</strong
+                  ><span
+                    >En la pantalla del ladrillo entra a <span class="key">File Browser</span>, busca
+                    <code>main.py</code> y pulsa el botón central. Con el botón Atrás se detiene.</span
+                  >
+                </div>
+              </li>
+            </ol>
+            <details>
+              <summary>Si el EV3 no conecta</summary>
+              <ul>
+                <li>
+                  <strong>No encuentra «ev3dev.local»:</strong> espera a que la luz esté verde y revisa el cable. Si
+                  sigue igual, cambia <code>ev3dev.local</code> por la IP que sale arriba en la pantalla del EV3.
+                </li>
+                <li>
+                  <strong>«scp» o «ssh» no se reconoce:</strong> en Windows ve a Configuración → Características
+                  opcionales e instala «Cliente OpenSSH».
+                </li>
+                <li>
+                  <strong>«REMOTE HOST IDENTIFICATION HAS CHANGED»:</strong> cambiaste de EV3 o de microSD. Ejecuta
+                  <code>ssh-keygen -R ev3dev.local</code> y vuelve a copiar.
+                </li>
+                <li>
+                  <strong>¿Prefieres Visual Studio Code?</strong> Instala la extensión «EV3 MicroPython», crea un
+                  proyecto y cambia su <code>main.py</code> por el tuyo. Con F5 se copia y se ejecuta.
+                </li>
+                <li>
+                  <strong>Volver al programa de LEGO (EV3-G):</strong> apaga el EV3, espera a que se apaguen la pantalla
+                  y la luz, saca la microSD y enciéndelo.
+                </li>
+              </ul>
+            </details>
+          </div>
+        </div>
+      </section>
+
       <section id="actualizaciones">
         <div class="wrap">
           <h2>Se actualiza solo</h2>
@@ -558,9 +858,7 @@
     <footer>
       <div class="wrap">
         <span>GreyForge · Equipo de robótica Los Grises</span>
-        <span
-          >¿Dudas o ideas? Usa el botón <strong>Sugerencias</strong> dentro de la app o pregúntale a tu profe.</span
-        >
+        <span>¿Dudas o ideas? Usa el botón <strong>Sugerencias</strong> dentro de la app o pregúntale a tu profe.</span>
       </div>
     </footer>
 
