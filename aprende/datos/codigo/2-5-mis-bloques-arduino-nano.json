@@ -1,0 +1,4 @@
+{
+  "lenguaje": "cpp",
+  "codigo": "#include \"robotblocks_runtime.h\"\n\n\nvoid fn_saludar();\nvoid fn_saludar() {\n    Serial.println(String(\"\\302\\241Hola!\"));\n}\n\nstatic void proceso_1() {\n    static RbProcessState s;\n    PT_BEGIN(s);\n    while (true) {\n        fn_saludar();\n        PT_SLEEP(s, 500);\n        fn_saludar();\n        PT_SLEEP(s, 2000);\n        PT_YIELD(s);\n    }\n    PT_END(s);\n}\n\nvoid setup() { Serial.begin(115200); }\n\nvoid loop() { rb_error_repeat(); proceso_1(); }\n"
+}

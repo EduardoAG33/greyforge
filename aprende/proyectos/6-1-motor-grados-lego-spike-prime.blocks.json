@@ -1,0 +1,333 @@
+{
+  "formatVersion": 4,
+  "irVersion": 2,
+  "id": "6-1-motor-grados-lego-spike-prime",
+  "name": "6.1 Motor por grados",
+  "board": {
+    "definitionId": "org.robotblocks.lego-spike-prime:board",
+    "bindings": {}
+  },
+  "devices": [],
+  "programs": [
+    {
+      "id": "main",
+      "name": "Programa principal",
+      "processes": [
+        {
+          "id": "start",
+          "trigger": {
+            "blockId": "core:start",
+            "operation": "core:start",
+            "fields": {}
+          },
+          "body": {
+            "id": "spike-11",
+            "blockId": "org.robotblocks.lego-spike:motor-angle",
+            "operation": "org.robotblocks.lego-spike:motor-angle",
+            "fields": {
+              "PORT": "a"
+            },
+            "inputs": {
+              "ANGLE": {
+                "id": "spike-9",
+                "blockId": "core:number",
+                "operation": "core:number",
+                "fields": {
+                  "NUMBER": 90
+                },
+                "inputs": {},
+                "next": null
+              },
+              "SPEED": {
+                "id": "spike-10",
+                "blockId": "core:number",
+                "operation": "core:number",
+                "fields": {
+                  "NUMBER": 500
+                },
+                "inputs": {},
+                "next": null
+              }
+            },
+            "next": {
+              "id": "spike-12",
+              "blockId": "org.robotblocks.lego-spike:motor-stop",
+              "operation": "org.robotblocks.lego-spike:motor-stop",
+              "fields": {
+                "PORT": "a",
+                "MODE": "hold"
+              },
+              "inputs": {},
+              "next": {
+                "id": "spike-14",
+                "blockId": "core:serial-println",
+                "operation": "core:serial-println",
+                "fields": {},
+                "inputs": {
+                  "VALUE": {
+                    "id": "spike-13",
+                    "blockId": "org.robotblocks.lego-spike:motor-position",
+                    "operation": "org.robotblocks.lego-spike:motor-position",
+                    "fields": {
+                      "PORT": "a"
+                    },
+                    "inputs": {},
+                    "next": null
+                  }
+                },
+                "next": null
+              }
+            }
+          }
+        }
+      ],
+      "detachedNodes": []
+    }
+  ],
+  "variables": [],
+  "lists": [],
+  "projectSettings": {
+    "locale": "es",
+    "units": "metric"
+  },
+  "extensions": [
+    {
+      "id": "org.robotblocks.lego-spike",
+      "version": "0.1.0"
+    },
+    {
+      "id": "org.robotblocks.lego-spike-prime",
+      "version": "0.1.1"
+    }
+  ],
+  "editor": {
+    "adapter": "scratch-blocks",
+    "positions": {
+      "start": {
+        "x": 52,
+        "y": 64
+      }
+    },
+    "blockDefinitions": [
+      {
+        "id": "core:start",
+        "category": "core:events",
+        "label": {
+          "es": "al iniciar",
+          "en": "when started"
+        },
+        "kind": "event",
+        "fields": [],
+        "inputs": [],
+        "operation": "core:start",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:number",
+        "category": "core:operators",
+        "label": {
+          "es": "%NUMBER",
+          "en": "%NUMBER"
+        },
+        "kind": "reporter",
+        "output": "number",
+        "fields": [
+          {
+            "name": "NUMBER",
+            "type": "number",
+            "default": 50
+          }
+        ],
+        "inputs": [],
+        "operation": "core:number",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:serial-println",
+        "category": "core:serial",
+        "label": {
+          "es": "imprimir %VALUE con salto de línea",
+          "en": "print %VALUE with newline"
+        },
+        "kind": "command",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "VALUE",
+            "type": "value",
+            "default": "hola"
+          }
+        ],
+        "operation": "core:serial-println",
+        "tooltip": {
+          "es": "Código experimental. Consulta el contrato de serie, tiempo y eventos en el catálogo de bloques.",
+          "en": "Experimental code. See serial, time and event conventions in the block catalog."
+        },
+        "requiredCapabilities": [],
+        "generators": {
+          "micropython": {
+            "canFail": false,
+            "statement": "print({VALUE})"
+          },
+          "arduino": {
+            "canFail": false,
+            "statement": "Serial.println({VALUE});"
+          },
+          "pybricks": {
+            "canFail": false,
+            "statement": "print({VALUE})"
+          }
+        }
+      },
+      {
+        "id": "org.robotblocks.lego-spike:motor-angle",
+        "category": "org.robotblocks.lego-spike:motors",
+        "label": {
+          "es": "motor %PORT girar %ANGLE grados a %SPEED grados/s",
+          "en": "motor %PORT run %ANGLE degrees at %SPEED degrees/s"
+        },
+        "kind": "command",
+        "fields": [
+          {
+            "name": "PORT",
+            "type": "string",
+            "default": "a",
+            "reference": {
+              "kind": "resource",
+              "capabilities": ["poweredUpPort"]
+            }
+          }
+        ],
+        "inputs": [
+          {
+            "name": "ANGLE",
+            "type": "number",
+            "default": 90,
+            "min": -2147483648,
+            "max": 2147483647
+          },
+          {
+            "name": "SPEED",
+            "type": "number",
+            "default": 500,
+            "min": 1,
+            "max": 2147483647
+          }
+        ],
+        "operation": "org.robotblocks.lego-spike:motor-angle",
+        "tooltip": {
+          "es": "Pybricks 3.6.1+ / 4.0 experimental. Unidades indicadas en el bloque. Comprueba conexiones y calibración antes de ejecutar.",
+          "en": "Experimental Pybricks 3.6.1+ / 4.0. Units shown in the block. Check connections and calibration before running."
+        },
+        "requiredCapabilities": ["poweredUpPort"],
+        "generators": {
+          "pybricks": {
+            "cooperative": true,
+            "statement": "await rb_motor({PORT}, {BLOCK_ID}).run_angle({SPEED}, {ANGLE})"
+          }
+        }
+      },
+      {
+        "id": "org.robotblocks.lego-spike:motor-stop",
+        "category": "org.robotblocks.lego-spike:motors",
+        "label": {
+          "es": "motor %PORT detener %MODE",
+          "en": "motor %PORT stop %MODE"
+        },
+        "kind": "command",
+        "fields": [
+          {
+            "name": "PORT",
+            "type": "string",
+            "default": "a",
+            "reference": {
+              "kind": "resource",
+              "capabilities": ["poweredUpPort"]
+            }
+          },
+          {
+            "name": "MODE",
+            "type": "string",
+            "default": "brake",
+            "options": [
+              {
+                "label": {
+                  "es": "frenar",
+                  "en": "brake"
+                },
+                "value": "brake"
+              },
+              {
+                "label": {
+                  "es": "mantener",
+                  "en": "hold"
+                },
+                "value": "hold"
+              },
+              {
+                "label": {
+                  "es": "libre",
+                  "en": "coast"
+                },
+                "value": "coast"
+              }
+            ]
+          }
+        ],
+        "inputs": [],
+        "operation": "org.robotblocks.lego-spike:motor-stop",
+        "tooltip": {
+          "es": "Pybricks 3.6.1+ / 4.0 experimental. Unidades indicadas en el bloque. Comprueba conexiones y calibración antes de ejecutar.",
+          "en": "Experimental Pybricks 3.6.1+ / 4.0. Units shown in the block. Check connections and calibration before running."
+        },
+        "requiredCapabilities": ["poweredUpPort"],
+        "generators": {
+          "pybricks": {
+            "statement": "rb_motor_stop(rb_motor({PORT}, {BLOCK_ID}), {MODE})"
+          }
+        }
+      },
+      {
+        "id": "org.robotblocks.lego-spike:motor-position",
+        "category": "org.robotblocks.lego-spike:motors",
+        "label": {
+          "es": "ángulo del motor %PORT en grados",
+          "en": "motor %PORT angle in degrees"
+        },
+        "kind": "reporter",
+        "output": "number",
+        "fields": [
+          {
+            "name": "PORT",
+            "type": "string",
+            "default": "a",
+            "reference": {
+              "kind": "resource",
+              "capabilities": ["poweredUpPort"]
+            }
+          }
+        ],
+        "inputs": [],
+        "operation": "org.robotblocks.lego-spike:motor-position",
+        "tooltip": {
+          "es": "Pybricks 3.6.1+ / 4.0 experimental. Unidades indicadas en el bloque. Comprueba conexiones y calibración antes de ejecutar.",
+          "en": "Experimental Pybricks 3.6.1+ / 4.0. Units shown in the block. Check connections and calibration before running."
+        },
+        "requiredCapabilities": ["poweredUpPort"],
+        "generators": {
+          "pybricks": {
+            "expression": "rb_motor({PORT}, {BLOCK_ID}).angle()"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "lenguaje": "cpp",
+  "codigo": "#include \"robotblocks_runtime.h\"\n\nfloat v_contador = 0;\n\nstatic void proceso_1() {\n    static RbProcessState s;\n    PT_BEGIN(s);\n    v_contador = 0;\n    while (true) {\n        v_contador = v_contador + 1;\n        Serial.println(v_contador);\n        PT_SLEEP(s, 1000);\n        PT_YIELD(s);\n    }\n    PT_END(s);\n}\n\nvoid setup() { Serial.begin(115200); }\n\nvoid loop() { rb_error_repeat(); proceso_1(); }\n"
+}

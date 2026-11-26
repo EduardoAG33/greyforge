@@ -1,0 +1,380 @@
+{
+  "formatVersion": 4,
+  "irVersion": 2,
+  "id": "2-5-mis-bloques-arduino-uno",
+  "name": "2.5 Mis Bloques: crea un bloque propio",
+  "board": {
+    "definitionId": "org.robotblocks.arduino-uno:board",
+    "bindings": {}
+  },
+  "devices": [],
+  "programs": [
+    {
+      "id": "main",
+      "name": "Programa principal",
+      "processes": [
+        {
+          "id": "inicio",
+          "trigger": {
+            "blockId": "core:start",
+            "operation": "core:start",
+            "fields": {}
+          },
+          "body": {
+            "id": "aprende-78",
+            "blockId": "core:forever",
+            "operation": "core:forever",
+            "fields": {},
+            "inputs": {
+              "BODY": {
+                "id": "aprende-72",
+                "blockId": "core:call",
+                "operation": "core:call",
+                "fields": {
+                  "NAME": "saludar"
+                },
+                "inputs": {},
+                "next": {
+                  "id": "aprende-74",
+                  "blockId": "core:wait-value",
+                  "operation": "core:wait-value",
+                  "fields": {},
+                  "inputs": {
+                    "SECONDS": {
+                      "id": "aprende-73",
+                      "blockId": "core:number",
+                      "operation": "core:number",
+                      "fields": {
+                        "NUMBER": 0.5
+                      },
+                      "inputs": {},
+                      "next": null
+                    }
+                  },
+                  "next": {
+                    "id": "aprende-75",
+                    "blockId": "core:call",
+                    "operation": "core:call",
+                    "fields": {
+                      "NAME": "saludar"
+                    },
+                    "inputs": {},
+                    "next": {
+                      "id": "aprende-77",
+                      "blockId": "core:wait-value",
+                      "operation": "core:wait-value",
+                      "fields": {},
+                      "inputs": {
+                        "SECONDS": {
+                          "id": "aprende-76",
+                          "blockId": "core:number",
+                          "operation": "core:number",
+                          "fields": {
+                            "NUMBER": 2
+                          },
+                          "inputs": {},
+                          "next": null
+                        }
+                      },
+                      "next": null
+                    }
+                  }
+                }
+              }
+            },
+            "next": null
+          }
+        },
+        {
+          "id": "saludo",
+          "trigger": {
+            "blockId": "core:function-0",
+            "operation": "core:function-0",
+            "fields": {
+              "NAME": "saludar",
+              "RET": "void"
+            }
+          },
+          "body": {
+            "id": "aprende-80",
+            "blockId": "core:serial-println",
+            "operation": "core:serial-println",
+            "fields": {},
+            "inputs": {
+              "VALUE": {
+                "id": "aprende-79",
+                "blockId": "core:text",
+                "operation": "core:text",
+                "fields": {
+                  "TEXT": "¡Hola!"
+                },
+                "inputs": {},
+                "next": null
+              }
+            },
+            "next": null
+          }
+        }
+      ],
+      "detachedNodes": []
+    }
+  ],
+  "variables": [],
+  "lists": [],
+  "projectSettings": {
+    "locale": "es",
+    "units": "metric"
+  },
+  "extensions": [
+    {
+      "id": "org.robotblocks.arduino-uno",
+      "version": "0.3.0"
+    }
+  ],
+  "editor": {
+    "adapter": "scratch-blocks",
+    "positions": {
+      "inicio": {
+        "x": 52,
+        "y": 64
+      },
+      "saludo": {
+        "x": 420,
+        "y": 64
+      }
+    },
+    "blockDefinitions": [
+      {
+        "id": "core:start",
+        "category": "core:events",
+        "label": {
+          "es": "al iniciar",
+          "en": "when started"
+        },
+        "kind": "event",
+        "fields": [],
+        "inputs": [],
+        "operation": "core:start",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:forever",
+        "category": "core:control",
+        "label": {
+          "es": "por siempre %BODY",
+          "en": "forever %BODY"
+        },
+        "kind": "loop",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "BODY",
+            "type": "statement"
+          }
+        ],
+        "operation": "core:forever",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:number",
+        "category": "core:operators",
+        "label": {
+          "es": "%NUMBER",
+          "en": "%NUMBER"
+        },
+        "kind": "reporter",
+        "output": "number",
+        "fields": [
+          {
+            "name": "NUMBER",
+            "type": "number",
+            "default": 50
+          }
+        ],
+        "inputs": [],
+        "operation": "core:number",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:text",
+        "category": "core:operators",
+        "label": {
+          "es": "%TEXT",
+          "en": "%TEXT"
+        },
+        "kind": "reporter",
+        "output": "string",
+        "fields": [
+          {
+            "name": "TEXT",
+            "type": "string",
+            "default": "hola"
+          }
+        ],
+        "inputs": [],
+        "operation": "core:text",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:wait-value",
+        "category": "core:control",
+        "label": {
+          "es": "esperar %SECONDS segundos",
+          "en": "wait %SECONDS seconds"
+        },
+        "kind": "command",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "SECONDS",
+            "type": "number",
+            "default": 1,
+            "min": 0
+          }
+        ],
+        "operation": "core:wait-value",
+        "tooltip": {
+          "es": "Estructura de control del programa. No ejecuta ni bloquea el navegador.",
+          "en": "Program control structure. Does not execute or block the browser."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:serial-println",
+        "category": "core:serial",
+        "label": {
+          "es": "imprimir %VALUE con salto de línea",
+          "en": "print %VALUE with newline"
+        },
+        "kind": "command",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "VALUE",
+            "type": "value",
+            "default": "hola"
+          }
+        ],
+        "operation": "core:serial-println",
+        "tooltip": {
+          "es": "Código experimental. Consulta el contrato de serie, tiempo y eventos en el catálogo de bloques.",
+          "en": "Experimental code. See serial, time and event conventions in the block catalog."
+        },
+        "requiredCapabilities": [],
+        "generators": {
+          "micropython": {
+            "canFail": false,
+            "statement": "print({VALUE})"
+          },
+          "arduino": {
+            "canFail": false,
+            "statement": "Serial.println({VALUE});"
+          },
+          "pybricks": {
+            "canFail": false,
+            "statement": "print({VALUE})"
+          }
+        }
+      },
+      {
+        "id": "core:function-0",
+        "category": "core:functions",
+        "label": {
+          "es": "definir %NAME devuelve %RET",
+          "en": "define %NAME returns %RET"
+        },
+        "kind": "event",
+        "fields": [
+          {
+            "name": "NAME",
+            "type": "string",
+            "default": "mi función"
+          },
+          {
+            "name": "RET",
+            "type": "string",
+            "default": "void",
+            "options": [
+              {
+                "label": {
+                  "es": "nada",
+                  "en": "nothing"
+                },
+                "value": "void"
+              },
+              {
+                "label": {
+                  "es": "número",
+                  "en": "number"
+                },
+                "value": "number"
+              },
+              {
+                "label": {
+                  "es": "texto",
+                  "en": "text"
+                },
+                "value": "string"
+              },
+              {
+                "label": {
+                  "es": "booleano",
+                  "en": "boolean"
+                },
+                "value": "boolean"
+              }
+            ]
+          }
+        ],
+        "inputs": [],
+        "operation": "core:function-0",
+        "tooltip": {
+          "es": "Bloque propio con hasta cuatro parámetros. Usa devolver; no admite esperas ni recursión.",
+          "en": "Custom block with up to four parameters. Use return; waits and recursion are not supported."
+        },
+        "requiredCapabilities": [],
+        "toolboxHidden": true
+      },
+      {
+        "id": "core:call",
+        "category": "core:functions",
+        "label": {
+          "es": "llamar %NAME",
+          "en": "call %NAME"
+        },
+        "kind": "command",
+        "fields": [
+          {
+            "name": "NAME",
+            "type": "string",
+            "default": "mi función"
+          }
+        ],
+        "inputs": [],
+        "operation": "core:call",
+        "tooltip": {
+          "es": "Código experimental. Consulta el contrato de serie, tiempo y eventos en el catálogo de bloques.",
+          "en": "Experimental code. See serial, time and event conventions in the block catalog."
+        },
+        "requiredCapabilities": [],
+        "toolboxHidden": true
+      }
+    ]
+  }
+}

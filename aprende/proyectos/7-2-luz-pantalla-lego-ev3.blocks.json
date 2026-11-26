@@ -1,0 +1,378 @@
+{
+  "formatVersion": 4,
+  "irVersion": 2,
+  "id": "7-2-luz-pantalla-lego-ev3",
+  "name": "7.2 Luz y pantalla del EV3",
+  "board": {
+    "definitionId": "org.robotblocks.lego-ev3:board",
+    "bindings": {}
+  },
+  "devices": [],
+  "programs": [
+    {
+      "id": "main",
+      "name": "Programa principal",
+      "processes": [
+        {
+          "id": "start",
+          "trigger": {
+            "blockId": "core:start",
+            "operation": "core:start",
+            "fields": {}
+          },
+          "body": {
+            "id": "ev3-10",
+            "blockId": "core:forever",
+            "operation": "core:forever",
+            "fields": {},
+            "inputs": {
+              "BODY": {
+                "id": "ev3-1",
+                "blockId": "org.robotblocks.lego-ev3-devices:light",
+                "operation": "org.robotblocks.lego-ev3-devices:light",
+                "fields": {
+                  "COLOR": "GREEN"
+                },
+                "inputs": {},
+                "next": {
+                  "id": "ev3-3",
+                  "blockId": "org.robotblocks.lego-ev3-devices:screen-text",
+                  "operation": "org.robotblocks.lego-ev3-devices:screen-text",
+                  "fields": {},
+                  "inputs": {
+                    "TEXT": {
+                      "id": "ev3-2",
+                      "blockId": "core:text",
+                      "operation": "core:text",
+                      "fields": {
+                        "TEXT": "Hola EV3"
+                      },
+                      "inputs": {},
+                      "next": null
+                    }
+                  },
+                  "next": {
+                    "id": "ev3-5",
+                    "blockId": "core:wait-ms",
+                    "operation": "core:wait-ms",
+                    "fields": {},
+                    "inputs": {
+                      "MS": {
+                        "id": "ev3-4",
+                        "blockId": "core:number",
+                        "operation": "core:number",
+                        "fields": {
+                          "NUMBER": 100
+                        },
+                        "inputs": {},
+                        "next": null
+                      }
+                    },
+                    "next": {
+                      "id": "ev3-6",
+                      "blockId": "org.robotblocks.lego-ev3-devices:light-off",
+                      "operation": "org.robotblocks.lego-ev3-devices:light-off",
+                      "fields": {},
+                      "inputs": {},
+                      "next": {
+                        "id": "ev3-7",
+                        "blockId": "org.robotblocks.lego-ev3-devices:screen-clear",
+                        "operation": "org.robotblocks.lego-ev3-devices:screen-clear",
+                        "fields": {},
+                        "inputs": {},
+                        "next": {
+                          "id": "ev3-9",
+                          "blockId": "core:wait-ms",
+                          "operation": "core:wait-ms",
+                          "fields": {},
+                          "inputs": {
+                            "MS": {
+                              "id": "ev3-8",
+                              "blockId": "core:number",
+                              "operation": "core:number",
+                              "fields": {
+                                "NUMBER": 100
+                              },
+                              "inputs": {},
+                              "next": null
+                            }
+                          },
+                          "next": null
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "next": null
+          }
+        }
+      ],
+      "detachedNodes": []
+    }
+  ],
+  "variables": [],
+  "lists": [],
+  "projectSettings": {
+    "locale": "es",
+    "units": "metric"
+  },
+  "extensions": [
+    {
+      "id": "org.robotblocks.lego-ev3",
+      "version": "0.1.1"
+    },
+    {
+      "id": "org.robotblocks.lego-ev3-devices",
+      "version": "0.4.0"
+    }
+  ],
+  "editor": {
+    "adapter": "scratch-blocks",
+    "positions": {
+      "start": {
+        "x": 52,
+        "y": 64
+      }
+    },
+    "blockDefinitions": [
+      {
+        "id": "core:start",
+        "category": "core:events",
+        "label": {
+          "es": "al iniciar",
+          "en": "when started"
+        },
+        "kind": "event",
+        "fields": [],
+        "inputs": [],
+        "operation": "core:start",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:forever",
+        "category": "core:control",
+        "label": {
+          "es": "por siempre %BODY",
+          "en": "forever %BODY"
+        },
+        "kind": "loop",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "BODY",
+            "type": "statement"
+          }
+        ],
+        "operation": "core:forever",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:number",
+        "category": "core:operators",
+        "label": {
+          "es": "%NUMBER",
+          "en": "%NUMBER"
+        },
+        "kind": "reporter",
+        "output": "number",
+        "fields": [
+          {
+            "name": "NUMBER",
+            "type": "number",
+            "default": 50
+          }
+        ],
+        "inputs": [],
+        "operation": "core:number",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:text",
+        "category": "core:operators",
+        "label": {
+          "es": "%TEXT",
+          "en": "%TEXT"
+        },
+        "kind": "reporter",
+        "output": "string",
+        "fields": [
+          {
+            "name": "TEXT",
+            "type": "string",
+            "default": "hola"
+          }
+        ],
+        "inputs": [],
+        "operation": "core:text",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:wait-ms",
+        "category": "core:time",
+        "label": {
+          "es": "esperar %MS ms",
+          "en": "wait %MS ms"
+        },
+        "kind": "command",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "MS",
+            "type": "number",
+            "default": 100,
+            "min": 0,
+            "max": 2147483647,
+            "integer": true
+          }
+        ],
+        "operation": "core:wait-ms",
+        "tooltip": {
+          "es": "Código experimental. Consulta el contrato de serie, tiempo y eventos en el catálogo de bloques.",
+          "en": "Experimental code. See serial, time and event conventions in the block catalog."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "org.robotblocks.lego-ev3-devices:screen-text",
+        "category": "org.robotblocks.lego-ev3-devices:hub",
+        "label": {
+          "es": "pantalla escribir %TEXT",
+          "en": "screen print %TEXT"
+        },
+        "kind": "command",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "TEXT",
+            "type": "string",
+            "default": "Hola"
+          }
+        ],
+        "operation": "org.robotblocks.lego-ev3-devices:screen-text",
+        "tooltip": {
+          "es": "EV3 microSD / Pybricks 2.0 · experimental.",
+          "en": "EV3 microSD / Pybricks 2.0 · experimental."
+        },
+        "requiredCapabilities": ["hubDisplay"],
+        "generators": {
+          "pybricks": {
+            "statement": "rb_hub.screen.print({TEXT})"
+          }
+        }
+      },
+      {
+        "id": "org.robotblocks.lego-ev3-devices:screen-clear",
+        "category": "org.robotblocks.lego-ev3-devices:hub",
+        "label": {
+          "es": "pantalla borrar",
+          "en": "screen clear"
+        },
+        "kind": "command",
+        "fields": [],
+        "inputs": [],
+        "operation": "org.robotblocks.lego-ev3-devices:screen-clear",
+        "tooltip": {
+          "es": "EV3 microSD / Pybricks 2.0 · experimental.",
+          "en": "EV3 microSD / Pybricks 2.0 · experimental."
+        },
+        "requiredCapabilities": ["hubDisplay"],
+        "generators": {
+          "pybricks": {
+            "statement": "rb_hub.screen.clear()"
+          }
+        }
+      },
+      {
+        "id": "org.robotblocks.lego-ev3-devices:light",
+        "category": "org.robotblocks.lego-ev3-devices:hub",
+        "label": {
+          "es": "luz de estado %COLOR",
+          "en": "status light %COLOR"
+        },
+        "kind": "command",
+        "fields": [
+          {
+            "name": "COLOR",
+            "type": "string",
+            "default": "GREEN",
+            "options": [
+              {
+                "label": {
+                  "es": "verde",
+                  "en": "green"
+                },
+                "value": "GREEN"
+              },
+              {
+                "label": {
+                  "es": "rojo",
+                  "en": "red"
+                },
+                "value": "RED"
+              },
+              {
+                "label": {
+                  "es": "naranja",
+                  "en": "orange"
+                },
+                "value": "ORANGE"
+              }
+            ]
+          }
+        ],
+        "inputs": [],
+        "operation": "org.robotblocks.lego-ev3-devices:light",
+        "tooltip": {
+          "es": "EV3 microSD / Pybricks 2.0 · experimental.",
+          "en": "EV3 microSD / Pybricks 2.0 · experimental."
+        },
+        "requiredCapabilities": ["hubLight"],
+        "generators": {
+          "pybricks": {
+            "statement": "rb_light({COLOR})"
+          }
+        }
+      },
+      {
+        "id": "org.robotblocks.lego-ev3-devices:light-off",
+        "category": "org.robotblocks.lego-ev3-devices:hub",
+        "label": {
+          "es": "luz de estado apagar",
+          "en": "status light off"
+        },
+        "kind": "command",
+        "fields": [],
+        "inputs": [],
+        "operation": "org.robotblocks.lego-ev3-devices:light-off",
+        "tooltip": {
+          "es": "EV3 microSD / Pybricks 2.0 · experimental.",
+          "en": "EV3 microSD / Pybricks 2.0 · experimental."
+        },
+        "requiredCapabilities": ["hubLight"],
+        "generators": {
+          "pybricks": {
+            "statement": "rb_hub.light.off()"
+          }
+        }
+      }
+    ]
+  }
+}

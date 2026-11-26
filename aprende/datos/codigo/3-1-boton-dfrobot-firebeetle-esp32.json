@@ -1,0 +1,4 @@
+{
+  "lenguaje": "python",
+  "codigo": "import asyncio\nfrom robotblocks_runtime import *\nfrom machine import Pin, PWM\n\n\ninput_pin_25 = Pin(25, Pin.IN)\n\nasync def proceso_1():\n    while True:\n        print((input_pin_25.value() != 0))\n        await rb_wait(0.5)\n        await rb_yield()\n\nasync def main():\n    await rb_run(proceso_1)\n\nasyncio.run(main())\n"
+}

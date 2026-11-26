@@ -1,0 +1,4 @@
+{
+  "lenguaje": "python",
+  "codigo": "import asyncio\nfrom robotblocks_runtime import *\n\n\n\nasync def proceso_1():\n    while True:\n        print(\"Suma, escala, límite, comparación y dado:\")\n        print((8 + 2))\n        print(rb_map(5, 0, 10, 0, 100, \"aprende-782\"))\n        print(rb_clamp(120, 0, 100, \"aprende-787\"))\n        print((3 < 5))\n        print(rb_random(1, 6, \"aprende-795\"))\n        await rb_wait(2)\n        await rb_yield()\n\nasync def main():\n    await rb_run(proceso_1)\n\nasyncio.run(main())\n"
+}

@@ -1,0 +1,635 @@
+{
+  "formatVersion": 4,
+  "irVersion": 2,
+  "id": "2-4-operaciones-teensy-41",
+  "name": "2.4 Operaciones con números",
+  "board": {
+    "definitionId": "org.robotblocks.teensy-41:board",
+    "bindings": {}
+  },
+  "devices": [],
+  "programs": [
+    {
+      "id": "main",
+      "name": "Programa principal",
+      "processes": [
+        {
+          "id": "inicio",
+          "trigger": {
+            "blockId": "core:start",
+            "operation": "core:start",
+            "fields": {}
+          },
+          "body": {
+            "id": "aprende-1345",
+            "blockId": "core:forever",
+            "operation": "core:forever",
+            "fields": {},
+            "inputs": {
+              "BODY": {
+                "id": "aprende-1318",
+                "blockId": "core:serial-println",
+                "operation": "core:serial-println",
+                "fields": {},
+                "inputs": {
+                  "VALUE": {
+                    "id": "aprende-1317",
+                    "blockId": "core:text",
+                    "operation": "core:text",
+                    "fields": {
+                      "TEXT": "Suma, escala, límite, comparación y dado:"
+                    },
+                    "inputs": {},
+                    "next": null
+                  }
+                },
+                "next": {
+                  "id": "aprende-1322",
+                  "blockId": "core:serial-println",
+                  "operation": "core:serial-println",
+                  "fields": {},
+                  "inputs": {
+                    "VALUE": {
+                      "id": "aprende-1321",
+                      "blockId": "core:add",
+                      "operation": "core:add",
+                      "fields": {},
+                      "inputs": {
+                        "LEFT": {
+                          "id": "aprende-1319",
+                          "blockId": "core:number",
+                          "operation": "core:number",
+                          "fields": {
+                            "NUMBER": 8
+                          },
+                          "inputs": {},
+                          "next": null
+                        },
+                        "RIGHT": {
+                          "id": "aprende-1320",
+                          "blockId": "core:number",
+                          "operation": "core:number",
+                          "fields": {
+                            "NUMBER": 2
+                          },
+                          "inputs": {},
+                          "next": null
+                        }
+                      },
+                      "next": null
+                    }
+                  },
+                  "next": {
+                    "id": "aprende-1329",
+                    "blockId": "core:serial-println",
+                    "operation": "core:serial-println",
+                    "fields": {},
+                    "inputs": {
+                      "VALUE": {
+                        "id": "aprende-1328",
+                        "blockId": "core:map",
+                        "operation": "core:map",
+                        "fields": {},
+                        "inputs": {
+                          "VALUE": {
+                            "id": "aprende-1323",
+                            "blockId": "core:number",
+                            "operation": "core:number",
+                            "fields": {
+                              "NUMBER": 5
+                            },
+                            "inputs": {},
+                            "next": null
+                          },
+                          "FROM_MIN": {
+                            "id": "aprende-1324",
+                            "blockId": "core:number",
+                            "operation": "core:number",
+                            "fields": {
+                              "NUMBER": 0
+                            },
+                            "inputs": {},
+                            "next": null
+                          },
+                          "FROM_MAX": {
+                            "id": "aprende-1325",
+                            "blockId": "core:number",
+                            "operation": "core:number",
+                            "fields": {
+                              "NUMBER": 10
+                            },
+                            "inputs": {},
+                            "next": null
+                          },
+                          "TO_MIN": {
+                            "id": "aprende-1326",
+                            "blockId": "core:number",
+                            "operation": "core:number",
+                            "fields": {
+                              "NUMBER": 0
+                            },
+                            "inputs": {},
+                            "next": null
+                          },
+                          "TO_MAX": {
+                            "id": "aprende-1327",
+                            "blockId": "core:number",
+                            "operation": "core:number",
+                            "fields": {
+                              "NUMBER": 100
+                            },
+                            "inputs": {},
+                            "next": null
+                          }
+                        },
+                        "next": null
+                      }
+                    },
+                    "next": {
+                      "id": "aprende-1334",
+                      "blockId": "core:serial-println",
+                      "operation": "core:serial-println",
+                      "fields": {},
+                      "inputs": {
+                        "VALUE": {
+                          "id": "aprende-1333",
+                          "blockId": "core:clamp",
+                          "operation": "core:clamp",
+                          "fields": {},
+                          "inputs": {
+                            "VALUE": {
+                              "id": "aprende-1330",
+                              "blockId": "core:number",
+                              "operation": "core:number",
+                              "fields": {
+                                "NUMBER": 120
+                              },
+                              "inputs": {},
+                              "next": null
+                            },
+                            "MIN": {
+                              "id": "aprende-1331",
+                              "blockId": "core:number",
+                              "operation": "core:number",
+                              "fields": {
+                                "NUMBER": 0
+                              },
+                              "inputs": {},
+                              "next": null
+                            },
+                            "MAX": {
+                              "id": "aprende-1332",
+                              "blockId": "core:number",
+                              "operation": "core:number",
+                              "fields": {
+                                "NUMBER": 100
+                              },
+                              "inputs": {},
+                              "next": null
+                            }
+                          },
+                          "next": null
+                        }
+                      },
+                      "next": {
+                        "id": "aprende-1338",
+                        "blockId": "core:serial-println",
+                        "operation": "core:serial-println",
+                        "fields": {},
+                        "inputs": {
+                          "VALUE": {
+                            "id": "aprende-1337",
+                            "blockId": "core:less",
+                            "operation": "core:less",
+                            "fields": {},
+                            "inputs": {
+                              "LEFT": {
+                                "id": "aprende-1335",
+                                "blockId": "core:number",
+                                "operation": "core:number",
+                                "fields": {
+                                  "NUMBER": 3
+                                },
+                                "inputs": {},
+                                "next": null
+                              },
+                              "RIGHT": {
+                                "id": "aprende-1336",
+                                "blockId": "core:number",
+                                "operation": "core:number",
+                                "fields": {
+                                  "NUMBER": 5
+                                },
+                                "inputs": {},
+                                "next": null
+                              }
+                            },
+                            "next": null
+                          }
+                        },
+                        "next": {
+                          "id": "aprende-1342",
+                          "blockId": "core:serial-println",
+                          "operation": "core:serial-println",
+                          "fields": {},
+                          "inputs": {
+                            "VALUE": {
+                              "id": "aprende-1341",
+                              "blockId": "core:random",
+                              "operation": "core:random",
+                              "fields": {},
+                              "inputs": {
+                                "MIN": {
+                                  "id": "aprende-1339",
+                                  "blockId": "core:number",
+                                  "operation": "core:number",
+                                  "fields": {
+                                    "NUMBER": 1
+                                  },
+                                  "inputs": {},
+                                  "next": null
+                                },
+                                "MAX": {
+                                  "id": "aprende-1340",
+                                  "blockId": "core:number",
+                                  "operation": "core:number",
+                                  "fields": {
+                                    "NUMBER": 6
+                                  },
+                                  "inputs": {},
+                                  "next": null
+                                }
+                              },
+                              "next": null
+                            }
+                          },
+                          "next": {
+                            "id": "aprende-1344",
+                            "blockId": "core:wait-value",
+                            "operation": "core:wait-value",
+                            "fields": {},
+                            "inputs": {
+                              "SECONDS": {
+                                "id": "aprende-1343",
+                                "blockId": "core:number",
+                                "operation": "core:number",
+                                "fields": {
+                                  "NUMBER": 2
+                                },
+                                "inputs": {},
+                                "next": null
+                              }
+                            },
+                            "next": null
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "next": null
+          }
+        }
+      ],
+      "detachedNodes": []
+    }
+  ],
+  "variables": [],
+  "lists": [],
+  "projectSettings": {
+    "locale": "es",
+    "units": "metric"
+  },
+  "extensions": [
+    {
+      "id": "org.robotblocks.teensy-41",
+      "version": "0.3.0"
+    }
+  ],
+  "editor": {
+    "adapter": "scratch-blocks",
+    "positions": {
+      "inicio": {
+        "x": 52,
+        "y": 64
+      }
+    },
+    "blockDefinitions": [
+      {
+        "id": "core:start",
+        "category": "core:events",
+        "label": {
+          "es": "al iniciar",
+          "en": "when started"
+        },
+        "kind": "event",
+        "fields": [],
+        "inputs": [],
+        "operation": "core:start",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:forever",
+        "category": "core:control",
+        "label": {
+          "es": "por siempre %BODY",
+          "en": "forever %BODY"
+        },
+        "kind": "loop",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "BODY",
+            "type": "statement"
+          }
+        ],
+        "operation": "core:forever",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:number",
+        "category": "core:operators",
+        "label": {
+          "es": "%NUMBER",
+          "en": "%NUMBER"
+        },
+        "kind": "reporter",
+        "output": "number",
+        "fields": [
+          {
+            "name": "NUMBER",
+            "type": "number",
+            "default": 50
+          }
+        ],
+        "inputs": [],
+        "operation": "core:number",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:text",
+        "category": "core:operators",
+        "label": {
+          "es": "%TEXT",
+          "en": "%TEXT"
+        },
+        "kind": "reporter",
+        "output": "string",
+        "fields": [
+          {
+            "name": "TEXT",
+            "type": "string",
+            "default": "hola"
+          }
+        ],
+        "inputs": [],
+        "operation": "core:text",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:add",
+        "category": "core:operators",
+        "label": {
+          "es": "%LEFT + %RIGHT",
+          "en": "%LEFT + %RIGHT"
+        },
+        "kind": "reporter",
+        "output": "number",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "LEFT",
+            "type": "number",
+            "default": 0
+          },
+          {
+            "name": "RIGHT",
+            "type": "number",
+            "default": 1
+          }
+        ],
+        "operation": "core:add",
+        "tooltip": {
+          "es": "Expresión del programa generado. Consulta sus convenciones en el catálogo de bloques.",
+          "en": "Expression in the generated program. See conventions in the block catalog."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:random",
+        "category": "core:operators",
+        "label": {
+          "es": "entero al azar entre %MIN y %MAX",
+          "en": "random integer from %MIN to %MAX"
+        },
+        "kind": "reporter",
+        "output": "number",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "MIN",
+            "type": "number",
+            "default": 1
+          },
+          {
+            "name": "MAX",
+            "type": "number",
+            "default": 10
+          }
+        ],
+        "operation": "core:random",
+        "tooltip": {
+          "es": "Expresión del programa generado. Consulta sus convenciones en el catálogo de bloques.",
+          "en": "Expression in the generated program. See conventions in the block catalog."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:less",
+        "category": "core:operators",
+        "label": {
+          "es": "%LEFT < %RIGHT",
+          "en": "%LEFT < %RIGHT"
+        },
+        "kind": "boolean",
+        "output": "boolean",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "LEFT",
+            "type": "number",
+            "default": 0
+          },
+          {
+            "name": "RIGHT",
+            "type": "number",
+            "default": 0
+          }
+        ],
+        "operation": "core:less",
+        "tooltip": {
+          "es": "Expresión del programa generado. Consulta sus convenciones en el catálogo de bloques.",
+          "en": "Expression in the generated program. See conventions in the block catalog."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:map",
+        "category": "core:operators",
+        "label": {
+          "es": "mapear %VALUE de %FROM_MIN a %FROM_MAX hacia %TO_MIN a %TO_MAX",
+          "en": "map %VALUE from %FROM_MIN to %FROM_MAX into %TO_MIN to %TO_MAX"
+        },
+        "kind": "reporter",
+        "output": "number",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "VALUE",
+            "type": "number",
+            "default": 0
+          },
+          {
+            "name": "FROM_MIN",
+            "type": "number",
+            "default": 0
+          },
+          {
+            "name": "FROM_MAX",
+            "type": "number",
+            "default": 1023
+          },
+          {
+            "name": "TO_MIN",
+            "type": "number",
+            "default": 0
+          },
+          {
+            "name": "TO_MAX",
+            "type": "number",
+            "default": 255
+          }
+        ],
+        "operation": "core:map",
+        "tooltip": {
+          "es": "Expresión del programa generado. Consulta sus convenciones en el catálogo de bloques.",
+          "en": "Expression in the generated program. See conventions in the block catalog."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:clamp",
+        "category": "core:operators",
+        "label": {
+          "es": "limitar %VALUE entre %MIN y %MAX",
+          "en": "clamp %VALUE between %MIN and %MAX"
+        },
+        "kind": "reporter",
+        "output": "number",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "VALUE",
+            "type": "number",
+            "default": 0
+          },
+          {
+            "name": "MIN",
+            "type": "number",
+            "default": 0
+          },
+          {
+            "name": "MAX",
+            "type": "number",
+            "default": 100
+          }
+        ],
+        "operation": "core:clamp",
+        "tooltip": {
+          "es": "Expresión del programa generado. Consulta sus convenciones en el catálogo de bloques.",
+          "en": "Expression in the generated program. See conventions in the block catalog."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:wait-value",
+        "category": "core:control",
+        "label": {
+          "es": "esperar %SECONDS segundos",
+          "en": "wait %SECONDS seconds"
+        },
+        "kind": "command",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "SECONDS",
+            "type": "number",
+            "default": 1,
+            "min": 0
+          }
+        ],
+        "operation": "core:wait-value",
+        "tooltip": {
+          "es": "Estructura de control del programa. No ejecuta ni bloquea el navegador.",
+          "en": "Program control structure. Does not execute or block the browser."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:serial-println",
+        "category": "core:serial",
+        "label": {
+          "es": "imprimir %VALUE con salto de línea",
+          "en": "print %VALUE with newline"
+        },
+        "kind": "command",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "VALUE",
+            "type": "value",
+            "default": "hola"
+          }
+        ],
+        "operation": "core:serial-println",
+        "tooltip": {
+          "es": "Código experimental. Consulta el contrato de serie, tiempo y eventos en el catálogo de bloques.",
+          "en": "Experimental code. See serial, time and event conventions in the block catalog."
+        },
+        "requiredCapabilities": [],
+        "generators": {
+          "micropython": {
+            "canFail": false,
+            "statement": "print({VALUE})"
+          },
+          "arduino": {
+            "canFail": false,
+            "statement": "Serial.println({VALUE});"
+          },
+          "pybricks": {
+            "canFail": false,
+            "statement": "print({VALUE})"
+          }
+        }
+      }
+    ]
+  }
+}

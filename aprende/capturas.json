@@ -1,0 +1,632 @@
+[
+  {
+    "imagen": "img/1-1-primer-programa-arduino-uno.png",
+    "proyecto": "proyectos/1-1-primer-programa-arduino-uno.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/1-2-cargar-arduino-uno.png",
+    "proyecto": "proyectos/1-2-cargar-arduino-uno.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/1-3-monitor-arduino-uno.png",
+    "proyecto": "proyectos/1-3-monitor-arduino-uno.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/2-1-esperar-y-repetir-arduino-uno.png",
+    "proyecto": "proyectos/2-1-esperar-y-repetir-arduino-uno.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/2-2-decisiones-arduino-uno.png",
+    "proyecto": "proyectos/2-2-decisiones-arduino-uno.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/2-3-variables-arduino-uno.png",
+    "proyecto": "proyectos/2-3-variables-arduino-uno.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/2-4-operaciones-arduino-uno.png",
+    "proyecto": "proyectos/2-4-operaciones-arduino-uno.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/2-5-mis-bloques-arduino-uno.png",
+    "proyecto": "proyectos/2-5-mis-bloques-arduino-uno.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/3-1-boton-arduino-uno.png",
+    "proyecto": "proyectos/3-1-boton-arduino-uno.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/3-2-potenciometro-arduino-uno.png",
+    "proyecto": "proyectos/3-2-potenciometro-arduino-uno.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/3-3-ultrasonico-arduino-uno.png",
+    "proyecto": "proyectos/3-3-ultrasonico-arduino-uno.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/3-4-laser-arduino-uno.png",
+    "proyecto": "proyectos/3-4-laser-arduino-uno.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/3-5-responder-a-un-sensor-arduino-uno.png",
+    "proyecto": "proyectos/3-5-responder-a-un-sensor-arduino-uno.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/4-1-servo-arduino-uno.png",
+    "proyecto": "proyectos/4-1-servo-arduino-uno.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/4-2-servo-con-potenciometro-arduino-uno.png",
+    "proyecto": "proyectos/4-2-servo-con-potenciometro-arduino-uno.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/4-3-motores-arduino-uno.png",
+    "proyecto": "proyectos/4-3-motores-arduino-uno.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/5-1-avanzar-y-girar-arduino-uno.png",
+    "proyecto": "proyectos/5-1-avanzar-y-girar-arduino-uno.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/5-2-evitar-obstaculos-arduino-uno.png",
+    "proyecto": "proyectos/5-2-evitar-obstaculos-arduino-uno.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/6-1-motor-grados-lego-spike-prime.png",
+    "proyecto": "proyectos/6-1-motor-grados-lego-spike-prime.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/6-2-matriz-lego-spike-prime.png",
+    "proyecto": "proyectos/6-2-matriz-lego-spike-prime.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/6-3-color-lego-spike-prime.png",
+    "proyecto": "proyectos/6-3-color-lego-spike-prime.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/6-4-distancia-lego-spike-prime.png",
+    "proyecto": "proyectos/6-4-distancia-lego-spike-prime.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/7-1-motor-grados-lego-ev3.png",
+    "proyecto": "proyectos/7-1-motor-grados-lego-ev3.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/7-2-luz-pantalla-lego-ev3.png",
+    "proyecto": "proyectos/7-2-luz-pantalla-lego-ev3.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/7-3-color-lego-ev3.png",
+    "proyecto": "proyectos/7-3-color-lego-ev3.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/7-4-distancia-lego-ev3.png",
+    "proyecto": "proyectos/7-4-distancia-lego-ev3.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/8-1-tira-rgb-arduino-uno.png",
+    "proyecto": "proyectos/8-1-tira-rgb-arduino-uno.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/8-2-pantalla-oled-arduino-uno.png",
+    "proyecto": "proyectos/8-2-pantalla-oled-arduino-uno.blocks.json",
+    "que_mostrar": "todo el programa"
+  },
+  {
+    "imagen": "img/1-1-primer-programa-arduino-uno-paso-1.png",
+    "proyecto": "../../app/examples/aprende-pasos/1-1-primer-programa-arduino-uno-paso-1.blocks.json",
+    "que_mostrar": "Al iniciar, con por siempre vacío."
+  },
+  {
+    "imagen": "img/1-1-primer-programa-arduino-uno-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/1-1-primer-programa-arduino-uno-paso-2.blocks.json",
+    "que_mostrar": "Dentro de por siempre, el pin D13 recibe 1 y hay una espera de 500 ms."
+  },
+  {
+    "imagen": "img/1-1-primer-programa-arduino-uno-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/1-1-primer-programa-arduino-uno-paso-3.blocks.json",
+    "que_mostrar": "Por siempre alterna D13 entre 1 y 0, con 500 ms de espera después de cada escritura."
+  },
+  {
+    "imagen": "img/1-2-cargar-arduino-uno-paso-1.png",
+    "proyecto": "../../app/examples/aprende-pasos/1-2-cargar-arduino-uno-paso-1.blocks.json",
+    "que_mostrar": "Al iniciar, con por siempre vacío."
+  },
+  {
+    "imagen": "img/1-2-cargar-arduino-uno-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/1-2-cargar-arduino-uno-paso-2.blocks.json",
+    "que_mostrar": "Dentro de por siempre, el pin D13 recibe 1 y hay una espera de 500 ms."
+  },
+  {
+    "imagen": "img/1-2-cargar-arduino-uno-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/1-2-cargar-arduino-uno-paso-3.blocks.json",
+    "que_mostrar": "Por siempre alterna D13 entre 1 y 0, con 500 ms de espera después de cada escritura."
+  },
+  {
+    "imagen": "img/1-3-monitor-arduino-uno-paso-1.png",
+    "proyecto": "../../app/examples/aprende-pasos/1-3-monitor-arduino-uno-paso-1.blocks.json",
+    "que_mostrar": "Al iniciar, con por siempre vacío."
+  },
+  {
+    "imagen": "img/1-3-monitor-arduino-uno-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/1-3-monitor-arduino-uno-paso-2.blocks.json",
+    "que_mostrar": "Dentro de por siempre se imprime Hola, GreyForge."
+  },
+  {
+    "imagen": "img/1-3-monitor-arduino-uno-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/1-3-monitor-arduino-uno-paso-3.blocks.json",
+    "que_mostrar": "Por siempre imprime Hola, GreyForge y luego el número 42."
+  },
+  {
+    "imagen": "img/1-3-monitor-arduino-uno-paso-4.png",
+    "proyecto": "../../app/examples/aprende-pasos/1-3-monitor-arduino-uno-paso-4.blocks.json",
+    "que_mostrar": "Por siempre imprime el saludo y el número 42 y espera 1 segundo."
+  },
+  {
+    "imagen": "img/2-1-esperar-y-repetir-arduino-uno-paso-1.png",
+    "proyecto": "../../app/examples/aprende-pasos/2-1-esperar-y-repetir-arduino-uno-paso-1.blocks.json",
+    "que_mostrar": "Dentro de por siempre hay un repetir 3 veces vacío."
+  },
+  {
+    "imagen": "img/2-1-esperar-y-repetir-arduino-uno-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/2-1-esperar-y-repetir-arduino-uno-paso-2.blocks.json",
+    "que_mostrar": "El repetir 3 veces enciende D13 y espera 0.2 segundos."
+  },
+  {
+    "imagen": "img/2-1-esperar-y-repetir-arduino-uno-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/2-1-esperar-y-repetir-arduino-uno-paso-3.blocks.json",
+    "que_mostrar": "El repetir 3 veces alterna D13 entre 1 y 0 con dos esperas de 0.2 segundos."
+  },
+  {
+    "imagen": "img/2-1-esperar-y-repetir-arduino-uno-paso-4.png",
+    "proyecto": "../../app/examples/aprende-pasos/2-1-esperar-y-repetir-arduino-uno-paso-4.blocks.json",
+    "que_mostrar": "Por siempre repite tres parpadeos y después espera 1 segundo."
+  },
+  {
+    "imagen": "img/2-2-decisiones-arduino-uno-paso-1.png",
+    "proyecto": "../../app/examples/aprende-pasos/2-2-decisiones-arduino-uno-paso-1.blocks.json",
+    "que_mostrar": "Por siempre contiene si 3 < 5 entonces, con el cuerpo vacío."
+  },
+  {
+    "imagen": "img/2-2-decisiones-arduino-uno-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/2-2-decisiones-arduino-uno-paso-2.blocks.json",
+    "que_mostrar": "Si 3 es menor que 5, se imprime Es menor."
+  },
+  {
+    "imagen": "img/2-2-decisiones-arduino-uno-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/2-2-decisiones-arduino-uno-paso-3.blocks.json",
+    "que_mostrar": "Si 3 es menor que 5 se imprime Es menor, y en si no se imprime No es menor."
+  },
+  {
+    "imagen": "img/2-2-decisiones-arduino-uno-paso-4.png",
+    "proyecto": "../../app/examples/aprende-pasos/2-2-decisiones-arduino-uno-paso-4.blocks.json",
+    "que_mostrar": "Las dos ramas del si van seguidas de una espera de 1 segundo dentro de por siempre."
+  },
+  {
+    "imagen": "img/2-3-variables-arduino-uno-paso-1.png",
+    "proyecto": "../../app/examples/aprende-pasos/2-3-variables-arduino-uno-paso-1.blocks.json",
+    "que_mostrar": "Al iniciar, contador se fija a 0."
+  },
+  {
+    "imagen": "img/2-3-variables-arduino-uno-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/2-3-variables-arduino-uno-paso-2.blocks.json",
+    "que_mostrar": "Al iniciar se fija contador a 0 y, dentro de por siempre, a valor de contador + 1."
+  },
+  {
+    "imagen": "img/2-3-variables-arduino-uno-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/2-3-variables-arduino-uno-paso-3.blocks.json",
+    "que_mostrar": "Por siempre suma 1 a contador e imprime el valor de contador."
+  },
+  {
+    "imagen": "img/2-3-variables-arduino-uno-paso-4.png",
+    "proyecto": "../../app/examples/aprende-pasos/2-3-variables-arduino-uno-paso-4.blocks.json",
+    "que_mostrar": "Por siempre incrementa contador, lo imprime y espera 1 segundo."
+  },
+  {
+    "imagen": "img/2-4-operaciones-arduino-uno-paso-1.png",
+    "proyecto": "../../app/examples/aprende-pasos/2-4-operaciones-arduino-uno-paso-1.blocks.json",
+    "que_mostrar": "Por siempre imprime el encabezado y la suma 8 + 2."
+  },
+  {
+    "imagen": "img/2-4-operaciones-arduino-uno-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/2-4-operaciones-arduino-uno-paso-2.blocks.json",
+    "que_mostrar": "La impresión de la suma va seguida de mapear 5 de 0–10 a 0–100."
+  },
+  {
+    "imagen": "img/2-4-operaciones-arduino-uno-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/2-4-operaciones-arduino-uno-paso-3.blocks.json",
+    "que_mostrar": "Tras el encabezado, se imprimen la suma, el mapeo y 120 limitado al intervalo de 0 a 100."
+  },
+  {
+    "imagen": "img/2-4-operaciones-arduino-uno-paso-4.png",
+    "proyecto": "../../app/examples/aprende-pasos/2-4-operaciones-arduino-uno-paso-4.blocks.json",
+    "que_mostrar": "La comparación 3 < 5 se imprime después de la suma, el mapeo y el límite."
+  },
+  {
+    "imagen": "img/2-4-operaciones-arduino-uno-paso-5.png",
+    "proyecto": "../../app/examples/aprende-pasos/2-4-operaciones-arduino-uno-paso-5.blocks.json",
+    "que_mostrar": "Por siempre imprime el encabezado, la suma, el mapeo, el límite, la comparación y el dado, y espera 2 segundos."
+  },
+  {
+    "imagen": "img/2-5-mis-bloques-arduino-uno-paso-1.png",
+    "proyecto": "../../app/examples/aprende-pasos/2-5-mis-bloques-arduino-uno-paso-1.blocks.json",
+    "que_mostrar": "Al iniciar y definir saludar devuelve nada aparecen como dos bloques separados."
+  },
+  {
+    "imagen": "img/2-5-mis-bloques-arduino-uno-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/2-5-mis-bloques-arduino-uno-paso-2.blocks.json",
+    "que_mostrar": "La definición de saludar contiene una impresión de ¡Hola!"
+  },
+  {
+    "imagen": "img/2-5-mis-bloques-arduino-uno-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/2-5-mis-bloques-arduino-uno-paso-3.blocks.json",
+    "que_mostrar": "Por siempre llama a saludar y espera 0.5 segundos. A un lado está la definición."
+  },
+  {
+    "imagen": "img/2-5-mis-bloques-arduino-uno-paso-4.png",
+    "proyecto": "../../app/examples/aprende-pasos/2-5-mis-bloques-arduino-uno-paso-4.blocks.json",
+    "que_mostrar": "Por siempre llama dos veces a saludar, con una espera de 0.5 segundos y otra de 2 segundos."
+  },
+  {
+    "imagen": "img/3-1-boton-arduino-uno-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/3-1-boton-arduino-uno-paso-2.blocks.json",
+    "que_mostrar": "Al iniciar, con por siempre vacío."
+  },
+  {
+    "imagen": "img/3-1-boton-arduino-uno-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/3-1-boton-arduino-uno-paso-3.blocks.json",
+    "que_mostrar": "Por siempre imprime si D2 está alto."
+  },
+  {
+    "imagen": "img/3-1-boton-arduino-uno-paso-4.png",
+    "proyecto": "../../app/examples/aprende-pasos/3-1-boton-arduino-uno-paso-4.blocks.json",
+    "que_mostrar": "Por siempre imprime si D2 está alto y espera 500 ms."
+  },
+  {
+    "imagen": "img/3-2-potenciometro-arduino-uno-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/3-2-potenciometro-arduino-uno-paso-2.blocks.json",
+    "que_mostrar": "Al iniciar, con por siempre vacío."
+  },
+  {
+    "imagen": "img/3-2-potenciometro-arduino-uno-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/3-2-potenciometro-arduino-uno-paso-3.blocks.json",
+    "que_mostrar": "Por siempre imprime la lectura analógica de A0."
+  },
+  {
+    "imagen": "img/3-2-potenciometro-arduino-uno-paso-4.png",
+    "proyecto": "../../app/examples/aprende-pasos/3-2-potenciometro-arduino-uno-paso-4.blocks.json",
+    "que_mostrar": "Por siempre imprime la lectura analógica de A0 y espera 500 ms."
+  },
+  {
+    "imagen": "img/3-3-ultrasonico-arduino-uno-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/3-3-ultrasonico-arduino-uno-paso-2.blocks.json",
+    "que_mostrar": "Al iniciar, con por siempre vacío."
+  },
+  {
+    "imagen": "img/3-3-ultrasonico-arduino-uno-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/3-3-ultrasonico-arduino-uno-paso-3.blocks.json",
+    "que_mostrar": "Por siempre imprime la distancia en cm medida con TRIG D2 y ECHO D4."
+  },
+  {
+    "imagen": "img/3-3-ultrasonico-arduino-uno-paso-4.png",
+    "proyecto": "../../app/examples/aprende-pasos/3-3-ultrasonico-arduino-uno-paso-4.blocks.json",
+    "que_mostrar": "Por siempre imprime la distancia en cm medida con TRIG D2 y ECHO D4 y espera 500 ms."
+  },
+  {
+    "imagen": "img/3-4-laser-arduino-uno-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/3-4-laser-arduino-uno-paso-2.blocks.json",
+    "que_mostrar": "Al iniciar, se configuran los láseres izquierdo, centro y derecho en A4 y A5, con XSHUT D2, D3 y D4."
+  },
+  {
+    "imagen": "img/3-4-laser-arduino-uno-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/3-4-laser-arduino-uno-paso-3.blocks.json",
+    "que_mostrar": "Después de configurar los tres láseres, por siempre imprime la distancia del izquierdo."
+  },
+  {
+    "imagen": "img/3-4-laser-arduino-uno-paso-4.png",
+    "proyecto": "../../app/examples/aprende-pasos/3-4-laser-arduino-uno-paso-4.blocks.json",
+    "que_mostrar": "Por siempre imprime las distancias de izquierdo y centro."
+  },
+  {
+    "imagen": "img/3-4-laser-arduino-uno-paso-5.png",
+    "proyecto": "../../app/examples/aprende-pasos/3-4-laser-arduino-uno-paso-5.blocks.json",
+    "que_mostrar": "Por siempre imprime las tres distancias en orden y espera 500 ms."
+  },
+  {
+    "imagen": "img/3-5-responder-a-un-sensor-arduino-uno-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/3-5-responder-a-un-sensor-arduino-uno-paso-2.blocks.json",
+    "que_mostrar": "Por siempre pregunta si la distancia del ultrasónico con TRIG D2 y ECHO D4 es menor que 20 cm."
+  },
+  {
+    "imagen": "img/3-5-responder-a-un-sensor-arduino-uno-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/3-5-responder-a-un-sensor-arduino-uno-paso-3.blocks.json",
+    "que_mostrar": "Si la distancia es menor que 20 cm, D13 recibe 1."
+  },
+  {
+    "imagen": "img/3-5-responder-a-un-sensor-arduino-uno-paso-4.png",
+    "proyecto": "../../app/examples/aprende-pasos/3-5-responder-a-un-sensor-arduino-uno-paso-4.blocks.json",
+    "que_mostrar": "Si la distancia es menor que 20 cm, D13 recibe 1. En si no, recibe 0."
+  },
+  {
+    "imagen": "img/3-5-responder-a-un-sensor-arduino-uno-paso-5.png",
+    "proyecto": "../../app/examples/aprende-pasos/3-5-responder-a-un-sensor-arduino-uno-paso-5.blocks.json",
+    "que_mostrar": "La decisión que enciende o apaga D13 va seguida de una espera de 0.1 segundos."
+  },
+  {
+    "imagen": "img/4-1-servo-arduino-uno-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/4-1-servo-arduino-uno-paso-2.blocks.json",
+    "que_mostrar": "Dentro de por siempre, el servo de D9 va a 0 grados y espera 500 ms."
+  },
+  {
+    "imagen": "img/4-1-servo-arduino-uno-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/4-1-servo-arduino-uno-paso-3.blocks.json",
+    "que_mostrar": "El servo de D9 pasa por 0 y 90 grados y se queda 500 ms en cada posición."
+  },
+  {
+    "imagen": "img/4-1-servo-arduino-uno-paso-4.png",
+    "proyecto": "../../app/examples/aprende-pasos/4-1-servo-arduino-uno-paso-4.blocks.json",
+    "que_mostrar": "Por siempre, el servo de D9 va a 0, 90 y 180 grados con una espera de 500 ms en cada posición."
+  },
+  {
+    "imagen": "img/4-2-servo-con-potenciometro-arduino-uno-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/4-2-servo-con-potenciometro-arduino-uno-paso-2.blocks.json",
+    "que_mostrar": "Dentro de por siempre está el bloque del servo en D9 con la entrada de ángulo preparada."
+  },
+  {
+    "imagen": "img/4-2-servo-con-potenciometro-arduino-uno-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/4-2-servo-con-potenciometro-arduino-uno-paso-3.blocks.json",
+    "que_mostrar": "El ángulo del servo en D9 se limita a 0–180 y recibe un mapeo de 0–1023 a 0–180."
+  },
+  {
+    "imagen": "img/4-2-servo-con-potenciometro-arduino-uno-paso-4.png",
+    "proyecto": "../../app/examples/aprende-pasos/4-2-servo-con-potenciometro-arduino-uno-paso-4.blocks.json",
+    "que_mostrar": "El mapeo toma la lectura de A0 y el resultado limitado controla el servo de D9."
+  },
+  {
+    "imagen": "img/4-2-servo-con-potenciometro-arduino-uno-paso-5.png",
+    "proyecto": "../../app/examples/aprende-pasos/4-2-servo-con-potenciometro-arduino-uno-paso-5.blocks.json",
+    "que_mostrar": "Por siempre, el servo recibe el ángulo calculado a partir de A0 y espera 0.1 segundos."
+  },
+  {
+    "imagen": "img/4-3-motores-arduino-uno-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/4-3-motores-arduino-uno-paso-2.blocks.json",
+    "que_mostrar": "Al iniciar, se configuran el motor B con D5, D6 y D7 y el C con D10, D11 y D12."
+  },
+  {
+    "imagen": "img/4-3-motores-arduino-uno-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/4-3-motores-arduino-uno-paso-3.blocks.json",
+    "que_mostrar": "Después de configurar B y C, por siempre mueve ambos a 35 durante 1 segundo."
+  },
+  {
+    "imagen": "img/4-3-motores-arduino-uno-paso-4.png",
+    "proyecto": "../../app/examples/aprende-pasos/4-3-motores-arduino-uno-paso-4.blocks.json",
+    "que_mostrar": "Los dos motores avanzan un segundo y se quedan frenados medio segundo."
+  },
+  {
+    "imagen": "img/4-3-motores-arduino-uno-paso-5.png",
+    "proyecto": "../../app/examples/aprende-pasos/4-3-motores-arduino-uno-paso-5.blocks.json",
+    "que_mostrar": "Por siempre, B y C avanzan, frenan, retroceden y frenan otra vez."
+  },
+  {
+    "imagen": "img/5-1-avanzar-y-girar-arduino-uno-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/5-1-avanzar-y-girar-arduino-uno-paso-2.blocks.json",
+    "que_mostrar": "Al iniciar, se configuran el motor B con D5, D6 y D7 y el C con D10, D11 y D12."
+  },
+  {
+    "imagen": "img/5-1-avanzar-y-girar-arduino-uno-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/5-1-avanzar-y-girar-arduino-uno-paso-3.blocks.json",
+    "que_mostrar": "Al iniciar, configura B y C y los mueve a 35 durante 1 segundo."
+  },
+  {
+    "imagen": "img/5-1-avanzar-y-girar-arduino-uno-paso-4.png",
+    "proyecto": "../../app/examples/aprende-pasos/5-1-avanzar-y-girar-arduino-uno-paso-4.blocks.json",
+    "que_mostrar": "Después de avanzar un segundo, ambos motores frenan durante 0.3 segundos."
+  },
+  {
+    "imagen": "img/5-1-avanzar-y-girar-arduino-uno-paso-5.png",
+    "proyecto": "../../app/examples/aprende-pasos/5-1-avanzar-y-girar-arduino-uno-paso-5.blocks.json",
+    "que_mostrar": "Tras avanzar y frenar, el robot gira durante 0.4 segundos y vuelve a frenar."
+  },
+  {
+    "imagen": "img/5-2-evitar-obstaculos-arduino-uno-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/5-2-evitar-obstaculos-arduino-uno-paso-2.blocks.json",
+    "que_mostrar": "Al iniciar, se configuran el motor B con D5, D6 y D7 y el C con D10, D11 y D12."
+  },
+  {
+    "imagen": "img/5-2-evitar-obstaculos-arduino-uno-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/5-2-evitar-obstaculos-arduino-uno-paso-3.blocks.json",
+    "que_mostrar": "Después de configurar B y C, por siempre guarda la distancia del ultrasónico en la variable distancia."
+  },
+  {
+    "imagen": "img/5-2-evitar-obstaculos-arduino-uno-paso-4.png",
+    "proyecto": "../../app/examples/aprende-pasos/5-2-evitar-obstaculos-arduino-uno-paso-4.blocks.json",
+    "que_mostrar": "Por siempre guarda la distancia. Si es menor que 20 cm, el robot frena, espera, gira y vuelve a frenar."
+  },
+  {
+    "imagen": "img/5-2-evitar-obstaculos-arduino-uno-paso-5.png",
+    "proyecto": "../../app/examples/aprende-pasos/5-2-evitar-obstaculos-arduino-uno-paso-5.blocks.json",
+    "que_mostrar": "La decisión gira por debajo de 20 cm, avanza por debajo de 400 cm en el segundo caso y frena en el último. Al final espera 0.1 segundos."
+  },
+  {
+    "imagen": "img/6-1-motor-grados-lego-spike-prime-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/6-1-motor-grados-lego-spike-prime-paso-2.blocks.json",
+    "que_mostrar": "Al iniciar, el motor A gira 90 grados a 500 grados por segundo."
+  },
+  {
+    "imagen": "img/6-1-motor-grados-lego-spike-prime-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/6-1-motor-grados-lego-spike-prime-paso-3.blocks.json",
+    "que_mostrar": "El motor A gira 90 grados y se detiene manteniendo la posición."
+  },
+  {
+    "imagen": "img/6-1-motor-grados-lego-spike-prime-paso-4.png",
+    "proyecto": "../../app/examples/aprende-pasos/6-1-motor-grados-lego-spike-prime-paso-4.blocks.json",
+    "que_mostrar": "El motor A gira 90 grados, mantiene la posición y su ángulo se imprime en el Monitor."
+  },
+  {
+    "imagen": "img/6-2-matriz-lego-spike-prime-paso-1.png",
+    "proyecto": "../../app/examples/aprende-pasos/6-2-matriz-lego-spike-prime-paso-1.blocks.json",
+    "que_mostrar": "Al iniciar, con por siempre vacío."
+  },
+  {
+    "imagen": "img/6-2-matriz-lego-spike-prime-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/6-2-matriz-lego-spike-prime-paso-2.blocks.json",
+    "que_mostrar": "La matriz muestra el número 1 y espera 500 ms dentro de por siempre."
+  },
+  {
+    "imagen": "img/6-2-matriz-lego-spike-prime-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/6-2-matriz-lego-spike-prime-paso-3.blocks.json",
+    "que_mostrar": "La matriz alterna entre mostrar 1 y apagarse, con pausas de 500 ms."
+  },
+  {
+    "imagen": "img/6-3-color-lego-spike-prime-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/6-3-color-lego-spike-prime-paso-2.blocks.json",
+    "que_mostrar": "Al iniciar, con por siempre vacío."
+  },
+  {
+    "imagen": "img/6-3-color-lego-spike-prime-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/6-3-color-lego-spike-prime-paso-3.blocks.json",
+    "que_mostrar": "Por siempre imprime la reflexión del sensor C."
+  },
+  {
+    "imagen": "img/6-3-color-lego-spike-prime-paso-4.png",
+    "proyecto": "../../app/examples/aprende-pasos/6-3-color-lego-spike-prime-paso-4.blocks.json",
+    "que_mostrar": "Por siempre imprime la reflexión del sensor C y espera 500 ms."
+  },
+  {
+    "imagen": "img/6-4-distancia-lego-spike-prime-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/6-4-distancia-lego-spike-prime-paso-2.blocks.json",
+    "que_mostrar": "Al iniciar, con por siempre vacío."
+  },
+  {
+    "imagen": "img/6-4-distancia-lego-spike-prime-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/6-4-distancia-lego-spike-prime-paso-3.blocks.json",
+    "que_mostrar": "Por siempre imprime la distancia en milímetros del sensor D."
+  },
+  {
+    "imagen": "img/6-4-distancia-lego-spike-prime-paso-4.png",
+    "proyecto": "../../app/examples/aprende-pasos/6-4-distancia-lego-spike-prime-paso-4.blocks.json",
+    "que_mostrar": "Por siempre imprime la distancia en milímetros del sensor D y espera 500 ms."
+  },
+  {
+    "imagen": "img/7-1-motor-grados-lego-ev3-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/7-1-motor-grados-lego-ev3-paso-2.blocks.json",
+    "que_mostrar": "Al iniciar, el motor A gira 90 grados a 500 grados por segundo."
+  },
+  {
+    "imagen": "img/7-1-motor-grados-lego-ev3-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/7-1-motor-grados-lego-ev3-paso-3.blocks.json",
+    "que_mostrar": "El motor A gira 90 grados y se detiene manteniendo la posición."
+  },
+  {
+    "imagen": "img/7-1-motor-grados-lego-ev3-paso-4.png",
+    "proyecto": "../../app/examples/aprende-pasos/7-1-motor-grados-lego-ev3-paso-4.blocks.json",
+    "que_mostrar": "El motor A gira 90 grados, mantiene la posición y su ángulo se imprime en el Monitor."
+  },
+  {
+    "imagen": "img/7-2-luz-pantalla-lego-ev3-paso-1.png",
+    "proyecto": "../../app/examples/aprende-pasos/7-2-luz-pantalla-lego-ev3-paso-1.blocks.json",
+    "que_mostrar": "Al iniciar, con por siempre vacío."
+  },
+  {
+    "imagen": "img/7-2-luz-pantalla-lego-ev3-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/7-2-luz-pantalla-lego-ev3-paso-2.blocks.json",
+    "que_mostrar": "Por siempre enciende la luz verde y escribe Hola EV3 en la pantalla."
+  },
+  {
+    "imagen": "img/7-2-luz-pantalla-lego-ev3-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/7-2-luz-pantalla-lego-ev3-paso-3.blocks.json",
+    "que_mostrar": "La luz verde y el texto Hola EV3 se quedan 100 ms."
+  },
+  {
+    "imagen": "img/7-2-luz-pantalla-lego-ev3-paso-4.png",
+    "proyecto": "../../app/examples/aprende-pasos/7-2-luz-pantalla-lego-ev3-paso-4.blocks.json",
+    "que_mostrar": "Por siempre enciende la luz y escribe Hola EV3, espera 100 ms, apaga, borra y espera otros 100 ms."
+  },
+  {
+    "imagen": "img/7-3-color-lego-ev3-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/7-3-color-lego-ev3-paso-2.blocks.json",
+    "que_mostrar": "Al iniciar, con por siempre vacío."
+  },
+  {
+    "imagen": "img/7-3-color-lego-ev3-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/7-3-color-lego-ev3-paso-3.blocks.json",
+    "que_mostrar": "Por siempre imprime la reflexión del sensor de la entrada 1."
+  },
+  {
+    "imagen": "img/7-3-color-lego-ev3-paso-4.png",
+    "proyecto": "../../app/examples/aprende-pasos/7-3-color-lego-ev3-paso-4.blocks.json",
+    "que_mostrar": "Por siempre imprime la reflexión del sensor de la entrada 1 y espera 500 ms."
+  },
+  {
+    "imagen": "img/7-4-distancia-lego-ev3-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/7-4-distancia-lego-ev3-paso-2.blocks.json",
+    "que_mostrar": "Al iniciar, con por siempre vacío."
+  },
+  {
+    "imagen": "img/7-4-distancia-lego-ev3-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/7-4-distancia-lego-ev3-paso-3.blocks.json",
+    "que_mostrar": "Por siempre imprime la distancia en milímetros del sensor de la entrada 2."
+  },
+  {
+    "imagen": "img/7-4-distancia-lego-ev3-paso-4.png",
+    "proyecto": "../../app/examples/aprende-pasos/7-4-distancia-lego-ev3-paso-4.blocks.json",
+    "que_mostrar": "Por siempre imprime la distancia en milímetros del sensor de la entrada 2 y espera 500 ms."
+  },
+  {
+    "imagen": "img/8-1-tira-rgb-arduino-uno-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/8-1-tira-rgb-arduino-uno-paso-2.blocks.json",
+    "que_mostrar": "Al iniciar, se inicializan 8 LEDs de la tira del pin D5."
+  },
+  {
+    "imagen": "img/8-1-tira-rgb-arduino-uno-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/8-1-tira-rgb-arduino-uno-paso-3.blocks.json",
+    "que_mostrar": "La tira en D5 se inicializa, queda con brillo 40 y muestra un arcoíris en los LEDs 0 a 7."
+  },
+  {
+    "imagen": "img/8-1-tira-rgb-arduino-uno-paso-4.png",
+    "proyecto": "../../app/examples/aprende-pasos/8-1-tira-rgb-arduino-uno-paso-4.blocks.json",
+    "que_mostrar": "Al iniciar se dibuja el arcoíris y debajo queda un por siempre vacío."
+  },
+  {
+    "imagen": "img/8-1-tira-rgb-arduino-uno-paso-5.png",
+    "proyecto": "../../app/examples/aprende-pasos/8-1-tira-rgb-arduino-uno-paso-5.blocks.json",
+    "que_mostrar": "El arcoíris del pin D5 gira un LED en cada vuelta, con una espera de 0.2 segundos."
+  },
+  {
+    "imagen": "img/8-2-pantalla-oled-arduino-uno-paso-2.png",
+    "proyecto": "../../app/examples/aprende-pasos/8-2-pantalla-oled-arduino-uno-paso-2.blocks.json",
+    "que_mostrar": "Al iniciar, se configura la OLED SSD1306 de 128×64 en la dirección 0x3C con SDA A4 y SCL A5."
+  },
+  {
+    "imagen": "img/8-2-pantalla-oled-arduino-uno-paso-3.png",
+    "proyecto": "../../app/examples/aprende-pasos/8-2-pantalla-oled-arduino-uno-paso-3.blocks.json",
+    "que_mostrar": "Al iniciar, se configura la pantalla OLED y se escribe Hola, GreyForge en la fila 1."
+  }
+]

@@ -1,0 +1,4 @@
+{
+  "lenguaje": "python",
+  "codigo": "import asyncio\nfrom robotblocks_runtime import *\n\nv_contador = 0\n\n\nasync def proceso_1():\n    global v_contador\n    v_contador = 0\n    while True:\n        v_contador = v_contador + 1\n        print(v_contador)\n        await rb_wait(1)\n        await rb_yield()\n\nasync def main():\n    await rb_run(proceso_1)\n\nasyncio.run(main())\n"
+}

@@ -1,0 +1,4 @@
+{
+  "lenguaje": "cpp",
+  "codigo": "#include \"robotblocks_runtime.h\"\n\n\nstatic void proceso_1() {\n    static RbProcessState s;\n    PT_BEGIN(s);\n    while (true) {\n        digitalWrite(21, 0);\n        PT_SLEEP(s, 500);\n        digitalWrite(21, 1);\n        PT_SLEEP(s, 500);\n        PT_YIELD(s);\n    }\n    PT_END(s);\n}\n\nvoid setup() { Serial.begin(115200); pinMode(21, OUTPUT); }\n\nvoid loop() { rb_error_repeat(); proceso_1(); }\n"
+}

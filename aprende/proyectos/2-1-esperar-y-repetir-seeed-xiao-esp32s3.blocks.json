@@ -1,0 +1,343 @@
+{
+  "formatVersion": 4,
+  "irVersion": 2,
+  "id": "2-1-esperar-y-repetir-seeed-xiao-esp32s3",
+  "name": "2.1 Esperar y repetir",
+  "board": {
+    "definitionId": "org.robotblocks.seeed-xiao-esp32s3:board",
+    "bindings": {}
+  },
+  "devices": [],
+  "programs": [
+    {
+      "id": "main",
+      "name": "Programa principal",
+      "processes": [
+        {
+          "id": "inicio",
+          "trigger": {
+            "blockId": "core:start",
+            "operation": "core:start",
+            "fields": {}
+          },
+          "body": {
+            "id": "aprende-930",
+            "blockId": "core:forever",
+            "operation": "core:forever",
+            "fields": {},
+            "inputs": {
+              "BODY": {
+                "id": "aprende-927",
+                "blockId": "core:repeat-count",
+                "operation": "core:repeat-count",
+                "fields": {},
+                "inputs": {
+                  "TIMES": {
+                    "id": "aprende-926",
+                    "blockId": "core:number",
+                    "operation": "core:number",
+                    "fields": {
+                      "NUMBER": 3
+                    },
+                    "inputs": {},
+                    "next": null
+                  },
+                  "BODY": {
+                    "id": "aprende-919",
+                    "blockId": "org.robotblocks.demo-board-io:digital-write-value",
+                    "operation": "org.robotblocks.demo-board-io:digital-write-value",
+                    "fields": {
+                      "PIN": "led"
+                    },
+                    "inputs": {
+                      "VALUE": {
+                        "id": "aprende-918",
+                        "blockId": "core:number",
+                        "operation": "core:number",
+                        "fields": {
+                          "NUMBER": 0
+                        },
+                        "inputs": {},
+                        "next": null
+                      }
+                    },
+                    "next": {
+                      "id": "aprende-921",
+                      "blockId": "core:wait-value",
+                      "operation": "core:wait-value",
+                      "fields": {},
+                      "inputs": {
+                        "SECONDS": {
+                          "id": "aprende-920",
+                          "blockId": "core:number",
+                          "operation": "core:number",
+                          "fields": {
+                            "NUMBER": 0.2
+                          },
+                          "inputs": {},
+                          "next": null
+                        }
+                      },
+                      "next": {
+                        "id": "aprende-923",
+                        "blockId": "org.robotblocks.demo-board-io:digital-write-value",
+                        "operation": "org.robotblocks.demo-board-io:digital-write-value",
+                        "fields": {
+                          "PIN": "led"
+                        },
+                        "inputs": {
+                          "VALUE": {
+                            "id": "aprende-922",
+                            "blockId": "core:number",
+                            "operation": "core:number",
+                            "fields": {
+                              "NUMBER": 1
+                            },
+                            "inputs": {},
+                            "next": null
+                          }
+                        },
+                        "next": {
+                          "id": "aprende-925",
+                          "blockId": "core:wait-value",
+                          "operation": "core:wait-value",
+                          "fields": {},
+                          "inputs": {
+                            "SECONDS": {
+                              "id": "aprende-924",
+                              "blockId": "core:number",
+                              "operation": "core:number",
+                              "fields": {
+                                "NUMBER": 0.2
+                              },
+                              "inputs": {},
+                              "next": null
+                            }
+                          },
+                          "next": null
+                        }
+                      }
+                    }
+                  }
+                },
+                "next": {
+                  "id": "aprende-929",
+                  "blockId": "core:wait-value",
+                  "operation": "core:wait-value",
+                  "fields": {},
+                  "inputs": {
+                    "SECONDS": {
+                      "id": "aprende-928",
+                      "blockId": "core:number",
+                      "operation": "core:number",
+                      "fields": {
+                        "NUMBER": 1
+                      },
+                      "inputs": {},
+                      "next": null
+                    }
+                  },
+                  "next": null
+                }
+              }
+            },
+            "next": null
+          }
+        }
+      ],
+      "detachedNodes": []
+    }
+  ],
+  "variables": [],
+  "lists": [],
+  "projectSettings": {
+    "locale": "es",
+    "units": "metric"
+  },
+  "extensions": [
+    {
+      "id": "org.robotblocks.demo-board-io",
+      "version": "1.3.0"
+    },
+    {
+      "id": "org.robotblocks.seeed-xiao-esp32s3",
+      "version": "0.3.0"
+    }
+  ],
+  "editor": {
+    "adapter": "scratch-blocks",
+    "positions": {
+      "inicio": {
+        "x": 52,
+        "y": 64
+      }
+    },
+    "blockDefinitions": [
+      {
+        "id": "core:start",
+        "category": "core:events",
+        "label": {
+          "es": "al iniciar",
+          "en": "when started"
+        },
+        "kind": "event",
+        "fields": [],
+        "inputs": [],
+        "operation": "core:start",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:forever",
+        "category": "core:control",
+        "label": {
+          "es": "por siempre %BODY",
+          "en": "forever %BODY"
+        },
+        "kind": "loop",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "BODY",
+            "type": "statement"
+          }
+        ],
+        "operation": "core:forever",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:number",
+        "category": "core:operators",
+        "label": {
+          "es": "%NUMBER",
+          "en": "%NUMBER"
+        },
+        "kind": "reporter",
+        "output": "number",
+        "fields": [
+          {
+            "name": "NUMBER",
+            "type": "number",
+            "default": 50
+          }
+        ],
+        "inputs": [],
+        "operation": "core:number",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:wait-value",
+        "category": "core:control",
+        "label": {
+          "es": "esperar %SECONDS segundos",
+          "en": "wait %SECONDS seconds"
+        },
+        "kind": "command",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "SECONDS",
+            "type": "number",
+            "default": 1,
+            "min": 0
+          }
+        ],
+        "operation": "core:wait-value",
+        "tooltip": {
+          "es": "Estructura de control del programa. No ejecuta ni bloquea el navegador.",
+          "en": "Program control structure. Does not execute or block the browser."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:repeat-count",
+        "category": "core:control",
+        "label": {
+          "es": "repetir %TIMES veces %BODY",
+          "en": "repeat %TIMES times %BODY"
+        },
+        "kind": "loop",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "TIMES",
+            "type": "number",
+            "default": 10,
+            "min": 0,
+            "integer": true
+          },
+          {
+            "name": "BODY",
+            "type": "statement"
+          }
+        ],
+        "operation": "core:repeat-count",
+        "tooltip": {
+          "es": "Estructura de control del programa. No ejecuta ni bloquea el navegador.",
+          "en": "Program control structure. Does not execute or block the browser."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "org.robotblocks.demo-board-io:digital-write-value",
+        "category": "org.robotblocks.demo-board-io:pins",
+        "label": {
+          "es": "escribir pin digital %PIN valor %VALUE",
+          "en": "write digital pin %PIN value %VALUE"
+        },
+        "kind": "command",
+        "fields": [
+          {
+            "name": "PIN",
+            "type": "string",
+            "default": "",
+            "reference": {
+              "kind": "resource",
+              "capabilities": ["digitalOutput"]
+            }
+          }
+        ],
+        "inputs": [
+          {
+            "name": "VALUE",
+            "type": "number",
+            "default": 1,
+            "min": 0,
+            "max": 1,
+            "integer": true
+          }
+        ],
+        "operation": "org.robotblocks.demo-board-io:digital-write-value",
+        "tooltip": {
+          "es": "MicroPython ESP32 experimental. Revisa las capacidades y las notas del pin antes de cargar. Arduino experimental: API del core, sin librerías externas.",
+          "en": "Experimental ESP32 MicroPython. Check pin capabilities and notes before uploading. Experimental Arduino: core API, no external libraries."
+        },
+        "requiredCapabilities": ["digitalOutput"],
+        "generators": {
+          "micropython": {
+            "canFail": false,
+            "imports": ["from machine import Pin, PWM"],
+            "setup": ["pin_{PIN} = Pin({PIN}, Pin.OUT)"],
+            "statement": "pin_{PIN}.value({VALUE})"
+          },
+          "arduino": {
+            "canFail": false,
+            "setup": ["pinMode({PIN}, OUTPUT);"],
+            "statement": "digitalWrite({PIN}, {VALUE});"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,610 @@
+{
+  "formatVersion": 4,
+  "irVersion": 2,
+  "id": "5-1-avanzar-y-girar-teensy-40",
+  "name": "5.1 Avanzar y girar por tiempo",
+  "board": {
+    "definitionId": "org.robotblocks.teensy-40:board",
+    "bindings": {}
+  },
+  "devices": [],
+  "programs": [
+    {
+      "id": "main",
+      "name": "Programa principal",
+      "processes": [
+        {
+          "id": "inicio",
+          "trigger": {
+            "blockId": "core:start",
+            "operation": "core:start",
+            "fields": {}
+          },
+          "body": {
+            "id": "aprende-1216",
+            "blockId": "org.robotblocks.motores:configure",
+            "operation": "org.robotblocks.motores:configure",
+            "fields": {
+              "MOTOR": "B",
+              "PWM": "d5",
+              "IN1": "d6",
+              "IN2": "d7"
+            },
+            "inputs": {},
+            "next": {
+              "id": "aprende-1217",
+              "blockId": "org.robotblocks.motores:configure",
+              "operation": "org.robotblocks.motores:configure",
+              "fields": {
+                "MOTOR": "C",
+                "PWM": "d10",
+                "IN1": "d11",
+                "IN2": "d12"
+              },
+              "inputs": {},
+              "next": {
+                "id": "aprende-1220",
+                "blockId": "org.robotblocks.motores:pair",
+                "operation": "org.robotblocks.motores:pair",
+                "fields": {
+                  "LEFT": "B",
+                  "RIGHT": "C"
+                },
+                "inputs": {
+                  "LEFT_SPEED": {
+                    "id": "aprende-1218",
+                    "blockId": "core:number",
+                    "operation": "core:number",
+                    "fields": {
+                      "NUMBER": 35
+                    },
+                    "inputs": {},
+                    "next": null
+                  },
+                  "RIGHT_SPEED": {
+                    "id": "aprende-1219",
+                    "blockId": "core:number",
+                    "operation": "core:number",
+                    "fields": {
+                      "NUMBER": 35
+                    },
+                    "inputs": {},
+                    "next": null
+                  }
+                },
+                "next": {
+                  "id": "aprende-1222",
+                  "blockId": "core:wait-value",
+                  "operation": "core:wait-value",
+                  "fields": {},
+                  "inputs": {
+                    "SECONDS": {
+                      "id": "aprende-1221",
+                      "blockId": "core:number",
+                      "operation": "core:number",
+                      "fields": {
+                        "NUMBER": 1
+                      },
+                      "inputs": {},
+                      "next": null
+                    }
+                  },
+                  "next": {
+                    "id": "aprende-1223",
+                    "blockId": "org.robotblocks.motores:stop",
+                    "operation": "org.robotblocks.motores:stop",
+                    "fields": {
+                      "MOTOR": "todos",
+                      "MODE": "frenar"
+                    },
+                    "inputs": {},
+                    "next": {
+                      "id": "aprende-1225",
+                      "blockId": "core:wait-value",
+                      "operation": "core:wait-value",
+                      "fields": {},
+                      "inputs": {
+                        "SECONDS": {
+                          "id": "aprende-1224",
+                          "blockId": "core:number",
+                          "operation": "core:number",
+                          "fields": {
+                            "NUMBER": 0.3
+                          },
+                          "inputs": {},
+                          "next": null
+                        }
+                      },
+                      "next": {
+                        "id": "aprende-1228",
+                        "blockId": "org.robotblocks.motores:pair",
+                        "operation": "org.robotblocks.motores:pair",
+                        "fields": {
+                          "LEFT": "B",
+                          "RIGHT": "C"
+                        },
+                        "inputs": {
+                          "LEFT_SPEED": {
+                            "id": "aprende-1226",
+                            "blockId": "core:number",
+                            "operation": "core:number",
+                            "fields": {
+                              "NUMBER": 35
+                            },
+                            "inputs": {},
+                            "next": null
+                          },
+                          "RIGHT_SPEED": {
+                            "id": "aprende-1227",
+                            "blockId": "core:number",
+                            "operation": "core:number",
+                            "fields": {
+                              "NUMBER": -35
+                            },
+                            "inputs": {},
+                            "next": null
+                          }
+                        },
+                        "next": {
+                          "id": "aprende-1230",
+                          "blockId": "core:wait-value",
+                          "operation": "core:wait-value",
+                          "fields": {},
+                          "inputs": {
+                            "SECONDS": {
+                              "id": "aprende-1229",
+                              "blockId": "core:number",
+                              "operation": "core:number",
+                              "fields": {
+                                "NUMBER": 0.4
+                              },
+                              "inputs": {},
+                              "next": null
+                            }
+                          },
+                          "next": {
+                            "id": "aprende-1231",
+                            "blockId": "org.robotblocks.motores:stop",
+                            "operation": "org.robotblocks.motores:stop",
+                            "fields": {
+                              "MOTOR": "todos",
+                              "MODE": "frenar"
+                            },
+                            "inputs": {},
+                            "next": null
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "detachedNodes": []
+    }
+  ],
+  "variables": [],
+  "lists": [],
+  "projectSettings": {
+    "locale": "es",
+    "units": "metric"
+  },
+  "extensions": [
+    {
+      "id": "org.robotblocks.motores",
+      "version": "1.1.2"
+    },
+    {
+      "id": "org.robotblocks.teensy-40",
+      "version": "0.3.0"
+    }
+  ],
+  "editor": {
+    "adapter": "scratch-blocks",
+    "positions": {
+      "inicio": {
+        "x": 52,
+        "y": 64
+      }
+    },
+    "blockDefinitions": [
+      {
+        "id": "core:start",
+        "category": "core:events",
+        "label": {
+          "es": "al iniciar",
+          "en": "when started"
+        },
+        "kind": "event",
+        "fields": [],
+        "inputs": [],
+        "operation": "core:start",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:number",
+        "category": "core:operators",
+        "label": {
+          "es": "%NUMBER",
+          "en": "%NUMBER"
+        },
+        "kind": "reporter",
+        "output": "number",
+        "fields": [
+          {
+            "name": "NUMBER",
+            "type": "number",
+            "default": 50
+          }
+        ],
+        "inputs": [],
+        "operation": "core:number",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:wait-value",
+        "category": "core:control",
+        "label": {
+          "es": "esperar %SECONDS segundos",
+          "en": "wait %SECONDS seconds"
+        },
+        "kind": "command",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "SECONDS",
+            "type": "number",
+            "default": 1,
+            "min": 0
+          }
+        ],
+        "operation": "core:wait-value",
+        "tooltip": {
+          "es": "Estructura de control del programa. No ejecuta ni bloquea el navegador.",
+          "en": "Program control structure. Does not execute or block the browser."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "org.robotblocks.motores:configure",
+        "category": "org.robotblocks.motores:motores",
+        "label": {
+          "es": "configurar motor %MOTOR PWM %PWM IN1 %IN1 IN2 %IN2",
+          "en": "configure motor %MOTOR PWM %PWM IN1 %IN1 IN2 %IN2"
+        },
+        "kind": "command",
+        "fields": [
+          {
+            "name": "MOTOR",
+            "type": "string",
+            "default": "A",
+            "options": [
+              {
+                "label": {
+                  "es": "A",
+                  "en": "A"
+                },
+                "value": "A"
+              },
+              {
+                "label": {
+                  "es": "B",
+                  "en": "B"
+                },
+                "value": "B"
+              },
+              {
+                "label": {
+                  "es": "C",
+                  "en": "C"
+                },
+                "value": "C"
+              },
+              {
+                "label": {
+                  "es": "D",
+                  "en": "D"
+                },
+                "value": "D"
+              }
+            ]
+          },
+          {
+            "name": "PWM",
+            "type": "string",
+            "default": "",
+            "reference": {
+              "kind": "resource",
+              "capabilities": ["pwm"]
+            }
+          },
+          {
+            "name": "IN1",
+            "type": "string",
+            "default": "",
+            "reference": {
+              "kind": "resource",
+              "capabilities": ["digitalOutput"]
+            }
+          },
+          {
+            "name": "IN2",
+            "type": "string",
+            "default": "",
+            "reference": {
+              "kind": "resource",
+              "capabilities": ["digitalOutput"]
+            }
+          }
+        ],
+        "inputs": [],
+        "operation": "org.robotblocks.motores:configure",
+        "tooltip": {
+          "es": "Ponlo en «al iniciar», una vez por motor. PWM va a ENA/PWMA; IN1 e IN2 a los pines de dirección. TB6612FNG o L298N. Si el motor gira al revés, intercambia IN1 e IN2 en «configurar motor».",
+          "en": "Place in “when started”, once per motor. PWM connects to ENA/PWMA; IN1 and IN2 to the direction pins. TB6612FNG or L298N. If the motor spins backward, swap IN1 and IN2 in “configure motor”."
+        },
+        "requiredCapabilities": ["pwm", "digitalOutput"],
+        "generators": {
+          "micropython": {
+            "canFail": false,
+            "imports": ["from machine import Pin, PWM"],
+            "globals": [
+              "motores_puente = {}\n",
+              "def motores_configurar(motor, pwm, in1, in2):\n    motores_puente[motor] = (PWM(Pin(pwm), freq=1000, duty_u16=0), Pin(in1, Pin.OUT, value=0), Pin(in2, Pin.OUT, value=0))\n"
+            ],
+            "statement": "motores_configurar({MOTOR}, {PWM}, {IN1}, {IN2})"
+          },
+          "arduino": {
+            "hardware": {
+              "features": ["pwm"]
+            },
+            "globals": [
+              "struct RbMotor { int pwm = -1, ina = -1, inb = -1; };\nstatic RbMotor motores_puente[4];\ninline int motores_indice(const String& motor) { return motor.length() == 1 ? motor[0] - 'A' : -1; }\ninline void motores_configurar(const String& motor, int pwm, int ina, int inb) {\n    int i = motores_indice(motor); if (i < 0 || i > 3) return;\n    motores_puente[i].pwm = pwm; motores_puente[i].ina = ina; motores_puente[i].inb = inb;\n    pinMode(pwm, OUTPUT); pinMode(ina, OUTPUT); pinMode(inb, OUTPUT);\n    digitalWrite(ina, LOW); digitalWrite(inb, LOW); analogWrite(pwm, 0);\n}\ninline void motores_parar(RbMotor& m, bool frenar) {\n    digitalWrite(m.ina, frenar ? HIGH : LOW); digitalWrite(m.inb, frenar ? HIGH : LOW);\n    analogWrite(m.pwm, frenar ? {PWM_MAX} : 0);\n}\ninline void motores_velocidad(const String& motor, float velocidad, const char* bloque) {\n    int i = motores_indice(motor);\n    if (i < 0 || i > 3 || motores_puente[i].pwm < 0) { rb_fail(bloque, \"Motor sin configurar: usa configurar motor al iniciar\"); return; }\n    velocidad = fmaxf(-100, fminf(100, rb_finite(velocidad, bloque)));\n    RbMotor& m = motores_puente[i];\n    if (velocidad == 0) { motores_parar(m, false); return; }\n    digitalWrite(m.ina, velocidad > 0 ? HIGH : LOW); digitalWrite(m.inb, velocidad > 0 ? LOW : HIGH);\n    analogWrite(m.pwm, uint32_t(fabsf(velocidad) * {PWM_MAX} / 100.0f));\n}\ninline void motores_detener(const String& motor, const String& modo) {\n    for (int i = 0; i < 4; i++) if (motores_puente[i].pwm >= 0 && (motor == \"todos\" || motores_indice(motor) == i)) motores_parar(motores_puente[i], modo == \"frenar\");\n}"
+            ],
+            "statement": "motores_configurar({MOTOR}, {PWM}, {IN1}, {IN2});"
+          }
+        }
+      },
+      {
+        "id": "org.robotblocks.motores:pair",
+        "category": "org.robotblocks.motores:motores",
+        "label": {
+          "es": "motores %LEFT %LEFT_SPEED %RIGHT %RIGHT_SPEED",
+          "en": "motors %LEFT %LEFT_SPEED %RIGHT %RIGHT_SPEED"
+        },
+        "kind": "command",
+        "fields": [
+          {
+            "name": "LEFT",
+            "type": "string",
+            "default": "B",
+            "options": [
+              {
+                "label": {
+                  "es": "A",
+                  "en": "A"
+                },
+                "value": "A"
+              },
+              {
+                "label": {
+                  "es": "B",
+                  "en": "B"
+                },
+                "value": "B"
+              },
+              {
+                "label": {
+                  "es": "C",
+                  "en": "C"
+                },
+                "value": "C"
+              },
+              {
+                "label": {
+                  "es": "D",
+                  "en": "D"
+                },
+                "value": "D"
+              }
+            ]
+          },
+          {
+            "name": "RIGHT",
+            "type": "string",
+            "default": "C",
+            "options": [
+              {
+                "label": {
+                  "es": "A",
+                  "en": "A"
+                },
+                "value": "A"
+              },
+              {
+                "label": {
+                  "es": "B",
+                  "en": "B"
+                },
+                "value": "B"
+              },
+              {
+                "label": {
+                  "es": "C",
+                  "en": "C"
+                },
+                "value": "C"
+              },
+              {
+                "label": {
+                  "es": "D",
+                  "en": "D"
+                },
+                "value": "D"
+              }
+            ]
+          }
+        ],
+        "inputs": [
+          {
+            "name": "LEFT_SPEED",
+            "type": "number",
+            "default": 50,
+            "slider": {
+              "min": -100,
+              "max": 100
+            }
+          },
+          {
+            "name": "RIGHT_SPEED",
+            "type": "number",
+            "default": 50,
+            "slider": {
+              "min": -100,
+              "max": 100
+            }
+          }
+        ],
+        "operation": "org.robotblocks.motores:pair",
+        "tooltip": {
+          "es": "Mueve dos motores a la vez, por ejemplo izquierdo y derecho. TB6612FNG o L298N. Si el motor gira al revés, intercambia IN1 e IN2 en «configurar motor».",
+          "en": "Moves two motors at once, for example left and right. TB6612FNG or L298N. If the motor spins backward, swap IN1 and IN2 in “configure motor”."
+        },
+        "requiredCapabilities": ["pwm", "digitalOutput"],
+        "generators": {
+          "micropython": {
+            "imports": ["from machine import Pin, PWM"],
+            "globals": [
+              "motores_puente = {}\n",
+              "def motores_parar(salidas, modo):\n    pwm, in1, in2 = salidas\n    # Frenar: IN1 e IN2 en alto. Libre: PWM en 0 e IN1/IN2 en bajo (TB6612FNG y L298N).\n    frenar = modo == \"frenar\"\n    in1.value(1 if frenar else 0)\n    in2.value(1 if frenar else 0)\n    pwm.duty_u16(65535 if frenar else 0)\n",
+              "def motores_velocidad(motor, velocidad, bloque):\n    salidas = motores_puente.get(motor)\n    if salidas is None:\n        rb_fail(bloque, \"Motor %s sin configurar: usa configurar motor al iniciar\" % motor)\n    velocidad = max(-100, min(100, velocidad))\n    if velocidad == 0:\n        motores_parar(salidas, \"libre\")\n        return\n    pwm, in1, in2 = salidas\n    in1.value(1 if velocidad > 0 else 0)\n    in2.value(0 if velocidad > 0 else 1)\n    pwm.duty_u16(int(abs(velocidad) * 65535 / 100))\n"
+            ],
+            "statement": "motores_velocidad({LEFT}, {LEFT_SPEED}, {BLOCK_ID})\nmotores_velocidad({RIGHT}, {RIGHT_SPEED}, {BLOCK_ID})"
+          },
+          "arduino": {
+            "hardware": {
+              "features": ["pwm"]
+            },
+            "globals": [
+              "struct RbMotor { int pwm = -1, ina = -1, inb = -1; };\nstatic RbMotor motores_puente[4];\ninline int motores_indice(const String& motor) { return motor.length() == 1 ? motor[0] - 'A' : -1; }\ninline void motores_configurar(const String& motor, int pwm, int ina, int inb) {\n    int i = motores_indice(motor); if (i < 0 || i > 3) return;\n    motores_puente[i].pwm = pwm; motores_puente[i].ina = ina; motores_puente[i].inb = inb;\n    pinMode(pwm, OUTPUT); pinMode(ina, OUTPUT); pinMode(inb, OUTPUT);\n    digitalWrite(ina, LOW); digitalWrite(inb, LOW); analogWrite(pwm, 0);\n}\ninline void motores_parar(RbMotor& m, bool frenar) {\n    digitalWrite(m.ina, frenar ? HIGH : LOW); digitalWrite(m.inb, frenar ? HIGH : LOW);\n    analogWrite(m.pwm, frenar ? {PWM_MAX} : 0);\n}\ninline void motores_velocidad(const String& motor, float velocidad, const char* bloque) {\n    int i = motores_indice(motor);\n    if (i < 0 || i > 3 || motores_puente[i].pwm < 0) { rb_fail(bloque, \"Motor sin configurar: usa configurar motor al iniciar\"); return; }\n    velocidad = fmaxf(-100, fminf(100, rb_finite(velocidad, bloque)));\n    RbMotor& m = motores_puente[i];\n    if (velocidad == 0) { motores_parar(m, false); return; }\n    digitalWrite(m.ina, velocidad > 0 ? HIGH : LOW); digitalWrite(m.inb, velocidad > 0 ? LOW : HIGH);\n    analogWrite(m.pwm, uint32_t(fabsf(velocidad) * {PWM_MAX} / 100.0f));\n}\ninline void motores_detener(const String& motor, const String& modo) {\n    for (int i = 0; i < 4; i++) if (motores_puente[i].pwm >= 0 && (motor == \"todos\" || motores_indice(motor) == i)) motores_parar(motores_puente[i], modo == \"frenar\");\n}"
+            ],
+            "statement": "motores_velocidad({LEFT}, {LEFT_SPEED}, {BLOCK_ID});\nmotores_velocidad({RIGHT}, {RIGHT_SPEED}, {BLOCK_ID});"
+          }
+        }
+      },
+      {
+        "id": "org.robotblocks.motores:stop",
+        "category": "org.robotblocks.motores:motores",
+        "label": {
+          "es": "detener %MOTOR %MODE",
+          "en": "stop %MOTOR %MODE"
+        },
+        "kind": "command",
+        "fields": [
+          {
+            "name": "MOTOR",
+            "type": "string",
+            "default": "todos",
+            "options": [
+              {
+                "label": {
+                  "es": "todos los motores",
+                  "en": "all motors"
+                },
+                "value": "todos"
+              },
+              {
+                "label": {
+                  "es": "motor A",
+                  "en": "motor A"
+                },
+                "value": "A"
+              },
+              {
+                "label": {
+                  "es": "motor B",
+                  "en": "motor B"
+                },
+                "value": "B"
+              },
+              {
+                "label": {
+                  "es": "motor C",
+                  "en": "motor C"
+                },
+                "value": "C"
+              },
+              {
+                "label": {
+                  "es": "motor D",
+                  "en": "motor D"
+                },
+                "value": "D"
+              }
+            ]
+          },
+          {
+            "name": "MODE",
+            "type": "string",
+            "default": "frenar",
+            "options": [
+              {
+                "label": {
+                  "es": "frenando",
+                  "en": "brake"
+                },
+                "value": "frenar"
+              },
+              {
+                "label": {
+                  "es": "en libre",
+                  "en": "coast"
+                },
+                "value": "libre"
+              }
+            ]
+          }
+        ],
+        "inputs": [],
+        "operation": "org.robotblocks.motores:stop",
+        "tooltip": {
+          "es": "Frenando: se detiene enseguida. En libre: gira hasta pararse solo. TB6612FNG o L298N. Si el motor gira al revés, intercambia IN1 e IN2 en «configurar motor».",
+          "en": "Braking: stops immediately. Coasting: spins until it stops on its own. TB6612FNG or L298N. If the motor spins backward, swap IN1 and IN2 in “configure motor”."
+        },
+        "requiredCapabilities": ["pwm", "digitalOutput"],
+        "generators": {
+          "micropython": {
+            "canFail": false,
+            "imports": ["from machine import Pin, PWM"],
+            "globals": [
+              "motores_puente = {}\n",
+              "def motores_parar(salidas, modo):\n    pwm, in1, in2 = salidas\n    # Frenar: IN1 e IN2 en alto. Libre: PWM en 0 e IN1/IN2 en bajo (TB6612FNG y L298N).\n    frenar = modo == \"frenar\"\n    in1.value(1 if frenar else 0)\n    in2.value(1 if frenar else 0)\n    pwm.duty_u16(65535 if frenar else 0)\n",
+              "def motores_detener(motor, modo):\n    for letra, salidas in motores_puente.items():\n        if motor == \"todos\" or motor == letra:\n            motores_parar(salidas, modo)\n"
+            ],
+            "statement": "motores_detener({MOTOR}, {MODE})"
+          },
+          "arduino": {
+            "hardware": {
+              "features": ["pwm"]
+            },
+            "globals": [
+              "struct RbMotor { int pwm = -1, ina = -1, inb = -1; };\nstatic RbMotor motores_puente[4];\ninline int motores_indice(const String& motor) { return motor.length() == 1 ? motor[0] - 'A' : -1; }\ninline void motores_configurar(const String& motor, int pwm, int ina, int inb) {\n    int i = motores_indice(motor); if (i < 0 || i > 3) return;\n    motores_puente[i].pwm = pwm; motores_puente[i].ina = ina; motores_puente[i].inb = inb;\n    pinMode(pwm, OUTPUT); pinMode(ina, OUTPUT); pinMode(inb, OUTPUT);\n    digitalWrite(ina, LOW); digitalWrite(inb, LOW); analogWrite(pwm, 0);\n}\ninline void motores_parar(RbMotor& m, bool frenar) {\n    digitalWrite(m.ina, frenar ? HIGH : LOW); digitalWrite(m.inb, frenar ? HIGH : LOW);\n    analogWrite(m.pwm, frenar ? {PWM_MAX} : 0);\n}\ninline void motores_velocidad(const String& motor, float velocidad, const char* bloque) {\n    int i = motores_indice(motor);\n    if (i < 0 || i > 3 || motores_puente[i].pwm < 0) { rb_fail(bloque, \"Motor sin configurar: usa configurar motor al iniciar\"); return; }\n    velocidad = fmaxf(-100, fminf(100, rb_finite(velocidad, bloque)));\n    RbMotor& m = motores_puente[i];\n    if (velocidad == 0) { motores_parar(m, false); return; }\n    digitalWrite(m.ina, velocidad > 0 ? HIGH : LOW); digitalWrite(m.inb, velocidad > 0 ? LOW : HIGH);\n    analogWrite(m.pwm, uint32_t(fabsf(velocidad) * {PWM_MAX} / 100.0f));\n}\ninline void motores_detener(const String& motor, const String& modo) {\n    for (int i = 0; i < 4; i++) if (motores_puente[i].pwm >= 0 && (motor == \"todos\" || motores_indice(motor) == i)) motores_parar(motores_puente[i], modo == \"frenar\");\n}"
+            ],
+            "statement": "motores_detener({MOTOR}, {MODE});"
+          }
+        }
+      }
+    ]
+  }
+}

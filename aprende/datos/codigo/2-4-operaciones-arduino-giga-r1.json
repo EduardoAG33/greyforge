@@ -1,0 +1,4 @@
+{
+  "lenguaje": "cpp",
+  "codigo": "#include \"robotblocks_runtime.h\"\n\n\nstatic void proceso_1() {\n    static RbProcessState s;\n    float rb_t1;\n    float rb_t2;\n    float rb_t3;\n    PT_BEGIN(s);\n    while (true) {\n        Serial.println(String(\"Suma, escala, l\\303\\255mite, comparaci\\303\\263n y dado:\"));\n        Serial.println((8.0f + 2));\n        rb_t1 = rb_map(5, 0, 10, 0, 100, \"aprende-600\");\n        if (rb_failed) return;\n        Serial.println(rb_t1);\n        rb_t2 = rb_clamp(120, 0, 100, \"aprende-605\");\n        if (rb_failed) return;\n        Serial.println(rb_t2);\n        Serial.println((3 < 5));\n        rb_t3 = rb_random(1, 6, \"aprende-613\");\n        if (rb_failed) return;\n        Serial.println(rb_t3);\n        PT_SLEEP(s, 2000);\n        PT_YIELD(s);\n    }\n    PT_END(s);\n}\n\nvoid setup() { Serial.begin(115200); }\n\nvoid loop() { rb_error_repeat(); proceso_1(); }\n"
+}
