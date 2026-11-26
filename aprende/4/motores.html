@@ -397,20 +397,8 @@
         </section>
         <section>
           <h2>Pasos</h2>
-          <p><span class="muted">La imagen muestra el programa de la Arduino UNO R3.</span></p>
-          <figure class="program">
-            <figcaption>
-              Al iniciar configura motores B y C. Por siempre avanza al 35 %, frena, retrocede al 50 % y vuelve a
-              frenar.
-            </figcaption>
-            <img
-              src="../img/4-3-motores-arduino-uno.png"
-              alt="Al iniciar configura motores B y C. Por siempre avanza al 35 %, frena, retrocede al 50 % y vuelve a frenar."
-              width="542"
-              height="669"
-              hidden
-            />
-          </figure>
+          <p><span class="muted">Las imágenes muestran el programa de la Arduino UNO R3.</span></p>
+          <p class="muted">Para otra tarjeta, usa los pines de su tabla de conexiones.</p>
           <ol class="steps">
             <li>
               <h3>Conecta los dos canales</h3>
@@ -422,88 +410,94 @@
             <li>
               <h3>Configura B y C</h3>
               <p>
-                Descarga el proyecto al final de la página y ábrelo con <strong>Archivo → Abrir</strong>. En
-                <strong>Motores</strong>, usa «configurar motor B PWM
-                <span
-                  data-uno="D5"
-                  data-r4="D5"
-                  data-nano="D5"
-                  data-giga="D5"
-                  data-firebeetle="D3 · GPIO26"
-                  data-xiao="D0 / A0 · GPIO1"
-                  data-teensy40="5"
-                  data-teensy41="5"
-                  >D5</span
-                >
-                IN1
-                <span
-                  data-uno="D6"
-                  data-r4="D6"
-                  data-nano="D6"
-                  data-giga="D6"
-                  data-firebeetle="D4 · GPIO27"
-                  data-xiao="D1 / A1 · GPIO2"
-                  data-teensy40="6"
-                  data-teensy41="6"
-                  >D6</span
-                >
-                IN2
-                <span
-                  data-uno="D7"
-                  data-r4="D7"
-                  data-nano="D7"
-                  data-giga="D7"
-                  data-firebeetle="D7 · GPIO13"
-                  data-xiao="D3 / A3 · GPIO4"
-                  data-teensy40="7"
-                  data-teensy41="7"
-                  >D7</span
-                >» y otro bloque igual para C con
-                <span
-                  data-uno="D10"
-                  data-r4="D10"
-                  data-nano="D10"
-                  data-giga="D10"
-                  data-firebeetle="DO · GPIO4"
-                  data-xiao="D8 / A8 · GPIO7"
-                  data-teensy40="10"
-                  data-teensy41="10"
-                  >D10</span
-                >,
-                <span
-                  data-uno="D11"
-                  data-r4="D11"
-                  data-nano="D11"
-                  data-giga="D11"
-                  data-firebeetle="DI · GPIO16"
-                  data-xiao="D9 / A9 · GPIO8"
-                  data-teensy40="11"
-                  data-teensy41="11"
-                  >D11</span
-                >
-                y
-                <span
-                  data-uno="D12"
-                  data-r4="D12"
-                  data-nano="D12"
-                  data-giga="D12"
-                  data-firebeetle="LRCK · GPIO17"
-                  data-xiao="D10 / A10 · GPIO9"
-                  data-teensy40="12"
-                  data-teensy41="12"
-                  >D12</span
-                >.
+                Debajo de «al iniciar», coloca dos «configurar motor … PWM … IN1 … IN2 …» de Motores. Elige B con PWM
+                D5, IN1 D6 e IN2 D7, y debajo C con PWM D10, IN1 D11 e IN2 D12.
               </p>
+              <figure class="program">
+                <figcaption>Al iniciar, se configuran el motor B con D5, D6 y D7 y el C con D10, D11 y D12.</figcaption>
+                <img
+                  src="../img/4-3-motores-arduino-uno-paso-2.png"
+                  alt="Al iniciar, se configuran el motor B con D5, D6 y D7 y el C con D10, D11 y D12."
+                  width="542"
+                  height="199"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Mueve y frena</h3>
+              <h3>Avanza un segundo</h3>
               <p>
-                Dentro de «por siempre», «motores B 35 C 35» avanza. «Detener todos frenar» para los motores y «motores
-                B −50 C −50» los hace retroceder. Pulsa <strong>Cargar</strong>. Si aparece una lista de puertos, elige
-                el de tu tarjeta.
+                Debajo de la configuración de C, encaja «por siempre» de Control. Dentro pon «motores B 35 C 35» de
+                Motores y debajo «esperar 1 segundos» de Control.
               </p>
+              <figure class="program">
+                <figcaption>Después de configurar B y C, por siempre mueve ambos a 35 durante 1 segundo.</figcaption>
+                <img
+                  src="../img/4-3-motores-arduino-uno-paso-3.png"
+                  alt="Después de configurar B y C, por siempre mueve ambos a 35 durante 1 segundo."
+                  width="542"
+                  height="375"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Frena antes de retroceder</h3>
+              <p>
+                Dentro de «por siempre», después de la espera, pon «detener todos los motores frenando» de Motores y
+                debajo «esperar 0.5 segundos» de Control.
+              </p>
+              <figure class="program">
+                <figcaption>Los dos motores avanzan un segundo y se quedan frenados medio segundo.</figcaption>
+                <img
+                  src="../img/4-3-motores-arduino-uno-paso-4.png"
+                  alt="Los dos motores avanzan un segundo y se quedan frenados medio segundo."
+                  width="542"
+                  height="474"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Retrocede y vuelve a frenar</h3>
+              <p>
+                Después de la pausa, dentro de «por siempre», pon «motores B −50 C −50» de Motores y «esperar 1
+                segundos» de Control. Debajo repite «detener todos los motores frenando» de Motores y «esperar 1
+                segundos» de Control.
+              </p>
+              <figure class="program">
+                <figcaption>Por siempre, B y C avanzan, frenan, retroceden y frenan otra vez.</figcaption>
+                <img
+                  src="../img/4-3-motores-arduino-uno-paso-5.png"
+                  alt="Por siempre, B y C avanzan, frenan, retroceden y frenan otra vez."
+                  width="542"
+                  height="669"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Carga y prueba</h3>
+              <p>
+                Conecta la tarjeta por USB y pulsa <strong>Cargar</strong>. Con las ruedas levantadas, observa cómo
+                giran en los dos sentidos y se detienen entre movimientos.
+              </p>
+              <figure class="program">
+                <figcaption>
+                  Al iniciar configura motores B y C. Por siempre avanza al 35 %, frena, retrocede al 50 % y vuelve a
+                  frenar.
+                </figcaption>
+                <img
+                  src="../img/4-3-motores-arduino-uno.png"
+                  alt="Al iniciar configura motores B y C. Por siempre avanza al 35 %, frena, retrocede al 50 % y vuelve a frenar."
+                  width="542"
+                  height="669"
+                  hidden
+                />
+              </figure>
             </li>
           </ol>
+          <p>¿Prefieres no armarlo? <a href="#descargar-proyecto">Descarga el proyecto terminado</a></p>
         </section>
         <section>
           <h2>Pruébalo</h2>

@@ -383,20 +383,8 @@
         </section>
         <section>
           <h2>Pasos</h2>
-          <p><span class="muted">La imagen muestra el programa de la Arduino UNO R3.</span></p>
-          <figure class="program">
-            <figcaption>
-              Configura tres VL53L0X en SDA A4 y SCL A5, con XSHUT D2, D3 y D4. Por siempre imprime izquierdo, centro y
-              derecho.
-            </figcaption>
-            <img
-              src="../img/3-4-laser-arduino-uno.png"
-              alt="Configura tres VL53L0X en SDA A4 y SCL A5, con XSHUT D2, D3 y D4. Por siempre imprime izquierdo, centro y derecho."
-              width="760"
-              height="558"
-              hidden
-            />
-          </figure>
+          <p><span class="muted">Las imágenes muestran el programa de la Arduino UNO R3.</span></p>
+          <p class="muted">Para otra tarjeta, usa los pines de su tabla de conexiones.</p>
           <ol class="steps">
             <li>
               <h3>Comparte dos cables</h3>
@@ -406,44 +394,101 @@
               </p>
             </li>
             <li>
-              <h3>Asigna tres direcciones</h3>
+              <h3>Configura los tres láseres</h3>
               <p>
-                Descarga el proyecto al final de la página y ábrelo con <strong>Archivo → Abrir</strong>. En
-                <strong>Láser</strong>, «configurar láseres VL53L0X SDA
-                <span
-                  data-uno="A4"
-                  data-r4="A4"
-                  data-nano="A4"
-                  data-giga="D20"
-                  data-firebeetle="SDA · GPIO21"
-                  data-xiao="D4 / A4 · GPIO5"
-                  data-teensy40="18 / A4"
-                  data-teensy41="18 / A4"
-                  >A4</span
-                >
-                SCL
-                <span
-                  data-uno="A5"
-                  data-r4="A5"
-                  data-nano="A5"
-                  data-giga="D21"
-                  data-firebeetle="SCL · GPIO22"
-                  data-xiao="D5 / A5 · GPIO6"
-                  data-teensy40="19 / A5"
-                  data-teensy41="19 / A5"
-                  >A5</span
-                >
-                modo …» configura izquierdo, centro y derecho con 0x30, 0x31 y 0x32.
+                Debajo de «al iniciar», pon «configurar láseres VL53L0X SDA A4 SCL A5 modo normal» de Láser. Usa el +
+                para dejar tres filas y asigna D2, 0x30 y «izquierdo» a la primera, D3, 0x31 y «centro» a la segunda, y
+                D4, 0x32 y «derecho» a la tercera.
               </p>
+              <figure class="program">
+                <figcaption>
+                  Al iniciar, se configuran los láseres izquierdo, centro y derecho en A4 y A5, con XSHUT D2, D3 y D4.
+                </figcaption>
+                <img
+                  src="../img/3-4-laser-arduino-uno-paso-2.png"
+                  alt="Al iniciar, se configuran los láseres izquierdo, centro y derecho en A4 y A5, con XSHUT D2, D3 y D4."
+                  width="760"
+                  height="277"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Lee por nombre</h3>
+              <h3>Lee el láser izquierdo</h3>
               <p>
-                Dentro de «por siempre», imprime «distancia del láser … en mm» una vez por cada nombre. Pulsa
-                <strong>Cargar</strong>. Si aparece una lista de puertos, elige el de tu tarjeta.
+                Debajo de la configuración, encaja «por siempre» de Control y, dentro, «imprimir … con salto de línea»
+                de Serie. En su entrada pon «distancia del láser izquierdo en mm» de Láser.
               </p>
+              <figure class="program">
+                <figcaption>
+                  Después de configurar los tres láseres, por siempre imprime la distancia del izquierdo.
+                </figcaption>
+                <img
+                  src="../img/3-4-laser-arduino-uno-paso-3.png"
+                  alt="Después de configurar los tres láseres, por siempre imprime la distancia del izquierdo."
+                  width="760"
+                  height="408"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Lee el láser del centro</h3>
+              <p>
+                Debajo de la primera impresión, aún dentro de «por siempre», añade otro «imprimir … con salto de línea»
+                de Serie con «distancia del láser centro en mm» de Láser en su entrada.
+              </p>
+              <figure class="program">
+                <figcaption>Por siempre imprime las distancias de izquierdo y centro.</figcaption>
+                <img
+                  src="../img/3-4-laser-arduino-uno-paso-4.png"
+                  alt="Por siempre imprime las distancias de izquierdo y centro."
+                  width="760"
+                  height="459"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Lee el láser derecho</h3>
+              <p>
+                Debajo de la impresión del centro, pon otro «imprimir … con salto de línea» de Serie con «distancia del
+                láser derecho en mm» de Láser en su entrada. Debajo agrega «esperar 500 ms» de Tiempo, dentro de «por
+                siempre».
+              </p>
+              <figure class="program">
+                <figcaption>Por siempre imprime las tres distancias en orden y espera 500 ms.</figcaption>
+                <img
+                  src="../img/3-4-laser-arduino-uno-paso-5.png"
+                  alt="Por siempre imprime las tres distancias en orden y espera 500 ms."
+                  width="760"
+                  height="558"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Carga y prueba</h3>
+              <p>
+                Conecta la tarjeta por USB y pulsa <strong>Cargar</strong>. Abre <strong>Monitor</strong> y mueve un
+                objeto frente a cada sensor por turno.
+              </p>
+              <figure class="program">
+                <figcaption>
+                  Configura tres VL53L0X en SDA A4 y SCL A5, con XSHUT D2, D3 y D4. Por siempre imprime izquierdo,
+                  centro y derecho.
+                </figcaption>
+                <img
+                  src="../img/3-4-laser-arduino-uno.png"
+                  alt="Configura tres VL53L0X en SDA A4 y SCL A5, con XSHUT D2, D3 y D4. Por siempre imprime izquierdo, centro y derecho."
+                  width="760"
+                  height="558"
+                  hidden
+                />
+              </figure>
             </li>
           </ol>
+          <p>¿Prefieres no armarlo? <a href="#descargar-proyecto">Descarga el proyecto terminado</a></p>
         </section>
         <section>
           <h2>Pruébalo</h2>

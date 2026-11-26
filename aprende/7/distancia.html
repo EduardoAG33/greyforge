@@ -260,36 +260,79 @@
         </section>
         <section>
           <h2>Pasos</h2>
-          <figure class="program">
-            <figcaption>Por siempre imprime la distancia del sensor en milímetros y espera 500 ms.</figcaption>
-            <img
-              src="../img/7-4-distancia-lego-ev3.png"
-              alt="Por siempre imprime la distancia del sensor en milímetros y espera 500 ms."
-              width="537"
-              height="276"
-              hidden
-            />
-          </figure>
+          <p><span class="muted">Las imágenes muestran el programa del EV3.</span></p>
           <ol class="steps">
             <li>
               <h3>Conecta el sensor</h3>
               <p>Prepara tu EV3 siguiendo <a href="../../#lego">SPIKE y EV3</a>. Pon el sensor en S2 (entrada 2).</p>
             </li>
             <li>
-              <h3>Ubica la lectura</h3>
-              <p>
-                Descarga el proyecto al final de la página y ábrelo con <strong>Archivo → Abrir</strong>. En
-                <strong>EV3 · Sensores</strong>, busca «distancia del sensor … (mm)» y revisa su puerto.
-              </p>
+              <h3>Prepara el ciclo</h3>
+              <p>Si te falta «al iniciar», búscalo en Eventos. Encaja debajo «por siempre» de Control.</p>
+              <figure class="program">
+                <figcaption>Al iniciar, con por siempre vacío.</figcaption>
+                <img
+                  src="../img/7-4-distancia-lego-ev3-paso-2.png"
+                  alt="Al iniciar, con por siempre vacío."
+                  width="184"
+                  height="201"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Imprime el resultado</h3>
+              <h3>Imprime la lectura</h3>
               <p>
-                La lectura se imprime con «imprimir … con salto de línea» cada 500 ms. En «Conectar EV3», usa «Probar
-                conexión». Pulsa «Cargar» y, si el programa no arranca, abre main.py en el File Browser del EV3.
+                Dentro de «por siempre», pon «imprimir … con salto de línea» de Serie. En el hueco de la impresión,
+                encaja «distancia del sensor S2 (entrada 2) (mm)» de EV3 · Sensores.
               </p>
+              <figure class="program">
+                <figcaption>Por siempre imprime la distancia en milímetros del sensor de la entrada 2.</figcaption>
+                <img
+                  src="../img/7-4-distancia-lego-ev3-paso-3.png"
+                  alt="Por siempre imprime la distancia en milímetros del sensor de la entrada 2."
+                  width="537"
+                  height="228"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Deja una pausa</h3>
+              <p>Debajo de la impresión, dentro de «por siempre», pon «esperar 500 ms» de Tiempo.</p>
+              <figure class="program">
+                <figcaption>
+                  Por siempre imprime la distancia en milímetros del sensor de la entrada 2 y espera 500 ms.
+                </figcaption>
+                <img
+                  src="../img/7-4-distancia-lego-ev3-paso-4.png"
+                  alt="Por siempre imprime la distancia en milímetros del sensor de la entrada 2 y espera 500 ms."
+                  width="537"
+                  height="276"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Carga y prueba</h3>
+              <p>
+                En <strong>Conectar EV3</strong>, usa <strong>Probar conexión</strong> y pulsa <strong>Cargar</strong>.
+                Acerca un objeto y observa cómo cambia la distancia.
+              </p>
+              <p>Si el programa no arranca, abre <code>main.py</code> en el File Browser del EV3.</p>
+              <figure class="program">
+                <figcaption>Por siempre imprime la distancia del sensor en milímetros y espera 500 ms.</figcaption>
+                <img
+                  src="../img/7-4-distancia-lego-ev3.png"
+                  alt="Por siempre imprime la distancia del sensor en milímetros y espera 500 ms."
+                  width="537"
+                  height="276"
+                  hidden
+                />
+              </figure>
             </li>
           </ol>
+          <p>¿Prefieres no armarlo? <a href="#descargar-proyecto">Descarga el proyecto terminado</a></p>
         </section>
         <section>
           <h2>Pruébalo</h2>

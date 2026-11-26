@@ -344,19 +344,11 @@
         </section>
         <section>
           <h2>Pasos</h2>
-          <p><span class="muted">La imagen muestra el programa de la Arduino UNO R3.</span></p>
-          <figure class="program">
-            <figcaption>
-              Por siempre compara la distancia con 20 cm. Si es menor, enciende D13. En el otro caso, lo apaga.
-            </figcaption>
-            <img
-              src="../img/3-5-responder-a-un-sensor-arduino-uno.png"
-              alt="Por siempre compara la distancia con 20 cm. Si es menor, enciende D13. En el otro caso, lo apaga."
-              width="734"
-              height="460"
-              hidden
-            />
-          </figure>
+          <p><span class="muted">Las imágenes muestran el programa de la Arduino UNO R3.</span></p>
+          <p class="muted">
+            Para otra tarjeta, usa los pines de su tabla de conexiones. Para el LED integrado de otra tarjeta, revisa el
+            pin y el valor de encendido en <a href="../1/primer-programa.html">Tu primer programa</a>.
+          </p>
           <ol class="steps">
             <li>
               <h3>Conecta el ultrasónico</h3>
@@ -366,54 +358,90 @@
               </p>
             </li>
             <li>
-              <h3>Decide con un número</h3>
+              <h3>Pregunta por la distancia</h3>
               <p>
-                Descarga el proyecto al final de la página y ábrelo con <strong>Archivo → Abrir</strong>. En «si …
-                entonces», usa «&lt;» de <strong>Operadores</strong>. Coloca a la izquierda la distancia y a la derecha
-                20.
+                Debajo de «al iniciar», pon «por siempre» de Control y, dentro, «si … entonces» de la misma categoría.
+                Encaja «… &lt; …» de Operadores en la condición, con «distancia ultrasónica en cm TRIG D2 ECHO D4» de
+                Ultrasónico a la izquierda y 20 a la derecha.
               </p>
+              <figure class="program">
+                <figcaption>
+                  Por siempre pregunta si la distancia del ultrasónico con TRIG D2 y ECHO D4 es menor que 20 cm.
+                </figcaption>
+                <img
+                  src="../img/3-5-responder-a-un-sensor-arduino-uno-paso-2.png"
+                  alt="Por siempre pregunta si la distancia del ultrasónico con TRIG D2 y ECHO D4 es menor que 20 cm."
+                  width="739"
+                  height="292"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Prende o apaga</h3>
+              <h3>Enciende si algo se acerca</h3>
+              <p>Dentro de «si … entonces», encaja «escribir pin digital D13 valor 1» de Pines de la tarjeta.</p>
+              <figure class="program">
+                <figcaption>Si la distancia es menor que 20 cm, D13 recibe 1.</figcaption>
+                <img
+                  src="../img/3-5-responder-a-un-sensor-arduino-uno-paso-3.png"
+                  alt="Si la distancia es menor que 20 cm, D13 recibe 1."
+                  width="734"
+                  height="316"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Apaga en el otro caso</h3>
               <p>
-                En <strong>Pines de la tarjeta</strong>, «escribir pin digital
-                <span
-                  data-uno="D13"
-                  data-r4="D13"
-                  data-nano="D13"
-                  data-giga="GREEN / LED RGB"
-                  data-firebeetle="D9 / LED integrado · GPIO2"
-                  data-xiao="USER_LED · GPIO21"
-                  data-teensy40="13"
-                  data-teensy41="13"
-                  >D13</span
-                >
-                valor
-                <span
-                  data-uno="1"
-                  data-r4="1"
-                  data-nano="1"
-                  data-giga="1"
-                  data-firebeetle="1"
-                  data-xiao="0"
-                  data-teensy40="1"
-                  data-teensy41="1"
-                  >1</span
-                >» enciende el LED dentro de «si». Dentro de «si no», escribe
-                <span
-                  data-uno="0"
-                  data-r4="0"
-                  data-nano="0"
-                  data-giga="0"
-                  data-firebeetle="0"
-                  data-xiao="1"
-                  data-teensy40="0"
-                  data-teensy41="0"
-                  >0</span
-                >. Pulsa <strong>Cargar</strong>. Si aparece una lista de puertos, elige el de tu tarjeta.
+                Pulsa + para añadir «si no» y coloca dentro «escribir pin digital D13 valor 0» de Pines de la tarjeta.
               </p>
+              <figure class="program">
+                <figcaption>Si la distancia es menor que 20 cm, D13 recibe 1. En si no, recibe 0.</figcaption>
+                <img
+                  src="../img/3-5-responder-a-un-sensor-arduino-uno-paso-4.png"
+                  alt="Si la distancia es menor que 20 cm, D13 recibe 1. En si no, recibe 0."
+                  width="734"
+                  height="412"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Espera antes de medir otra vez</h3>
+              <p>Debajo de todo el «si», dentro de «por siempre», añade «esperar 0.1 segundos» de Control.</p>
+              <figure class="program">
+                <figcaption>La decisión que enciende o apaga D13 va seguida de una espera de 0.1 segundos.</figcaption>
+                <img
+                  src="../img/3-5-responder-a-un-sensor-arduino-uno-paso-5.png"
+                  alt="La decisión que enciende o apaga D13 va seguida de una espera de 0.1 segundos."
+                  width="734"
+                  height="460"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Carga y prueba</h3>
+              <p>
+                Conecta la tarjeta por USB y pulsa <strong>Cargar</strong>. Acerca y aleja un objeto para ver el LED
+                cambiar alrededor de los 20 cm.
+              </p>
+              <figure class="program">
+                <figcaption>
+                  Por siempre compara la distancia con 20 cm. Si es menor, enciende D13. En el otro caso, lo apaga.
+                </figcaption>
+                <img
+                  src="../img/3-5-responder-a-un-sensor-arduino-uno.png"
+                  alt="Por siempre compara la distancia con 20 cm. Si es menor, enciende D13. En el otro caso, lo apaga."
+                  width="734"
+                  height="460"
+                  hidden
+                />
+              </figure>
             </li>
           </ol>
+          <p>¿Prefieres no armarlo? <a href="#descargar-proyecto">Descarga el proyecto terminado</a></p>
         </section>
         <section>
           <h2>Pruébalo</h2>

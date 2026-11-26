@@ -270,53 +270,98 @@
         </section>
         <section>
           <h2>Pasos</h2>
-          <p><span class="muted">La imagen muestra el programa de la Arduino UNO R3.</span></p>
-          <figure class="program">
-            <figcaption>
-              Por siempre contiene repetir tres veces el encendido y apagado del LED y luego esperar un segundo.
-            </figcaption>
-            <img
-              src="../img/2-1-esperar-y-repetir-arduino-uno.png"
-              alt="Por siempre contiene repetir tres veces el encendido y apagado del LED y luego esperar un segundo."
-              width="374"
-              height="497"
-              hidden
-            />
-          </figure>
+          <p><span class="muted">Las imágenes muestran el programa de la Arduino UNO R3.</span></p>
+          <p class="muted">
+            Para el LED integrado de otra tarjeta, revisa el pin y el valor de encendido en
+            <a href="../1/primer-programa.html">Tu primer programa</a>.
+          </p>
           <ol class="steps">
             <li>
               <h3>Cuenta tres</h3>
               <p>
-                Descarga el proyecto al final de la página y ábrelo con <strong>Archivo → Abrir</strong>. En
-                <strong>Control</strong> ubica «repetir 3 veces» dentro de «por siempre».
+                Debajo de «al iniciar», encaja «por siempre» de Control. Dentro, pon «repetir 3 veces» de la misma
+                categoría.
               </p>
+              <figure class="program">
+                <figcaption>Dentro de por siempre hay un repetir 3 veces vacío.</figcaption>
+                <img
+                  src="../img/2-1-esperar-y-repetir-arduino-uno-paso-1.png"
+                  alt="Dentro de por siempre hay un repetir 3 veces vacío."
+                  width="233"
+                  height="281"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Marca el ritmo</h3>
+              <h3>Enciende y espera</h3>
               <p>
-                Dentro de «repetir 3 veces», los dos bloques «esperar 0.2 segundos» de <strong>Control</strong> separan
-                el encendido y apagado del pin
-                <span
-                  data-uno="D13"
-                  data-r4="D13"
-                  data-nano="D13"
-                  data-giga="GREEN / LED RGB"
-                  data-firebeetle="D9 / LED integrado · GPIO2"
-                  data-xiao="USER_LED · GPIO21"
-                  data-teensy40="13"
-                  data-teensy41="13"
-                  >D13</span
-                >.
+                Dentro de «repetir 3 veces», pon «escribir pin digital D13 valor 1» de Pines de la tarjeta. Debajo añade
+                «esperar 0.2 segundos» de Control.
               </p>
+              <figure class="program">
+                <figcaption>El repetir 3 veces enciende D13 y espera 0.2 segundos.</figcaption>
+                <img
+                  src="../img/2-1-esperar-y-repetir-arduino-uno-paso-2.png"
+                  alt="El repetir 3 veces enciende D13 y espera 0.2 segundos."
+                  width="374"
+                  height="353"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Apaga y espera</h3>
+              <p>
+                Dentro de «repetir 3 veces», debajo de la espera, pon «escribir pin digital D13 valor 0» de Pines de la
+                tarjeta. Debajo añade otro «esperar 0.2 segundos» de Control.
+              </p>
+              <figure class="program">
+                <figcaption>El repetir 3 veces alterna D13 entre 1 y 0 con dos esperas de 0.2 segundos.</figcaption>
+                <img
+                  src="../img/2-1-esperar-y-repetir-arduino-uno-paso-3.png"
+                  alt="El repetir 3 veces alterna D13 entre 1 y 0 con dos esperas de 0.2 segundos."
+                  width="374"
+                  height="449"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
               <h3>Separa los grupos</h3>
+              <p>Pon «esperar 1 segundos» de Control debajo de «repetir 3 veces», todavía dentro de «por siempre».</p>
+              <figure class="program">
+                <figcaption>Por siempre repite tres parpadeos y después espera 1 segundo.</figcaption>
+                <img
+                  src="../img/2-1-esperar-y-repetir-arduino-uno-paso-4.png"
+                  alt="Por siempre repite tres parpadeos y después espera 1 segundo."
+                  width="374"
+                  height="497"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Carga y prueba</h3>
               <p>
-                La espera de 1 segundo va debajo de «repetir 3 veces», todavía dentro de «por siempre». Pulsa
-                <strong>Cargar</strong>. Si aparece una lista de puertos, elige el de tu tarjeta.
+                Conecta la tarjeta por USB y pulsa <strong>Cargar</strong>. Cuenta tres parpadeos rápidos y fíjate en la
+                pausa que los separa del siguiente grupo.
               </p>
+              <figure class="program">
+                <figcaption>
+                  Por siempre contiene repetir tres veces el encendido y apagado del LED y luego esperar un segundo.
+                </figcaption>
+                <img
+                  src="../img/2-1-esperar-y-repetir-arduino-uno.png"
+                  alt="Por siempre contiene repetir tres veces el encendido y apagado del LED y luego esperar un segundo."
+                  width="374"
+                  height="497"
+                  hidden
+                />
+              </figure>
             </li>
           </ol>
+          <p>¿Prefieres no armarlo? <a href="#descargar-proyecto">Descarga el proyecto terminado</a></p>
         </section>
         <section>
           <h2>Pruébalo</h2>

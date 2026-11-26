@@ -314,51 +314,87 @@
         </section>
         <section>
           <h2>Pasos</h2>
-          <p><span class="muted">La imagen muestra el programa de la Arduino UNO R3.</span></p>
-          <figure class="program">
-            <figcaption>
-              Por siempre hace que el servo del pin D9 vaya a 0, 90 y 180 grados, con esperas de 500 ms.
-            </figcaption>
-            <img
-              src="../img/4-1-servo-arduino-uno.png"
-              alt="Por siempre hace que el servo del pin D9 vaya a 0, 90 y 180 grados, con esperas de 500 ms."
-              width="341"
-              height="465"
-              hidden
-            />
-          </figure>
+          <p><span class="muted">Las imágenes muestran el programa de la Arduino UNO R3.</span></p>
+          <p class="muted">Para otra tarjeta, usa los pines de su tabla de conexiones.</p>
           <ol class="steps">
             <li>
               <h3>Conecta el servo</h3>
               <p>Sigue la tabla con el USB y la fuente apagados. Deja el brazo del servo libre para que pueda girar.</p>
             </li>
             <li>
-              <h3>Elige tres ángulos</h3>
+              <h3>Empieza en 0 grados</h3>
               <p>
-                Descarga el proyecto al final de la página y ábrelo con <strong>Archivo → Abrir</strong>. En
-                <strong>Servos</strong>, ubica «servo en pin
-                <span
-                  data-uno="D9"
-                  data-r4="D9"
-                  data-nano="D9"
-                  data-giga="D9"
-                  data-firebeetle="D2 · GPIO25"
-                  data-xiao="D3 / A3 · GPIO4"
-                  data-teensy40="9"
-                  data-teensy41="9"
-                  >D9</span
-                >
-                a … grados» y revisa las tres posiciones.
+                Debajo de «al iniciar», encaja «por siempre» de Control. Dentro pon «servo en pin D9 a 0 grados» de
+                Servos y debajo «esperar 500 ms» de Tiempo.
               </p>
+              <figure class="program">
+                <figcaption>Dentro de por siempre, el servo de D9 va a 0 grados y espera 500 ms.</figcaption>
+                <img
+                  src="../img/4-1-servo-arduino-uno-paso-2.png"
+                  alt="Dentro de por siempre, el servo de D9 va a 0 grados y espera 500 ms."
+                  width="341"
+                  height="273"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Dale tiempo</h3>
+              <h3>Gira a 90 grados</h3>
               <p>
-                Entre movimientos hay un bloque «esperar 500 ms» de <strong>Tiempo</strong>. Pulsa
-                <strong>Cargar</strong>. Si aparece una lista de puertos, elige el de tu tarjeta.
+                Debajo de la espera, dentro de «por siempre», pon «servo en pin D9 a 90 grados» de Servos y otro
+                «esperar 500 ms» de Tiempo.
               </p>
+              <figure class="program">
+                <figcaption>El servo de D9 pasa por 0 y 90 grados y se queda 500 ms en cada posición.</figcaption>
+                <img
+                  src="../img/4-1-servo-arduino-uno-paso-3.png"
+                  alt="El servo de D9 pasa por 0 y 90 grados y se queda 500 ms en cada posición."
+                  width="341"
+                  height="369"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Llega a 180 grados</h3>
+              <p>
+                Debajo de la segunda espera, dentro de «por siempre», pon «servo en pin D9 a 180 grados» de Servos y
+                otro «esperar 500 ms» de Tiempo.
+              </p>
+              <figure class="program">
+                <figcaption>
+                  Por siempre, el servo de D9 va a 0, 90 y 180 grados con una espera de 500 ms en cada posición.
+                </figcaption>
+                <img
+                  src="../img/4-1-servo-arduino-uno-paso-4.png"
+                  alt="Por siempre, el servo de D9 va a 0, 90 y 180 grados con una espera de 500 ms en cada posición."
+                  width="341"
+                  height="465"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Carga y prueba</h3>
+              <p>
+                Conecta la tarjeta por USB y pulsa <strong>Cargar</strong>. Observa las tres posiciones del brazo del
+                servo.
+              </p>
+              <figure class="program">
+                <figcaption>
+                  Por siempre hace que el servo del pin D9 vaya a 0, 90 y 180 grados, con esperas de 500 ms.
+                </figcaption>
+                <img
+                  src="../img/4-1-servo-arduino-uno.png"
+                  alt="Por siempre hace que el servo del pin D9 vaya a 0, 90 y 180 grados, con esperas de 500 ms."
+                  width="341"
+                  height="465"
+                  hidden
+                />
+              </figure>
             </li>
           </ol>
+          <p>¿Prefieres no armarlo? <a href="#descargar-proyecto">Descarga el proyecto terminado</a></p>
         </section>
         <section>
           <h2>Pruébalo</h2>

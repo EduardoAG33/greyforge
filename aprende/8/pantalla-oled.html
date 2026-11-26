@@ -339,63 +339,70 @@
         </section>
         <section>
           <h2>Pasos</h2>
-          <p><span class="muted">La imagen muestra el programa de la Arduino UNO R3.</span></p>
-          <figure class="program">
-            <figcaption>
-              Al iniciar configura la OLED en SDA A4 y SCL A5 con dirección 0x3C y muestra Hola, GreyForge en la fila
-              uno.
-            </figcaption>
-            <img
-              src="../img/8-2-pantalla-oled-arduino-uno.png"
-              alt="Al iniciar configura la OLED en SDA A4 y SCL A5 con dirección 0x3C y muestra Hola, GreyForge en la fila uno."
-              width="961"
-              height="196"
-              hidden
-            />
-          </figure>
+          <p><span class="muted">Las imágenes muestran el programa de la Arduino UNO R3.</span></p>
+          <p class="muted">Para otra tarjeta, usa los pines de su tabla de conexiones.</p>
           <ol class="steps">
             <li>
               <h3>Conecta la pantalla</h3>
               <p>Con todo apagado, sigue la tabla para un módulo SSD1306 de 128 × 64 que funcione con 3.3 V.</p>
             </li>
             <li>
-              <h3>Configúrala</h3>
+              <h3>Configura la pantalla</h3>
               <p>
-                Descarga el proyecto al final de la página y ábrelo con <strong>Archivo → Abrir</strong>. En
-                <strong>Pantalla OLED</strong>, ubica «configurar pantalla OLED … dirección … SDA
-                <span
-                  data-uno="A4"
-                  data-r4="A4"
-                  data-nano="A4"
-                  data-giga="D20"
-                  data-firebeetle="SDA · GPIO21"
-                  data-xiao="D4 / A4 · GPIO5"
-                  data-teensy40="18 / A4"
-                  data-teensy41="18 / A4"
-                  >A4</span
-                >
-                SCL
-                <span
-                  data-uno="A5"
-                  data-r4="A5"
-                  data-nano="A5"
-                  data-giga="D21"
-                  data-firebeetle="SCL · GPIO22"
-                  data-xiao="D5 / A5 · GPIO6"
-                  data-teensy40="19 / A5"
-                  data-teensy41="19 / A5"
-                  >A5</span
-                >». El ejemplo usa SSD1306, 128 × 64 y 0x3C.
+                Debajo de «al iniciar», pon «configurar pantalla OLED … dirección … SDA … SCL …» de Pantalla OLED. Elige
+                SSD1306, 128×64, dirección 0x3C, SDA A4 y SCL A5.
               </p>
+              <figure class="program">
+                <figcaption>
+                  Al iniciar, se configura la OLED SSD1306 de 128×64 en la dirección 0x3C con SDA A4 y SCL A5.
+                </figcaption>
+                <img
+                  src="../img/8-2-pantalla-oled-arduino-uno-paso-2.png"
+                  alt="Al iniciar, se configura la OLED SSD1306 de 128×64 en la dirección 0x3C con SDA A4 y SCL A5."
+                  width="961"
+                  height="148"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Escribe en la fila 1</h3>
+              <h3>Escribe en la primera fila</h3>
+              <p>Debajo de la configuración, coloca «OLED fila 1 mostrar Hola, GreyForge» de Pantalla OLED.</p>
+              <figure class="program">
+                <figcaption>
+                  Al iniciar, se configura la pantalla OLED y se escribe Hola, GreyForge en la fila 1.
+                </figcaption>
+                <img
+                  src="../img/8-2-pantalla-oled-arduino-uno-paso-3.png"
+                  alt="Al iniciar, se configura la pantalla OLED y se escribe Hola, GreyForge en la fila 1."
+                  width="961"
+                  height="196"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Carga y prueba</h3>
               <p>
-                «OLED fila 1 mostrar Hola, GreyForge» va debajo del bloque de configuración. Pulsa
-                <strong>Cargar</strong>. Si aparece una lista de puertos, elige el de tu tarjeta.
+                Conecta la tarjeta por USB y pulsa <strong>Cargar</strong>. Comprueba que «Hola, GreyForge» aparece en
+                la primera fila.
               </p>
+              <figure class="program">
+                <figcaption>
+                  Al iniciar configura la OLED en SDA A4 y SCL A5 con dirección 0x3C y muestra Hola, GreyForge en la
+                  fila uno.
+                </figcaption>
+                <img
+                  src="../img/8-2-pantalla-oled-arduino-uno.png"
+                  alt="Al iniciar configura la OLED en SDA A4 y SCL A5 con dirección 0x3C y muestra Hola, GreyForge en la fila uno."
+                  width="961"
+                  height="196"
+                  hidden
+                />
+              </figure>
             </li>
           </ol>
+          <p>¿Prefieres no armarlo? <a href="#descargar-proyecto">Descarga el proyecto terminado</a></p>
         </section>
         <section>
           <h2>Pruébalo</h2>

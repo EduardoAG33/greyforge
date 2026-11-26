@@ -306,88 +306,101 @@
         </section>
         <section>
           <h2>Pasos</h2>
-          <p><span class="muted">La imagen muestra el programa de la Arduino UNO R3.</span></p>
-          <figure class="program">
-            <figcaption>
-              Inicializa ocho LEDs, ajusta el brillo y pinta un arcoíris del LED 0 al 7. Por siempre gira los colores y
-              espera 0.2 segundos.
-            </figcaption>
-            <img
-              src="../img/8-1-tira-rgb-arduino-uno.png"
-              alt="Inicializa ocho LEDs, ajusta el brillo y pinta un arcoíris del LED 0 al 7. Por siempre gira los colores y espera 0.2 segundos."
-              width="420"
-              height="417"
-              hidden
-            />
-          </figure>
+          <p><span class="muted">Las imágenes muestran el programa de la Arduino UNO R3.</span></p>
+          <p class="muted">Para otra tarjeta, usa los pines de su tabla de conexiones.</p>
           <ol class="steps">
             <li>
               <h3>Encuentra la entrada de datos</h3>
               <p>Apaga el USB y la fuente de 5 V. Conecta DIN, el lado de entrada de la tira, según la tabla.</p>
             </li>
             <li>
-              <h3>Dibuja un arcoíris</h3>
-              <p>
-                Descarga el proyecto al final de la página y ábrelo con <strong>Archivo → Abrir</strong>. En
-                <strong>Luz RGB</strong>, ubica «inicializar luz RGB en pin
-                <span
-                  data-uno="D5"
-                  data-r4="D5"
-                  data-nano="D5"
-                  data-giga="D5"
-                  data-firebeetle="D3 · GPIO26"
-                  data-xiao="D0 / A0 · GPIO1"
-                  data-teensy40="5"
-                  data-teensy41="5"
-                  >D5</span
-                >
-                con 8 LEDs», «luz RGB pin
-                <span
-                  data-uno="D5"
-                  data-r4="D5"
-                  data-nano="D5"
-                  data-giga="D5"
-                  data-firebeetle="D3 · GPIO26"
-                  data-xiao="D0 / A0 · GPIO1"
-                  data-teensy40="5"
-                  data-teensy41="5"
-                  >D5</span
-                >
-                brillo 40» y «luz RGB pin
-                <span
-                  data-uno="D5"
-                  data-r4="D5"
-                  data-nano="D5"
-                  data-giga="D5"
-                  data-firebeetle="D3 · GPIO26"
-                  data-xiao="D0 / A0 · GPIO1"
-                  data-teensy40="5"
-                  data-teensy41="5"
-                  >D5</span
-                >
-                LEDs 0 a 7 arcoíris».
-              </p>
+              <h3>Inicializa la tira</h3>
+              <p>Debajo de «al iniciar», pon «inicializar luz RGB en pin D5 con 8 LEDs» de Luz RGB.</p>
+              <figure class="program">
+                <figcaption>Al iniciar, se inicializan 8 LEDs de la tira del pin D5.</figcaption>
+                <img
+                  src="../img/8-1-tira-rgb-arduino-uno-paso-2.png"
+                  alt="Al iniciar, se inicializan 8 LEDs de la tira del pin D5."
+                  width="416"
+                  height="145"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Mueve los colores</h3>
+              <h3>Dibuja un arcoíris</h3>
               <p>
-                Dentro de «por siempre», «luz RGB pin
-                <span
-                  data-uno="D5"
-                  data-r4="D5"
-                  data-nano="D5"
-                  data-giga="D5"
-                  data-firebeetle="D3 · GPIO26"
-                  data-xiao="D0 / A0 · GPIO1"
-                  data-teensy40="5"
-                  data-teensy41="5"
-                  >D5</span
-                >
-                girar 1» desplaza el patrón un lugar. Pulsa <strong>Cargar</strong>. Si aparece una lista de puertos,
-                elige el de tu tarjeta.
+                Debajo de la inicialización, pon «luz RGB pin D5 brillo 40» de Luz RGB. A continuación encaja «luz RGB
+                pin D5 LEDs 0 a 7 arcoíris» de la misma categoría.
               </p>
+              <figure class="program">
+                <figcaption>
+                  La tira en D5 se inicializa, queda con brillo 40 y muestra un arcoíris en los LEDs 0 a 7.
+                </figcaption>
+                <img
+                  src="../img/8-1-tira-rgb-arduino-uno-paso-3.png"
+                  alt="La tira en D5 se inicializa, queda con brillo 40 y muestra un arcoíris en los LEDs 0 a 7."
+                  width="420"
+                  height="241"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Prepara el movimiento continuo</h3>
+              <p>Debajo del arcoíris, encaja «por siempre» de Control.</p>
+              <figure class="program">
+                <figcaption>Al iniciar se dibuja el arcoíris y debajo queda un por siempre vacío.</figcaption>
+                <img
+                  src="../img/8-1-tira-rgb-arduino-uno-paso-4.png"
+                  alt="Al iniciar se dibuja el arcoíris y debajo queda un por siempre vacío."
+                  width="420"
+                  height="345"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Desplaza los colores</h3>
+              <p>
+                Dentro de «por siempre», pon «luz RGB pin D5 girar 1» de Luz RGB. Debajo pon «esperar 0.2 segundos» de
+                Control.
+              </p>
+              <figure class="program">
+                <figcaption>
+                  El arcoíris del pin D5 gira un LED en cada vuelta, con una espera de 0.2 segundos.
+                </figcaption>
+                <img
+                  src="../img/8-1-tira-rgb-arduino-uno-paso-5.png"
+                  alt="El arcoíris del pin D5 gira un LED en cada vuelta, con una espera de 0.2 segundos."
+                  width="420"
+                  height="417"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Carga y prueba</h3>
+              <p>
+                Conecta la tarjeta por USB y pulsa <strong>Cargar</strong>. Comprueba que el arcoíris se desplaza por la
+                tira.
+              </p>
+              <figure class="program">
+                <figcaption>
+                  Inicializa ocho LEDs, ajusta el brillo y pinta un arcoíris del LED 0 al 7. Por siempre gira los
+                  colores y espera 0.2 segundos.
+                </figcaption>
+                <img
+                  src="../img/8-1-tira-rgb-arduino-uno.png"
+                  alt="Inicializa ocho LEDs, ajusta el brillo y pinta un arcoíris del LED 0 al 7. Por siempre gira los colores y espera 0.2 segundos."
+                  width="420"
+                  height="417"
+                  hidden
+                />
+              </figure>
             </li>
           </ol>
+          <p>¿Prefieres no armarlo? <a href="#descargar-proyecto">Descarga el proyecto terminado</a></p>
         </section>
         <section>
           <h2>Pruébalo</h2>

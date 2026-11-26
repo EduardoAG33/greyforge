@@ -270,42 +270,96 @@
         </section>
         <section>
           <h2>Pasos</h2>
-          <p><span class="muted">La imagen muestra el programa de la Arduino UNO R3.</span></p>
-          <figure class="program">
-            <figcaption>
-              Por siempre evalúa si 3 es menor que 5 y escribe Es menor o No es menor, con una espera de un segundo.
-            </figcaption>
-            <img
-              src="../img/2-2-decisiones-arduino-uno.png"
-              alt="Por siempre evalúa si 3 es menor que 5 y escribe Es menor o No es menor, con una espera de un segundo."
-              width="393"
-              height="457"
-              hidden
-            />
-          </figure>
+          <p><span class="muted">Las imágenes muestran el programa de la Arduino UNO R3.</span></p>
           <ol class="steps">
             <li>
-              <h3>Revisa la pregunta</h3>
+              <h3>Haz la pregunta</h3>
               <p>
-                Descarga el proyecto al final de la página y ábrelo con <strong>Archivo → Abrir</strong>. El bloque «3
-                &lt; 5» de <strong>Operadores</strong> encaja en «si … entonces» de <strong>Control</strong>.
+                Debajo de «al iniciar», encaja «por siempre» y dentro pon «si … entonces», ambos de Control. En el hueco
+                de la condición, encaja «… &lt; …» de Operadores, con 3 a la izquierda y 5 a la derecha.
               </p>
+              <figure class="program">
+                <figcaption>Por siempre contiene si 3 &lt; 5 entonces, con el cuerpo vacío.</figcaption>
+                <img
+                  src="../img/2-2-decisiones-arduino-uno-paso-1.png"
+                  alt="Por siempre contiene si 3 &lt; 5 entonces, con el cuerpo vacío."
+                  width="345"
+                  height="289"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Conoce las dos respuestas</h3>
+              <h3>Escribe la respuesta del si</h3>
               <p>
-                Pulsa <strong>+</strong> en un «si» simple para agregar «si no». En el ejemplo ya está agregado y puedes
-                ver una impresión en cada camino.
+                Dentro de «si … entonces», pon «imprimir … con salto de línea» de Serie y escribe «Es menor» en su
+                entrada.
               </p>
+              <figure class="program">
+                <figcaption>Si 3 es menor que 5, se imprime Es menor.</figcaption>
+                <img
+                  src="../img/2-2-decisiones-arduino-uno-paso-2.png"
+                  alt="Si 3 es menor que 5, se imprime Es menor."
+                  width="367"
+                  height="313"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Prueba los botones</h3>
+              <h3>Añade la respuesta del si no</h3>
               <p>
-                Con «si no» puesto, otro <strong>+</strong> agrega «si no, si». El <strong>−</strong> de esa fila la
-                quita y deja su contenido suelto en el área de bloques.
+                Pulsa + en «si … entonces» para añadir «si no». Dentro de esa rama, pon otro «imprimir … con salto de
+                línea» de Serie y escribe «No es menor».
               </p>
+              <figure class="program">
+                <figcaption>Si 3 es menor que 5 se imprime Es menor, y en si no se imprime No es menor.</figcaption>
+                <img
+                  src="../img/2-2-decisiones-arduino-uno-paso-3.png"
+                  alt="Si 3 es menor que 5 se imprime Es menor, y en si no se imprime No es menor."
+                  width="393"
+                  height="409"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Deja tiempo para leer</h3>
+              <p>Coloca «esperar 1 segundos» de Control debajo de todo el «si», dentro de «por siempre».</p>
+              <figure class="program">
+                <figcaption>
+                  Las dos ramas del si van seguidas de una espera de 1 segundo dentro de por siempre.
+                </figcaption>
+                <img
+                  src="../img/2-2-decisiones-arduino-uno-paso-4.png"
+                  alt="Las dos ramas del si van seguidas de una espera de 1 segundo dentro de por siempre."
+                  width="393"
+                  height="457"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Carga y prueba</h3>
+              <p>
+                Conecta la tarjeta por USB y pulsa <strong>Cargar</strong>. Abre <strong>Monitor</strong> y busca «Es
+                menor».
+              </p>
+              <figure class="program">
+                <figcaption>
+                  Por siempre evalúa si 3 es menor que 5 y escribe Es menor o No es menor, con una espera de un segundo.
+                </figcaption>
+                <img
+                  src="../img/2-2-decisiones-arduino-uno.png"
+                  alt="Por siempre evalúa si 3 es menor que 5 y escribe Es menor o No es menor, con una espera de un segundo."
+                  width="393"
+                  height="457"
+                  hidden
+                />
+              </figure>
             </li>
           </ol>
+          <p>¿Prefieres no armarlo? <a href="#descargar-proyecto">Descarga el proyecto terminado</a></p>
         </section>
         <section>
           <h2>Pruébalo</h2>

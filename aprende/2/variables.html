@@ -267,41 +267,98 @@
         </section>
         <section>
           <h2>Pasos</h2>
-          <p><span class="muted">La imagen muestra el programa de la Arduino UNO R3.</span></p>
-          <figure class="program">
-            <figcaption>
-              Al iniciar fija contador a cero. Por siempre guarda contador más uno, imprime el valor y espera un
-              segundo.
-            </figcaption>
-            <img
-              src="../img/2-3-variables-arduino-uno.png"
-              alt="Al iniciar fija contador a cero. Por siempre guarda contador más uno, imprime el valor y espera un segundo."
-              width="498"
-              height="383"
-              hidden
-            />
-          </figure>
+          <p><span class="muted">Las imágenes muestran el programa de la Arduino UNO R3.</span></p>
           <ol class="steps">
             <li>
-              <h3>Encuentra la variable</h3>
+              <h3>Crea el contador</h3>
               <p>
-                Descarga el proyecto al final de la página y ábrelo con <strong>Archivo → Abrir</strong>. En
-                <strong>Variables</strong>, «Crear variable» sirve para nombrar un valor que puedes cambiar. El proyecto
-                ya tiene una de tipo Número llamada contador.
+                En Variables, usa «Crear variable» para crear «contador» de tipo Número. Encaja «fijar contador a 0» de
+                Variables debajo de «al iniciar».
               </p>
+              <figure class="program">
+                <figcaption>Al iniciar, contador se fija a 0.</figcaption>
+                <img
+                  src="../img/2-3-variables-arduino-uno-paso-1.png"
+                  alt="Al iniciar, contador se fija a 0."
+                  width="255"
+                  height="145"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Parte de cero</h3>
-              <p>«Fijar contador a 0» va debajo de «al iniciar», antes de «por siempre».</p>
+              <h3>Suma uno en cada vuelta</h3>
+              <p>
+                Debajo del primer «fijar», encaja «por siempre» de Control y, dentro, otro «fijar contador a …» de
+                Variables. En su entrada pon «… + …» de Operadores, con «valor de contador» de Variables a la izquierda
+                y 1 a la derecha.
+              </p>
+              <figure class="program">
+                <figcaption>
+                  Al iniciar se fija contador a 0 y, dentro de por siempre, a valor de contador + 1.
+                </figcaption>
+                <img
+                  src="../img/2-3-variables-arduino-uno-paso-2.png"
+                  alt="Al iniciar se fija contador a 0 y, dentro de por siempre, a valor de contador + 1."
+                  width="498"
+                  height="284"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Aumenta y muestra</h3>
+              <h3>Muestra el total</h3>
               <p>
-                Dentro de «por siempre», fija contador a «valor de contador + 1» e imprímelo con «imprimir … con salto
-                de línea». Pulsa <strong>Cargar</strong>. Si aparece una lista de puertos, elige el de tu tarjeta.
+                Debajo del incremento, dentro de «por siempre», pon «imprimir … con salto de línea» de Serie. Encaja
+                «valor de contador» de Variables en el hueco de la impresión.
               </p>
+              <figure class="program">
+                <figcaption>Por siempre suma 1 a contador e imprime el valor de contador.</figcaption>
+                <img
+                  src="../img/2-3-variables-arduino-uno-paso-3.png"
+                  alt="Por siempre suma 1 a contador e imprime el valor de contador."
+                  width="498"
+                  height="335"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Marca el ritmo</h3>
+              <p>Debajo de la impresión, añade «esperar 1 segundos» de Control dentro de «por siempre».</p>
+              <figure class="program">
+                <figcaption>Por siempre incrementa contador, lo imprime y espera 1 segundo.</figcaption>
+                <img
+                  src="../img/2-3-variables-arduino-uno-paso-4.png"
+                  alt="Por siempre incrementa contador, lo imprime y espera 1 segundo."
+                  width="498"
+                  height="383"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Carga y prueba</h3>
+              <p>
+                Conecta la tarjeta por USB y pulsa <strong>Cargar</strong>. Abre <strong>Monitor</strong> y comprueba
+                que el contador aumenta de uno en uno.
+              </p>
+              <figure class="program">
+                <figcaption>
+                  Al iniciar fija contador a cero. Por siempre guarda contador más uno, imprime el valor y espera un
+                  segundo.
+                </figcaption>
+                <img
+                  src="../img/2-3-variables-arduino-uno.png"
+                  alt="Al iniciar fija contador a cero. Por siempre guarda contador más uno, imprime el valor y espera un segundo."
+                  width="498"
+                  height="383"
+                  hidden
+                />
+              </figure>
             </li>
           </ol>
+          <p>¿Prefieres no armarlo? <a href="#descargar-proyecto">Descarga el proyecto terminado</a></p>
         </section>
         <section>
           <h2>Pruébalo</h2>

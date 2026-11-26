@@ -272,76 +272,83 @@
         </section>
         <section>
           <h2>Pasos</h2>
-          <p><span class="muted">La imagen muestra el programa de la Arduino UNO R3.</span></p>
-          <figure class="program">
-            <figcaption>
-              Al iniciar, por siempre escribe 1 en el pin D13, espera 500 ms, escribe 0 y espera otros 500 ms.
-            </figcaption>
-            <img
-              src="../img/1-1-primer-programa-arduino-uno.png"
-              alt="Al iniciar, por siempre escribe 1 en el pin D13, espera 500 ms, escribe 0 y espera otros 500 ms."
-              width="358"
-              height="369"
-              hidden
-            />
-          </figure>
+          <p><span class="muted">Las imágenes muestran el programa de la Arduino UNO R3.</span></p>
+          <p class="muted">
+            Usa D13 en UNO, Nano y Teensy, y «D9 / LED integrado · GPIO2» en FireBeetle. En GIGA, elige «RED / LED RGB»
+            y, en XIAO, «USER_LED · GPIO21». En estas dos tarjetas usa 0 para encender y 1 para apagar.
+          </p>
           <ol class="steps">
             <li>
-              <h3>Abre el ejemplo</h3>
-              <p>
-                Descarga el proyecto al final de la página y ábrelo con <strong>Archivo → Abrir</strong>. En
-                <strong>Eventos</strong>, ubica «al iniciar».
-              </p>
+              <h3>Prepara el ciclo</h3>
+              <p>Si te falta «al iniciar», búscalo en Eventos. Encaja debajo «por siempre» de Control.</p>
+              <figure class="program">
+                <figcaption>Al iniciar, con por siempre vacío.</figcaption>
+                <img
+                  src="../img/1-1-primer-programa-arduino-uno-paso-1.png"
+                  alt="Al iniciar, con por siempre vacío."
+                  width="184"
+                  height="201"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Sigue el parpadeo</h3>
+              <h3>Prende el LED</h3>
               <p>
-                Dentro de «por siempre», de <strong>Control</strong>, ubica «escribir pin digital
-                <span
-                  data-uno="D13"
-                  data-r4="D13"
-                  data-nano="D13"
-                  data-giga="GREEN / LED RGB"
-                  data-firebeetle="D9 / LED integrado · GPIO2"
-                  data-xiao="USER_LED · GPIO21"
-                  data-teensy40="13"
-                  data-teensy41="13"
-                  >D13</span
-                >
-                valor
-                <span
-                  data-uno="1"
-                  data-r4="1"
-                  data-nano="1"
-                  data-giga="1"
-                  data-firebeetle="1"
-                  data-xiao="0"
-                  data-teensy40="1"
-                  data-teensy41="1"
-                  >1</span
-                >» de <strong>Pines de la tarjeta</strong>. El segundo bloque de escritura usa
-                <span
-                  data-uno="0"
-                  data-r4="0"
-                  data-nano="0"
-                  data-giga="0"
-                  data-firebeetle="0"
-                  data-xiao="1"
-                  data-teensy40="0"
-                  data-teensy41="0"
-                  >0</span
-                >
-                para apagar la luz.
+                Dentro de «por siempre», pon «escribir pin digital D13 valor 1» de Pines de la tarjeta. Debajo pon
+                «esperar 500 ms» de Tiempo.
               </p>
+              <figure class="program">
+                <figcaption>Dentro de por siempre, el pin D13 recibe 1 y hay una espera de 500 ms.</figcaption>
+                <img
+                  src="../img/1-1-primer-programa-arduino-uno-paso-2.png"
+                  alt="Dentro de por siempre, el pin D13 recibe 1 y hay una espera de 500 ms."
+                  width="358"
+                  height="273"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Carga el programa</h3>
+              <h3>Apaga el LED</h3>
               <p>
-                Los bloques «esperar 500 ms» de <strong>Tiempo</strong> marcan cuánto dura cada estado. Si es tu primera
-                carga, sigue <a href="cargar.html">la lección 1.2</a> y vuelve aquí.
+                Debajo de la espera, aún dentro de «por siempre», pon «escribir pin digital D13 valor 0» de Pines de la
+                tarjeta y otro «esperar 500 ms» de Tiempo.
               </p>
+              <figure class="program">
+                <figcaption>
+                  Por siempre alterna D13 entre 1 y 0, con 500 ms de espera después de cada escritura.
+                </figcaption>
+                <img
+                  src="../img/1-1-primer-programa-arduino-uno-paso-3.png"
+                  alt="Por siempre alterna D13 entre 1 y 0, con 500 ms de espera después de cada escritura."
+                  width="358"
+                  height="369"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Carga y prueba</h3>
+              <p>
+                Conecta la tarjeta por USB y pulsa <strong>Cargar</strong>. Observa el parpadeo del LED integrado. Si es
+                tu primera carga, sigue los pasos de <a href="../1/cargar.html">la lección 1.2</a>.
+              </p>
+              <figure class="program">
+                <figcaption>
+                  Al iniciar, por siempre escribe 1 en el pin D13, espera 500 ms, escribe 0 y espera otros 500 ms.
+                </figcaption>
+                <img
+                  src="../img/1-1-primer-programa-arduino-uno.png"
+                  alt="Al iniciar, por siempre escribe 1 en el pin D13, espera 500 ms, escribe 0 y espera otros 500 ms."
+                  width="358"
+                  height="369"
+                  hidden
+                />
+              </figure>
             </li>
           </ol>
+          <p>¿Prefieres no armarlo? <a href="#descargar-proyecto">Descarga el proyecto terminado</a></p>
         </section>
         <section>
           <h2>Pruébalo</h2>

@@ -270,44 +270,102 @@
         </section>
         <section>
           <h2>Pasos</h2>
-          <p><span class="muted">La imagen muestra el programa de la Arduino UNO R3.</span></p>
-          <figure class="program">
-            <figcaption>
-              La definición de saludar imprime ¡Hola! El programa principal llama a saludar dos veces con una espera
-              entre llamadas.
-            </figcaption>
-            <img
-              src="../img/2-5-mis-bloques-arduino-uno.png"
-              alt="La definición de saludar imprime ¡Hola! El programa principal llama a saludar dos veces con una espera entre llamadas."
-              width="685"
-              height="369"
-              hidden
-            />
-          </figure>
+          <p><span class="muted">Las imágenes muestran el programa de la Arduino UNO R3.</span></p>
           <ol class="steps">
             <li>
-              <h3>Crea una tarea</h3>
+              <h3>Crea tu bloque</h3>
               <p>
-                En un proyecto nuevo para tu tarjeta, abre <strong>Mis Bloques → Crear un bloque</strong>. Pon saludar
-                en «Nombre del bloque», deja «Devuelve» en «nada» y pulsa «Crear bloque».
+                En Mis Bloques, pulsa «Crear un bloque» y escribe «saludar» en «Nombre del bloque». Deja «Devuelve» en
+                «nada» y pulsa «Crear bloque» para que aparezca «definir saludar devuelve nada» junto a «al iniciar».
               </p>
+              <figure class="program">
+                <figcaption>Al iniciar y definir saludar devuelve nada aparecen como dos bloques separados.</figcaption>
+                <img
+                  src="../img/2-5-mis-bloques-arduino-uno-paso-1.png"
+                  alt="Al iniciar y definir saludar devuelve nada aparecen como dos bloques separados."
+                  width="685"
+                  height="100"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Define qué hace</h3>
+              <h3>Define el saludo</h3>
               <p>
-                Debajo de la definición de saludar, agrega «imprimir ¡Hola! con salto de línea» de
-                <strong>Serie</strong>. Descarga el proyecto al final de la página y ábrelo con
-                <strong>Archivo → Abrir</strong>. Ahí puedes ver la definición junto al programa terminado.
+                Debajo de «definir saludar devuelve nada», encaja «imprimir … con salto de línea» de Serie y escribe
+                «¡Hola!».
               </p>
+              <figure class="program">
+                <figcaption>La definición de saludar contiene una impresión de ¡Hola!</figcaption>
+                <img
+                  src="../img/2-5-mis-bloques-arduino-uno-paso-2.png"
+                  alt="La definición de saludar contiene una impresión de ¡Hola!"
+                  width="685"
+                  height="148"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Llama tu bloque dos veces</h3>
+              <h3>Llama a saludar</h3>
               <p>
-                En <strong>Mis Bloques</strong>, busca el bloque saludar y úsalo dos veces dentro de «por siempre». Las
-                esperas se quedan junto a las llamadas.
+                Debajo de «al iniciar», pon «por siempre» de Control y, dentro, «llamar saludar» de Mis Bloques. Debajo
+                de la llamada añade «esperar 0.5 segundos» de Control.
               </p>
+              <figure class="program">
+                <figcaption>
+                  Por siempre llama a saludar y espera 0.5 segundos. A un lado está la definición.
+                </figcaption>
+                <img
+                  src="../img/2-5-mis-bloques-arduino-uno-paso-3.png"
+                  alt="Por siempre llama a saludar y espera 0.5 segundos. A un lado está la definición."
+                  width="685"
+                  height="273"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Repite el saludo</h3>
+              <p>
+                Debajo de la espera, dentro de «por siempre», añade otro «llamar saludar» de Mis Bloques. Después pon
+                «esperar 2 segundos» de Control.
+              </p>
+              <figure class="program">
+                <figcaption>
+                  Por siempre llama dos veces a saludar, con una espera de 0.5 segundos y otra de 2 segundos.
+                </figcaption>
+                <img
+                  src="../img/2-5-mis-bloques-arduino-uno-paso-4.png"
+                  alt="Por siempre llama dos veces a saludar, con una espera de 0.5 segundos y otra de 2 segundos."
+                  width="685"
+                  height="369"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Carga y prueba</h3>
+              <p>
+                Conecta la tarjeta por USB y pulsa <strong>Cargar</strong>. Abre <strong>Monitor</strong> y comprueba
+                que los saludos llegan de dos en dos.
+              </p>
+              <figure class="program">
+                <figcaption>
+                  La definición de saludar imprime ¡Hola! El programa principal llama a saludar dos veces con una espera
+                  entre llamadas.
+                </figcaption>
+                <img
+                  src="../img/2-5-mis-bloques-arduino-uno.png"
+                  alt="La definición de saludar imprime ¡Hola! El programa principal llama a saludar dos veces con una espera entre llamadas."
+                  width="685"
+                  height="369"
+                  hidden
+                />
+              </figure>
             </li>
           </ol>
+          <p>¿Prefieres no armarlo? <a href="#descargar-proyecto">Descarga el proyecto terminado</a></p>
         </section>
         <section>
           <h2>Pruébalo</h2>

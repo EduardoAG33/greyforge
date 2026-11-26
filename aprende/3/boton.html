@@ -313,17 +313,8 @@
         </section>
         <section>
           <h2>Pasos</h2>
-          <p><span class="muted">La imagen muestra el programa de la Arduino UNO R3.</span></p>
-          <figure class="program">
-            <figcaption>Por siempre imprime si el pin digital D2 está alto y espera 500 ms.</figcaption>
-            <img
-              src="../img/3-1-boton-arduino-uno.png"
-              alt="Por siempre imprime si el pin digital D2 está alto y espera 500 ms."
-              width="509"
-              height="276"
-              hidden
-            />
-          </figure>
+          <p><span class="muted">Las imágenes muestran el programa de la Arduino UNO R3.</span></p>
+          <p class="muted">Para otra tarjeta, usa los pines de su tabla de conexiones.</p>
           <ol class="steps">
             <li>
               <h3>Conecta el pulsador</h3>
@@ -333,32 +324,69 @@
               </p>
             </li>
             <li>
-              <h3>Encuentra la lectura</h3>
-              <p>
-                Descarga el proyecto al final de la página y ábrelo con <strong>Archivo → Abrir</strong>. En
-                <strong>Pines de la tarjeta</strong> está «pin digital
-                <span
-                  data-uno="D2"
-                  data-r4="D2"
-                  data-nano="D2"
-                  data-giga="D2"
-                  data-firebeetle="D2 · GPIO25"
-                  data-xiao="D1 / A1 · GPIO2"
-                  data-teensy40="2"
-                  data-teensy41="2"
-                  >D2</span
-                >
-                está alto».
-              </p>
+              <h3>Prepara el ciclo</h3>
+              <p>Si te falta «al iniciar», búscalo en Eventos. Encaja debajo «por siempre» de Control.</p>
+              <figure class="program">
+                <figcaption>Al iniciar, con por siempre vacío.</figcaption>
+                <img
+                  src="../img/3-1-boton-arduino-uno-paso-2.png"
+                  alt="Al iniciar, con por siempre vacío."
+                  width="184"
+                  height="201"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Muéstrala en el Monitor</h3>
+              <h3>Imprime la lectura</h3>
               <p>
-                Pon la lectura en «imprimir … con salto de línea» de <strong>Serie</strong> y deja la espera de 500 ms.
-                Pulsa <strong>Cargar</strong>. Si aparece una lista de puertos, elige el de tu tarjeta.
+                Dentro de «por siempre», pon «imprimir … con salto de línea» de Serie. En el hueco de la impresión,
+                encaja «pin digital D2 está alto» de Pines de la tarjeta.
               </p>
+              <figure class="program">
+                <figcaption>Por siempre imprime si D2 está alto.</figcaption>
+                <img
+                  src="../img/3-1-boton-arduino-uno-paso-3.png"
+                  alt="Por siempre imprime si D2 está alto."
+                  width="509"
+                  height="228"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Deja una pausa</h3>
+              <p>Debajo de la impresión, dentro de «por siempre», pon «esperar 500 ms» de Tiempo.</p>
+              <figure class="program">
+                <figcaption>Por siempre imprime si D2 está alto y espera 500 ms.</figcaption>
+                <img
+                  src="../img/3-1-boton-arduino-uno-paso-4.png"
+                  alt="Por siempre imprime si D2 está alto y espera 500 ms."
+                  width="509"
+                  height="276"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Carga y prueba</h3>
+              <p>
+                Conecta la tarjeta por USB y pulsa <strong>Cargar</strong>. Abre <strong>Monitor</strong> y compara la
+                lectura al presionar y soltar el botón.
+              </p>
+              <figure class="program">
+                <figcaption>Por siempre imprime si el pin digital D2 está alto y espera 500 ms.</figcaption>
+                <img
+                  src="../img/3-1-boton-arduino-uno.png"
+                  alt="Por siempre imprime si el pin digital D2 está alto y espera 500 ms."
+                  width="509"
+                  height="276"
+                  hidden
+                />
+              </figure>
             </li>
           </ol>
+          <p>¿Prefieres no armarlo? <a href="#descargar-proyecto">Descarga el proyecto terminado</a></p>
         </section>
         <section>
           <h2>Pruébalo</h2>

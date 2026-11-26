@@ -325,73 +325,80 @@
         </section>
         <section>
           <h2>Pasos</h2>
-          <p><span class="muted">La imagen muestra el programa de la Arduino UNO R3.</span></p>
-          <figure class="program">
-            <figcaption>Por siempre imprime la lectura del pin analógico A0 y espera 500 ms.</figcaption>
-            <img
-              src="../img/3-2-potenciometro-arduino-uno.png"
-              alt="Por siempre imprime la lectura del pin analógico A0 y espera 500 ms."
-              width="479"
-              height="276"
-              hidden
-            />
-          </figure>
+          <p><span class="muted">Las imágenes muestran el programa de la Arduino UNO R3.</span></p>
+          <p class="muted">Para otra tarjeta, usa los pines de su tabla de conexiones.</p>
           <ol class="steps">
             <li>
-              <h3>Conecta la perilla</h3>
+              <h3>Conecta el potenciómetro</h3>
               <p>
-                Sin el USB, conecta las patas exteriores a
-                <span
-                  data-uno="5 V"
-                  data-r4="5 V"
-                  data-nano="5 V"
-                  data-giga="3.3 V"
-                  data-firebeetle="3.3 V"
-                  data-xiao="3.3 V"
-                  data-teensy40="3.3 V"
-                  data-teensy41="3.3 V"
-                  >5 V</span
-                >
-                y GND. Lleva la pata central a
-                <span
-                  data-uno="A0"
-                  data-r4="A0"
-                  data-nano="A0"
-                  data-giga="A0"
-                  data-firebeetle="A0 / SENSOR_VP · GPIO36 · solo entrada"
-                  data-xiao="D0 / A0 · GPIO1"
-                  data-teensy40="14 / A0"
-                  data-teensy41="14 / A0"
-                  >A0</span
-                >.
+                Con el USB desconectado, conecta las dos patas exteriores a la alimentación y GND como indica la tabla.
+                Lleva la pata central al pin de entrada.
               </p>
             </li>
             <li>
-              <h3>Encuentra el valor</h3>
-              <p>
-                Descarga el proyecto al final de la página y ábrelo con <strong>Archivo → Abrir</strong>. En
-                <strong>Pines de la tarjeta</strong>, ubica «leer pin analógico
-                <span
-                  data-uno="A0"
-                  data-r4="A0"
-                  data-nano="A0"
-                  data-giga="A0"
-                  data-firebeetle="A0 / SENSOR_VP · GPIO36 · solo entrada"
-                  data-xiao="D0 / A0 · GPIO1"
-                  data-teensy40="14 / A0"
-                  data-teensy41="14 / A0"
-                  >A0</span
-                >».
-              </p>
+              <h3>Prepara el ciclo</h3>
+              <p>Si te falta «al iniciar», búscalo en Eventos. Encaja debajo «por siempre» de Control.</p>
+              <figure class="program">
+                <figcaption>Al iniciar, con por siempre vacío.</figcaption>
+                <img
+                  src="../img/3-2-potenciometro-arduino-uno-paso-2.png"
+                  alt="Al iniciar, con por siempre vacío."
+                  width="184"
+                  height="201"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
               <h3>Imprime la lectura</h3>
               <p>
-                La lectura va en «imprimir … con salto de línea» de <strong>Serie</strong>. Pulsa
-                <strong>Cargar</strong>. Si aparece una lista de puertos, elige el de tu tarjeta.
+                Dentro de «por siempre», pon «imprimir … con salto de línea» de Serie. En el hueco de la impresión,
+                encaja «leer pin analógico A0» de Pines de la tarjeta.
               </p>
+              <figure class="program">
+                <figcaption>Por siempre imprime la lectura analógica de A0.</figcaption>
+                <img
+                  src="../img/3-2-potenciometro-arduino-uno-paso-3.png"
+                  alt="Por siempre imprime la lectura analógica de A0."
+                  width="479"
+                  height="228"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Deja una pausa</h3>
+              <p>Debajo de la impresión, dentro de «por siempre», pon «esperar 500 ms» de Tiempo.</p>
+              <figure class="program">
+                <figcaption>Por siempre imprime la lectura analógica de A0 y espera 500 ms.</figcaption>
+                <img
+                  src="../img/3-2-potenciometro-arduino-uno-paso-4.png"
+                  alt="Por siempre imprime la lectura analógica de A0 y espera 500 ms."
+                  width="479"
+                  height="276"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Carga y prueba</h3>
+              <p>
+                Conecta la tarjeta por USB y pulsa <strong>Cargar</strong>. Abre <strong>Monitor</strong> y gira la
+                perilla para ver cómo cambia la lectura.
+              </p>
+              <figure class="program">
+                <figcaption>Por siempre imprime la lectura del pin analógico A0 y espera 500 ms.</figcaption>
+                <img
+                  src="../img/3-2-potenciometro-arduino-uno.png"
+                  alt="Por siempre imprime la lectura del pin analógico A0 y espera 500 ms."
+                  width="479"
+                  height="276"
+                  hidden
+                />
+              </figure>
             </li>
           </ol>
+          <p>¿Prefieres no armarlo? <a href="#descargar-proyecto">Descarga el proyecto terminado</a></p>
         </section>
         <section>
           <h2>Pruébalo</h2>

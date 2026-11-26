@@ -238,41 +238,77 @@
         </section>
         <section>
           <h2>Pasos</h2>
-          <figure class="program">
-            <figcaption>
-              Por siempre muestra el número 1 en la matriz, espera 500 ms, apaga la matriz y espera otros 500 ms.
-            </figcaption>
-            <img
-              src="../img/6-2-matriz-lego-spike-prime.png"
-              alt="Por siempre muestra el número 1 en la matriz, espera 500 ms, apaga la matriz y espera otros 500 ms."
-              width="280"
-              height="369"
-              hidden
-            />
-          </figure>
+          <p><span class="muted">Las imágenes muestran el programa del SPIKE Prime.</span></p>
           <ol class="steps">
             <li>
-              <h3>Abre el programa</h3>
-              <p>
-                Prepara tu SPIKE Prime siguiendo <a href="../../#lego">SPIKE y EV3</a>. Descarga el proyecto al final de
-                la página y ábrelo con <strong>Archivo → Abrir</strong>.
-              </p>
+              <h3>Prepara el ciclo</h3>
+              <p>Si te falta «al iniciar», búscalo en Eventos. Encaja debajo «por siempre» de Control.</p>
+              <figure class="program">
+                <figcaption>Al iniciar, con por siempre vacío.</figcaption>
+                <img
+                  src="../img/6-2-matriz-lego-spike-prime-paso-1.png"
+                  alt="Al iniciar, con por siempre vacío."
+                  width="184"
+                  height="201"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Enciende la matriz</h3>
+              <h3>Muestra el número</h3>
               <p>
-                En <strong>SPIKE · Hub</strong>, busca «matriz mostrar número 1» y «matriz apagar». Ambos están dentro
-                de «por siempre».
+                Dentro de «por siempre», pon «matriz mostrar número 1» de SPIKE · Hub. Debajo coloca «esperar 500 ms» de
+                Tiempo.
               </p>
+              <figure class="program">
+                <figcaption>La matriz muestra el número 1 y espera 500 ms dentro de por siempre.</figcaption>
+                <img
+                  src="../img/6-2-matriz-lego-spike-prime-paso-2.png"
+                  alt="La matriz muestra el número 1 y espera 500 ms dentro de por siempre."
+                  width="280"
+                  height="273"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Marca el ritmo</h3>
+              <h3>Apaga la matriz</h3>
               <p>
-                El programa espera 500 ms después de mostrar el número y otros 500 ms después de apagarlo. Usa «Conectar
-                hub» y pulsa «Cargar». El programa arranca al terminar.
+                Debajo de la espera, dentro de «por siempre», coloca «matriz apagar» de SPIKE · Hub y luego otro
+                «esperar 500 ms» de Tiempo.
               </p>
+              <figure class="program">
+                <figcaption>La matriz alterna entre mostrar 1 y apagarse, con pausas de 500 ms.</figcaption>
+                <img
+                  src="../img/6-2-matriz-lego-spike-prime-paso-3.png"
+                  alt="La matriz alterna entre mostrar 1 y apagarse, con pausas de 500 ms."
+                  width="280"
+                  height="369"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Carga y prueba</h3>
+              <p>
+                Usa <strong>Conectar hub</strong> y pulsa <strong>Cargar</strong>. Observa cómo aparece y desaparece el
+                1.
+              </p>
+              <figure class="program">
+                <figcaption>
+                  Por siempre muestra el número 1 en la matriz, espera 500 ms, apaga la matriz y espera otros 500 ms.
+                </figcaption>
+                <img
+                  src="../img/6-2-matriz-lego-spike-prime.png"
+                  alt="Por siempre muestra el número 1 en la matriz, espera 500 ms, apaga la matriz y espera otros 500 ms."
+                  width="280"
+                  height="369"
+                  hidden
+                />
+              </figure>
             </li>
           </ol>
+          <p>¿Prefieres no armarlo? <a href="#descargar-proyecto">Descarga el proyecto terminado</a></p>
         </section>
         <section>
           <h2>Pruébalo</h2>

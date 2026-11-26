@@ -477,20 +477,8 @@
         </section>
         <section>
           <h2>Pasos</h2>
-          <p><span class="muted">La imagen muestra el programa de la Arduino UNO R3.</span></p>
-          <figure class="program">
-            <figcaption>
-              Configura dos motores. Por siempre guarda la distancia: si es menor a 20 cm, frena y gira; si es menor a
-              400, avanza; en otro caso, frena.
-            </figcaption>
-            <img
-              src="../img/5-2-evitar-obstaculos-arduino-uno.png"
-              alt="Configura dos motores. Por siempre guarda la distancia: si es menor a 20 cm, frena y gira; si es menor a 400, avanza; en otro caso, frena."
-              width="660"
-              height="921"
-              hidden
-            />
-          </figure>
+          <p><span class="muted">Las imágenes muestran el programa de la Arduino UNO R3.</span></p>
+          <p class="muted">Para otra tarjeta, usa los pines de su tabla de conexiones.</p>
           <ol class="steps">
             <li>
               <h3>Monta el sensor al frente</h3>
@@ -500,43 +488,108 @@
               </p>
             </li>
             <li>
-              <h3>Guarda una lectura</h3>
+              <h3>Configura B y C</h3>
               <p>
-                Descarga el proyecto al final de la página y ábrelo con <strong>Archivo → Abrir</strong>. En
-                <strong>Ultrasónico</strong>, usa «distancia ultrasónica en cm TRIG
-                <span
-                  data-uno="D2"
-                  data-r4="D2"
-                  data-nano="D2"
-                  data-giga="D2"
-                  data-firebeetle="D2 · GPIO25"
-                  data-xiao="D4 / A4 · GPIO5"
-                  data-teensy40="2"
-                  data-teensy41="2"
-                  >D2</span
-                >
-                ECHO
-                <span
-                  data-uno="D4"
-                  data-r4="D4"
-                  data-nano="D4"
-                  data-giga="D4"
-                  data-firebeetle="A1 / SENSOR_VN · GPIO39 · solo entrada"
-                  data-xiao="D5 / A5 · GPIO6"
-                  data-teensy40="4"
-                  data-teensy41="4"
-                  >D4</span
-                >». Usa «fijar distancia a …» de <strong>Variables</strong> para guardar la medida una vez por vuelta.
+                Debajo de «al iniciar», coloca dos «configurar motor … PWM … IN1 … IN2 …» de Motores. Elige B con PWM
+                D5, IN1 D6 e IN2 D7, y debajo C con PWM D10, IN1 D11 e IN2 D12.
               </p>
+              <figure class="program">
+                <figcaption>Al iniciar, se configuran el motor B con D5, D6 y D7 y el C con D10, D11 y D12.</figcaption>
+                <img
+                  src="../img/5-2-evitar-obstaculos-arduino-uno-paso-2.png"
+                  alt="Al iniciar, se configuran el motor B con D5, D6 y D7 y el C con D10, D11 y D12."
+                  width="542"
+                  height="199"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Elige qué hacer</h3>
+              <h3>Guarda la distancia</h3>
               <p>
-                Si la distancia es menor a 20, frena y gira. En «si no, si», avanza cuando la distancia es menor a 400.
-                En «si no», frena.
+                En Variables, usa «Crear variable» para crear «distancia» de tipo Número. Debajo de la configuración de
+                C, pon «por siempre» de Control y, dentro, «fijar distancia a …» de Variables con «distancia ultrasónica
+                en cm TRIG D2 ECHO D4» de Ultrasónico en su entrada.
               </p>
+              <figure class="program">
+                <figcaption>
+                  Después de configurar B y C, por siempre guarda la distancia del ultrasónico en la variable distancia.
+                </figcaption>
+                <img
+                  src="../img/5-2-evitar-obstaculos-arduino-uno-paso-3.png"
+                  alt="Después de configurar B y C, por siempre guarda la distancia del ultrasónico en la variable distancia."
+                  width="660"
+                  height="330"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Gira si el objeto está cerca</h3>
+              <p>
+                Debajo de «fijar distancia a …», pon «si … entonces» de Control con «… &lt; …» de Operadores, «valor de
+                distancia» de Variables a la izquierda y 20 a la derecha. Dentro de «si», encaja en orden «detener todos
+                los motores frenando» de Motores, «esperar 0.2 segundos» de Control, «motores B 30 C −30» de Motores,
+                «esperar 0.35 segundos» de Control y otro «detener todos los motores frenando» de Motores.
+              </p>
+              <figure class="program">
+                <figcaption>
+                  Por siempre guarda la distancia. Si es menor que 20 cm, el robot frena, espera, gira y vuelve a
+                  frenar.
+                </figcaption>
+                <img
+                  src="../img/5-2-evitar-obstaculos-arduino-uno-paso-4.png"
+                  alt="Por siempre guarda la distancia. Si es menor que 20 cm, el robot frena, espera, gira y vuelve a frenar."
+                  width="660"
+                  height="667"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Añade los otros dos casos</h3>
+              <p>
+                Pulsa + dos veces para añadir «si no» y «si no, si», y en la segunda condición usa «… &lt; …» de
+                Operadores con «valor de distancia» de Variables y 400. En «si no, si» pon «motores B 30 C 30» de
+                Motores, en «si no» pon «detener todos los motores frenando» de Motores y debajo de toda la decisión
+                encaja «esperar 0.1 segundos» de Control, dentro de «por siempre».
+              </p>
+              <figure class="program">
+                <figcaption>
+                  La decisión gira por debajo de 20 cm, avanza por debajo de 400 cm en el segundo caso y frena en el
+                  último. Al final espera 0.1 segundos.
+                </figcaption>
+                <img
+                  src="../img/5-2-evitar-obstaculos-arduino-uno-paso-5.png"
+                  alt="La decisión gira por debajo de 20 cm, avanza por debajo de 400 cm en el segundo caso y frena en el último. Al final espera 0.1 segundos."
+                  width="660"
+                  height="921"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Carga y prueba</h3>
+              <p>
+                Conecta la tarjeta por USB y pulsa <strong>Cargar</strong>. Prueba en un espacio despejado y acerca una
+                caja al sensor para observar el giro.
+              </p>
+              <figure class="program">
+                <figcaption>
+                  Configura dos motores. Por siempre guarda la distancia: si es menor a 20 cm, frena y gira; si es menor
+                  a 400, avanza; en otro caso, frena.
+                </figcaption>
+                <img
+                  src="../img/5-2-evitar-obstaculos-arduino-uno.png"
+                  alt="Configura dos motores. Por siempre guarda la distancia: si es menor a 20 cm, frena y gira; si es menor a 400, avanza; en otro caso, frena."
+                  width="660"
+                  height="921"
+                  hidden
+                />
+              </figure>
             </li>
           </ol>
+          <p>¿Prefieres no armarlo? <a href="#descargar-proyecto">Descarga el proyecto terminado</a></p>
         </section>
         <section>
           <h2>Pruébalo</h2>

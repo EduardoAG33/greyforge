@@ -272,44 +272,122 @@
         </section>
         <section>
           <h2>Pasos</h2>
-          <p><span class="muted">La imagen muestra el programa de la Arduino UNO R3.</span></p>
-          <figure class="program">
-            <figcaption>
-              Cinco impresiones muestran una suma, un valor mapeado, un valor limitado, una comparación y un entero al
-              azar.
-            </figcaption>
-            <img
-              src="../img/2-4-operaciones-arduino-uno.png"
-              alt="Cinco impresiones muestran una suma, un valor mapeado, un valor limitado, una comparación y un entero al azar."
-              width="717"
-              height="553"
-              hidden
-            />
-          </figure>
+          <p><span class="muted">Las imágenes muestran el programa de la Arduino UNO R3.</span></p>
           <ol class="steps">
             <li>
-              <h3>Suma y compara</h3>
+              <h3>Escribe la suma</h3>
               <p>
-                Descarga el proyecto al final de la página y ábrelo con <strong>Archivo → Abrir</strong>. En
-                <strong>Operadores</strong> están «8 + 2» y «3 &lt; 5». La suma da un número y la comparación da
-                verdadero o falso.
+                Debajo de «al iniciar», encaja «por siempre» de Control y, dentro, «imprimir … con salto de línea» de
+                Serie con el texto «Suma, escala, límite, comparación y dado:». Debajo añade otra impresión y encaja «…
+                + …» de Operadores con 8 y 2 en ese orden.
               </p>
+              <figure class="program">
+                <figcaption>Por siempre imprime el encabezado y la suma 8 + 2.</figcaption>
+                <img
+                  src="../img/2-4-operaciones-arduino-uno-paso-1.png"
+                  alt="Por siempre imprime el encabezado y la suma 8 + 2."
+                  width="586"
+                  height="281"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Cambia de escala y recorta</h3>
+              <h3>Cambia de escala</h3>
               <p>
-                «Mapear 5 de 0 a 10 hacia 0 a 100» cambia de escala. «Limitar 120 entre 0 y 100» fija los extremos
-                permitidos.
+                Debajo de la suma, añade otro «imprimir … con salto de línea» de Serie. En su entrada pon «mapear 5 de 0
+                a 10 hacia 0 a 100» de Operadores.
               </p>
+              <figure class="program">
+                <figcaption>La impresión de la suma va seguida de mapear 5 de 0–10 a 0–100.</figcaption>
+                <img
+                  src="../img/2-4-operaciones-arduino-uno-paso-2.png"
+                  alt="La impresión de la suma va seguida de mapear 5 de 0–10 a 0–100."
+                  width="717"
+                  height="337"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Limita el resultado</h3>
+              <p>
+                Debajo de la escala, agrega otro «imprimir … con salto de línea» de Serie. En su entrada pon «limitar
+                120 entre 0 y 100» de Operadores.
+              </p>
+              <figure class="program">
+                <figcaption>
+                  Tras el encabezado, se imprimen la suma, el mapeo y 120 limitado al intervalo de 0 a 100.
+                </figcaption>
+                <img
+                  src="../img/2-4-operaciones-arduino-uno-paso-3.png"
+                  alt="Tras el encabezado, se imprimen la suma, el mapeo y 120 limitado al intervalo de 0 a 100."
+                  width="717"
+                  height="393"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Compara dos números</h3>
+              <p>
+                Debajo del límite, agrega otro «imprimir … con salto de línea» de Serie. En su entrada pon «… &lt; …» de
+                Operadores con 3 a la izquierda y 5 a la derecha.
+              </p>
+              <figure class="program">
+                <figcaption>La comparación 3 &lt; 5 se imprime después de la suma, el mapeo y el límite.</figcaption>
+                <img
+                  src="../img/2-4-operaciones-arduino-uno-paso-4.png"
+                  alt="La comparación 3 &lt; 5 se imprime después de la suma, el mapeo y el límite."
+                  width="717"
+                  height="449"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
               <h3>Tira un dado</h3>
               <p>
-                «Entero al azar entre 1 y 6» entrega un valor en cada vuelta. Pulsa <strong>Cargar</strong>. Si aparece
-                una lista de puertos, elige el de tu tarjeta.
+                Debajo de la comparación, encaja otro «imprimir … con salto de línea» de Serie con «entero al azar entre
+                1 y 6» de Operadores en su entrada. Debajo, aún dentro de «por siempre», pon «esperar 2 segundos» de
+                Control.
               </p>
+              <figure class="program">
+                <figcaption>
+                  Por siempre imprime el encabezado, la suma, el mapeo, el límite, la comparación y el dado, y espera 2
+                  segundos.
+                </figcaption>
+                <img
+                  src="../img/2-4-operaciones-arduino-uno-paso-5.png"
+                  alt="Por siempre imprime el encabezado, la suma, el mapeo, el límite, la comparación y el dado, y espera 2 segundos."
+                  width="717"
+                  height="553"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Carga y prueba</h3>
+              <p>
+                Conecta la tarjeta por USB y pulsa <strong>Cargar</strong>. Abre <strong>Monitor</strong> y fíjate en el
+                último valor de cada vuelta, entre 1 y 6.
+              </p>
+              <figure class="program">
+                <figcaption>
+                  Cinco impresiones muestran una suma, un valor mapeado, un valor limitado, una comparación y un entero
+                  al azar.
+                </figcaption>
+                <img
+                  src="../img/2-4-operaciones-arduino-uno.png"
+                  alt="Cinco impresiones muestran una suma, un valor mapeado, un valor limitado, una comparación y un entero al azar."
+                  width="717"
+                  height="553"
+                  hidden
+                />
+              </figure>
             </li>
           </ol>
+          <p>¿Prefieres no armarlo? <a href="#descargar-proyecto">Descarga el proyecto terminado</a></p>
         </section>
         <section>
           <h2>Pruébalo</h2>

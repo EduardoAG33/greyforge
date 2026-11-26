@@ -386,19 +386,8 @@
         </section>
         <section>
           <h2>Pasos</h2>
-          <p><span class="muted">La imagen muestra el programa de la Arduino UNO R3.</span></p>
-          <figure class="program">
-            <figcaption>
-              Por siempre lee A0, mapea de 0–1023 a 0–180, limita el resultado y lo manda al servo del pin D9.
-            </figcaption>
-            <img
-              src="../img/4-2-servo-con-potenciometro-arduino-uno.png"
-              alt="Por siempre lee A0, mapea de 0–1023 a 0–180, limita el resultado y lo manda al servo del pin D9."
-              width="1169"
-              height="292"
-              hidden
-            />
-          </figure>
+          <p><span class="muted">Las imágenes muestran el programa de la Arduino UNO R3.</span></p>
+          <p class="muted">Para otra tarjeta, usa los pines de su tabla de conexiones.</p>
           <ol class="steps">
             <li>
               <h3>Une los dos circuitos</h3>
@@ -408,53 +397,95 @@
               </p>
             </li>
             <li>
-              <h3>Cambia de escala</h3>
+              <h3>Coloca el servo en el ciclo</h3>
               <p>
-                Descarga el proyecto al final de la página y ábrelo con <strong>Archivo → Abrir</strong>. Con «mapear»
-                de <strong>Operadores</strong>, lleva «leer pin analógico
-                <span
-                  data-uno="A0"
-                  data-r4="A0"
-                  data-nano="A0"
-                  data-giga="A0"
-                  data-firebeetle="A0 / SENSOR_VP · GPIO36 · solo entrada"
-                  data-xiao="D0 / A0 · GPIO1"
-                  data-teensy40="14 / A0"
-                  data-teensy41="14 / A0"
-                  >A0</span
-                >» del intervalo 0–<span
-                  data-uno="1023"
-                  data-r4="1023"
-                  data-nano="1023"
-                  data-giga="1023"
-                  data-firebeetle="4095"
-                  data-xiao="4095"
-                  data-teensy40="1023"
-                  data-teensy41="1023"
-                  >1023</span
-                >
-                a 0–180.
+                Debajo de «al iniciar», encaja «por siempre» de Control. Dentro pon «servo en pin D9 a … grados» de
+                Servos.
               </p>
+              <figure class="program">
+                <figcaption>
+                  Dentro de por siempre está el bloque del servo en D9 con la entrada de ángulo preparada.
+                </figcaption>
+                <img
+                  src="../img/4-2-servo-con-potenciometro-arduino-uno-paso-2.png"
+                  alt="Dentro de por siempre está el bloque del servo en D9 con la entrada de ángulo preparada."
+                  width="366"
+                  height="228"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Limita el ángulo</h3>
+              <h3>Prepara la escala del ángulo</h3>
               <p>
-                Envuelve el resultado con «limitar … entre 0 y 180» y conéctalo a «servo en pin
-                <span
-                  data-uno="D9"
-                  data-r4="D9"
-                  data-nano="D9"
-                  data-giga="D9"
-                  data-firebeetle="D2 · GPIO25"
-                  data-xiao="D3 / A3 · GPIO4"
-                  data-teensy40="9"
-                  data-teensy41="9"
-                  >D9</span
-                >
-                a … grados». Pulsa <strong>Cargar</strong>. Si aparece una lista de puertos, elige el de tu tarjeta.
+                En el ángulo del servo pon «limitar … entre 0 y 180» de Operadores. En la primera entrada de «limitar»,
+                encaja «mapear … de 0 a 1023 hacia 0 a 180» de Operadores y usa 4095 en lugar de 1023 si tu tarjeta es
+                FireBeetle o XIAO.
               </p>
+              <figure class="program">
+                <figcaption>
+                  El ángulo del servo en D9 se limita a 0–180 y recibe un mapeo de 0–1023 a 0–180.
+                </figcaption>
+                <img
+                  src="../img/4-2-servo-con-potenciometro-arduino-uno-paso-3.png"
+                  alt="El ángulo del servo en D9 se limita a 0–180 y recibe un mapeo de 0–1023 a 0–180."
+                  width="1033"
+                  height="241"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Conecta la lectura al cálculo</h3>
+              <p>En la primera entrada de «mapear», encaja «leer pin analógico A0» de Pines de la tarjeta.</p>
+              <figure class="program">
+                <figcaption>El mapeo toma la lectura de A0 y el resultado limitado controla el servo de D9.</figcaption>
+                <img
+                  src="../img/4-2-servo-con-potenciometro-arduino-uno-paso-4.png"
+                  alt="El mapeo toma la lectura de A0 y el resultado limitado controla el servo de D9."
+                  width="1169"
+                  height="244"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Deja una pausa entre lecturas</h3>
+              <p>Debajo del bloque del servo, dentro de «por siempre», pon «esperar 0.1 segundos» de Control.</p>
+              <figure class="program">
+                <figcaption>
+                  Por siempre, el servo recibe el ángulo calculado a partir de A0 y espera 0.1 segundos.
+                </figcaption>
+                <img
+                  src="../img/4-2-servo-con-potenciometro-arduino-uno-paso-5.png"
+                  alt="Por siempre, el servo recibe el ángulo calculado a partir de A0 y espera 0.1 segundos."
+                  width="1169"
+                  height="292"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Carga y prueba</h3>
+              <p>
+                Conecta la tarjeta por USB y pulsa <strong>Cargar</strong>. Gira la perilla y fíjate en cómo la sigue el
+                servo.
+              </p>
+              <figure class="program">
+                <figcaption>
+                  Por siempre lee A0, mapea de 0–1023 a 0–180, limita el resultado y lo manda al servo del pin D9.
+                </figcaption>
+                <img
+                  src="../img/4-2-servo-con-potenciometro-arduino-uno.png"
+                  alt="Por siempre lee A0, mapea de 0–1023 a 0–180, limita el resultado y lo manda al servo del pin D9."
+                  width="1169"
+                  height="292"
+                  hidden
+                />
+              </figure>
             </li>
           </ol>
+          <p>¿Prefieres no armarlo? <a href="#descargar-proyecto">Descarga el proyecto terminado</a></p>
         </section>
         <section>
           <h2>Pruébalo</h2>

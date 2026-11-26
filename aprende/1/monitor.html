@@ -263,40 +263,89 @@
         </section>
         <section>
           <h2>Pasos</h2>
-          <p><span class="muted">La imagen muestra el programa de la Arduino UNO R3.</span></p>
-          <figure class="program">
-            <figcaption>Por siempre imprime Hola, GreyForge, imprime 42 y espera un segundo.</figcaption>
-            <img
-              src="../img/1-3-monitor-arduino-uno.png"
-              alt="Por siempre imprime Hola, GreyForge, imprime 42 y espera un segundo."
-              width="401"
-              height="321"
-              hidden
-            />
-          </figure>
+          <p><span class="muted">Las imágenes muestran el programa de la Arduino UNO R3.</span></p>
           <ol class="steps">
             <li>
-              <h3>Encuentra la salida</h3>
-              <p>
-                Descarga el proyecto al final de la página y ábrelo con <strong>Archivo → Abrir</strong>. Busca
-                «imprimir … con salto de línea» en <strong>Serie</strong>.
-              </p>
+              <h3>Prepara el ciclo</h3>
+              <p>Si te falta «al iniciar», búscalo en Eventos. Encaja debajo «por siempre» de Control.</p>
+              <figure class="program">
+                <figcaption>Al iniciar, con por siempre vacío.</figcaption>
+                <img
+                  src="../img/1-3-monitor-arduino-uno-paso-1.png"
+                  alt="Al iniciar, con por siempre vacío."
+                  width="184"
+                  height="201"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Lee los dos valores</h3>
+              <h3>Escribe el saludo</h3>
               <p>
-                El primer bloque imprime «Hola, GreyForge» y el segundo imprime 42. Los dos valores salen de
-                <strong>Operadores</strong>.
+                Dentro de «por siempre», pon «imprimir … con salto de línea» de Serie. Escribe «Hola, GreyForge» en su
+                campo de texto.
               </p>
+              <figure class="program">
+                <figcaption>Dentro de por siempre se imprime Hola, GreyForge.</figcaption>
+                <img
+                  src="../img/1-3-monitor-arduino-uno-paso-2.png"
+                  alt="Dentro de por siempre se imprime Hola, GreyForge."
+                  width="401"
+                  height="225"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Observa el resultado</h3>
+              <h3>Imprime un número</h3>
               <p>
-                Pulsa <strong>Cargar</strong>. Si aparece una lista de puertos, elige el de tu tarjeta. Abre
-                <strong>Monitor</strong> después de cargar. En C++ usa 115200 baudios si te pide la velocidad.
+                Debajo del saludo, pon otro «imprimir … con salto de línea» de Serie. Encaja un bloque de número de
+                Operadores en su entrada y escribe 42.
               </p>
+              <figure class="program">
+                <figcaption>Por siempre imprime Hola, GreyForge y luego el número 42.</figcaption>
+                <img
+                  src="../img/1-3-monitor-arduino-uno-paso-3.png"
+                  alt="Por siempre imprime Hola, GreyForge y luego el número 42."
+                  width="401"
+                  height="273"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Separa los mensajes</h3>
+              <p>Debajo de la segunda impresión, dentro de «por siempre», pon «esperar 1 segundos» de Control.</p>
+              <figure class="program">
+                <figcaption>Por siempre imprime el saludo y el número 42 y espera 1 segundo.</figcaption>
+                <img
+                  src="../img/1-3-monitor-arduino-uno-paso-4.png"
+                  alt="Por siempre imprime el saludo y el número 42 y espera 1 segundo."
+                  width="401"
+                  height="321"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Carga y prueba</h3>
+              <p>
+                Conecta la tarjeta por USB y pulsa <strong>Cargar</strong>. Abre <strong>Monitor</strong> y comprueba
+                que aparecen el saludo y 42 en dos líneas. En C++ usa 115200 baudios si te pide la velocidad.
+              </p>
+              <figure class="program">
+                <figcaption>Por siempre imprime Hola, GreyForge, imprime 42 y espera un segundo.</figcaption>
+                <img
+                  src="../img/1-3-monitor-arduino-uno.png"
+                  alt="Por siempre imprime Hola, GreyForge, imprime 42 y espera un segundo."
+                  width="401"
+                  height="321"
+                  hidden
+                />
+              </figure>
             </li>
           </ol>
+          <p>¿Prefieres no armarlo? <a href="#descargar-proyecto">Descarga el proyecto terminado</a></p>
         </section>
         <section>
           <h2>Pruébalo</h2>

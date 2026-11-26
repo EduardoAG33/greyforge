@@ -402,20 +402,10 @@
         </section>
         <section>
           <h2>Pasos</h2>
-          <p><span class="muted">La imagen muestra el programa de la Arduino UNO R3.</span></p>
-          <figure class="program">
-            <figcaption>
-              Al iniciar configura B y C, avanza un segundo, frena, gira con las ruedas en sentidos opuestos y frena
-              otra vez.
-            </figcaption>
-            <img
-              src="../img/5-1-avanzar-y-girar-arduino-uno.png"
-              alt="Al iniciar configura B y C, avanza un segundo, frena, gira con las ruedas en sentidos opuestos y frena otra vez."
-              width="542"
-              height="541"
-              hidden
-            />
-          </figure>
+          <p><span class="muted">Las imágenes muestran el programa de la Arduino UNO R3.</span></p>
+          <p class="muted">
+            Para otra tarjeta, usa los pines de <a href="../4/motores.html">la tabla del puente H</a>.
+          </p>
           <ol class="steps">
             <li>
               <h3>Monta los motores</h3>
@@ -425,20 +415,95 @@
               </p>
             </li>
             <li>
-              <h3>Avanza y espera</h3>
+              <h3>Configura B y C</h3>
               <p>
-                Descarga el proyecto al final de la página y ábrelo con <strong>Archivo → Abrir</strong>. Ubica «motores
-                B 35 C 35» de <strong>Motores</strong> y «esperar 1 segundos» de <strong>Control</strong>.
+                Debajo de «al iniciar», coloca dos «configurar motor … PWM … IN1 … IN2 …» de Motores. Elige B con PWM
+                D5, IN1 D6 e IN2 D7, y debajo C con PWM D10, IN1 D11 e IN2 D12.
               </p>
+              <figure class="program">
+                <figcaption>Al iniciar, se configuran el motor B con D5, D6 y D7 y el C con D10, D11 y D12.</figcaption>
+                <img
+                  src="../img/5-1-avanzar-y-girar-arduino-uno-paso-2.png"
+                  alt="Al iniciar, se configuran el motor B con D5, D6 y D7 y el C con D10, D11 y D12."
+                  width="542"
+                  height="199"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Avanza recto</h3>
+              <p>
+                Debajo de la configuración de C, coloca «motores B 35 C 35» de Motores. Añade «esperar 1 segundos» de
+                Control debajo.
+              </p>
+              <figure class="program">
+                <figcaption>Al iniciar, configura B y C y los mueve a 35 durante 1 segundo.</figcaption>
+                <img
+                  src="../img/5-1-avanzar-y-girar-arduino-uno-paso-3.png"
+                  alt="Al iniciar, configura B y C y los mueve a 35 durante 1 segundo."
+                  width="542"
+                  height="295"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Frena antes del giro</h3>
+              <p>
+                Debajo de la espera, coloca «detener todos los motores frenando» de Motores. Añade «esperar 0.3
+                segundos» de Control debajo.
+              </p>
+              <figure class="program">
+                <figcaption>Después de avanzar un segundo, ambos motores frenan durante 0.3 segundos.</figcaption>
+                <img
+                  src="../img/5-1-avanzar-y-girar-arduino-uno-paso-4.png"
+                  alt="Después de avanzar un segundo, ambos motores frenan durante 0.3 segundos."
+                  width="542"
+                  height="394"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
               <h3>Gira y detente</h3>
               <p>
-                Después de frenar y esperar, «motores B 35 C −35» gira durante 0.4 segundos. El último bloque es
-                «detener todos frenar».
+                Debajo de la pausa, coloca «motores B 35 C −35» de Motores y «esperar 0.4 segundos» de Control. Al final
+                encaja «detener todos los motores frenando» de Motores.
               </p>
+              <figure class="program">
+                <figcaption>Tras avanzar y frenar, el robot gira durante 0.4 segundos y vuelve a frenar.</figcaption>
+                <img
+                  src="../img/5-1-avanzar-y-girar-arduino-uno-paso-5.png"
+                  alt="Tras avanzar y frenar, el robot gira durante 0.4 segundos y vuelve a frenar."
+                  width="542"
+                  height="541"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Carga y prueba</h3>
+              <p>
+                Conecta la tarjeta por USB y pulsa <strong>Cargar</strong>. Pon el robot en el suelo con espacio y
+                observa el avance y el giro.
+              </p>
+              <figure class="program">
+                <figcaption>
+                  Al iniciar configura B y C, avanza un segundo, frena, gira con las ruedas en sentidos opuestos y frena
+                  otra vez.
+                </figcaption>
+                <img
+                  src="../img/5-1-avanzar-y-girar-arduino-uno.png"
+                  alt="Al iniciar configura B y C, avanza un segundo, frena, gira con las ruedas en sentidos opuestos y frena otra vez."
+                  width="542"
+                  height="541"
+                  hidden
+                />
+              </figure>
             </li>
           </ol>
+          <p>¿Prefieres no armarlo? <a href="#descargar-proyecto">Descarga el proyecto terminado</a></p>
         </section>
         <section>
           <h2>Pruébalo</h2>

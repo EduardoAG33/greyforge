@@ -238,41 +238,94 @@
         </section>
         <section>
           <h2>Pasos</h2>
-          <figure class="program">
-            <figcaption>
-              Por siempre enciende la luz verde, escribe Hola EV3, espera, apaga la luz, borra la pantalla y espera.
-            </figcaption>
-            <img
-              src="../img/7-2-luz-pantalla-lego-ev3.png"
-              alt="Por siempre enciende la luz verde, escribe Hola EV3, espera, apaga la luz, borra la pantalla y espera."
-              width="267"
-              height="468"
-              hidden
-            />
-          </figure>
+          <p><span class="muted">Las imágenes muestran el programa del EV3.</span></p>
           <ol class="steps">
             <li>
-              <h3>Abre el programa</h3>
-              <p>
-                Prepara tu EV3 siguiendo <a href="../../#lego">SPIKE y EV3</a>. Descarga el proyecto al final de la
-                página y ábrelo con <strong>Archivo → Abrir</strong>.
-              </p>
+              <h3>Prepara el ciclo</h3>
+              <p>Si te falta «al iniciar», búscalo en Eventos. Encaja debajo «por siempre» de Control.</p>
+              <figure class="program">
+                <figcaption>Al iniciar, con por siempre vacío.</figcaption>
+                <img
+                  src="../img/7-2-luz-pantalla-lego-ev3-paso-1.png"
+                  alt="Al iniciar, con por siempre vacío."
+                  width="184"
+                  height="201"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Muestra y enciende</h3>
+              <h3>Enciende y escribe</h3>
               <p>
-                En <strong>EV3 · Ladrillo</strong>, ubica «luz de estado …» en verde y «pantalla escribir Hola EV3».
+                Dentro de «por siempre», encaja «luz de estado verde» de EV3 · Ladrillo. Debajo pon «pantalla escribir
+                Hola EV3» de la misma categoría.
               </p>
+              <figure class="program">
+                <figcaption>Por siempre enciende la luz verde y escribe Hola EV3 en la pantalla.</figcaption>
+                <img
+                  src="../img/7-2-luz-pantalla-lego-ev3-paso-2.png"
+                  alt="Por siempre enciende la luz verde y escribe Hola EV3 en la pantalla."
+                  width="267"
+                  height="276"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Borra y apaga</h3>
+              <h3>Deja el mensaje visible</h3>
+              <p>Debajo del mensaje, dentro de «por siempre», añade «esperar 100 ms» de Tiempo.</p>
+              <figure class="program">
+                <figcaption>La luz verde y el texto Hola EV3 se quedan 100 ms.</figcaption>
+                <img
+                  src="../img/7-2-luz-pantalla-lego-ev3-paso-3.png"
+                  alt="La luz verde y el texto Hola EV3 se quedan 100 ms."
+                  width="267"
+                  height="324"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Apaga y borra</h3>
               <p>
-                En la misma categoría están «luz de estado apagar» y «pantalla borrar». La espera de cada estado es de
-                100 ms. En «Conectar EV3», usa «Probar conexión». Pulsa «Cargar» y, si el programa no arranca, abre
-                main.py en el File Browser del EV3.
+                Después de la espera, dentro de «por siempre», pon «luz de estado apagar» y «pantalla borrar» en ese
+                orden, ambos de EV3 · Ladrillo. Debajo añade otro «esperar 100 ms» de Tiempo.
               </p>
+              <figure class="program">
+                <figcaption>
+                  Por siempre enciende la luz y escribe Hola EV3, espera 100 ms, apaga, borra y espera otros 100 ms.
+                </figcaption>
+                <img
+                  src="../img/7-2-luz-pantalla-lego-ev3-paso-4.png"
+                  alt="Por siempre enciende la luz y escribe Hola EV3, espera 100 ms, apaga, borra y espera otros 100 ms."
+                  width="267"
+                  height="468"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Carga y prueba</h3>
+              <p>
+                En <strong>Conectar EV3</strong>, usa <strong>Probar conexión</strong> y pulsa <strong>Cargar</strong>.
+                Mira cómo parpadean la luz verde y el mensaje.
+              </p>
+              <p>Si el programa no arranca, abre <code>main.py</code> en el File Browser del EV3.</p>
+              <figure class="program">
+                <figcaption>
+                  Por siempre enciende la luz verde, escribe Hola EV3, espera, apaga la luz, borra la pantalla y espera.
+                </figcaption>
+                <img
+                  src="../img/7-2-luz-pantalla-lego-ev3.png"
+                  alt="Por siempre enciende la luz verde, escribe Hola EV3, espera, apaga la luz, borra la pantalla y espera."
+                  width="267"
+                  height="468"
+                  hidden
+                />
+              </figure>
             </li>
           </ol>
+          <p>¿Prefieres no armarlo? <a href="#descargar-proyecto">Descarga el proyecto terminado</a></p>
         </section>
         <section>
           <h2>Pruébalo</h2>

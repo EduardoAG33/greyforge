@@ -256,16 +256,7 @@
         </section>
         <section>
           <h2>Pasos</h2>
-          <figure class="program">
-            <figcaption>Por siempre imprime el porcentaje de reflexión del sensor de color y espera 500 ms.</figcaption>
-            <img
-              src="../img/6-3-color-lego-spike-prime.png"
-              alt="Por siempre imprime el porcentaje de reflexión del sensor de color y espera 500 ms."
-              width="514"
-              height="276"
-              hidden
-            />
-          </figure>
+          <p><span class="muted">Las imágenes muestran el programa del SPIKE Prime.</span></p>
           <ol class="steps">
             <li>
               <h3>Conecta el sensor</h3>
@@ -274,20 +265,71 @@
               </p>
             </li>
             <li>
-              <h3>Lee el porcentaje</h3>
-              <p>
-                Descarga el proyecto al final de la página y ábrelo con <strong>Archivo → Abrir</strong>. En
-                <strong>SPIKE · Sensores</strong>, ubica «reflexión del sensor C (%)».
-              </p>
+              <h3>Prepara el ciclo</h3>
+              <p>Si te falta «al iniciar», búscalo en Eventos. Encaja debajo «por siempre» de Control.</p>
+              <figure class="program">
+                <figcaption>Al iniciar, con por siempre vacío.</figcaption>
+                <img
+                  src="../img/6-3-color-lego-spike-prime-paso-2.png"
+                  alt="Al iniciar, con por siempre vacío."
+                  width="184"
+                  height="201"
+                  hidden
+                />
+              </figure>
             </li>
             <li>
-              <h3>Prueba dos superficies</h3>
+              <h3>Imprime la lectura</h3>
               <p>
-                La lectura se imprime con «imprimir … con salto de línea» cada 500 ms. Usa «Conectar hub» y pulsa
-                «Cargar». El programa arranca al terminar.
+                Dentro de «por siempre», pon «imprimir … con salto de línea» de Serie. En el hueco de la impresión,
+                encaja «reflexión del sensor C (%)» de SPIKE · Sensores.
               </p>
+              <figure class="program">
+                <figcaption>Por siempre imprime la reflexión del sensor C.</figcaption>
+                <img
+                  src="../img/6-3-color-lego-spike-prime-paso-3.png"
+                  alt="Por siempre imprime la reflexión del sensor C."
+                  width="514"
+                  height="228"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Deja una pausa</h3>
+              <p>Debajo de la impresión, dentro de «por siempre», pon «esperar 500 ms» de Tiempo.</p>
+              <figure class="program">
+                <figcaption>Por siempre imprime la reflexión del sensor C y espera 500 ms.</figcaption>
+                <img
+                  src="../img/6-3-color-lego-spike-prime-paso-4.png"
+                  alt="Por siempre imprime la reflexión del sensor C y espera 500 ms."
+                  width="514"
+                  height="276"
+                  hidden
+                />
+              </figure>
+            </li>
+            <li>
+              <h3>Carga y prueba</h3>
+              <p>
+                Usa <strong>Conectar hub</strong> y pulsa <strong>Cargar</strong>. Abre <strong>Monitor</strong> y
+                compara dos superficies.
+              </p>
+              <figure class="program">
+                <figcaption>
+                  Por siempre imprime el porcentaje de reflexión del sensor de color y espera 500 ms.
+                </figcaption>
+                <img
+                  src="../img/6-3-color-lego-spike-prime.png"
+                  alt="Por siempre imprime el porcentaje de reflexión del sensor de color y espera 500 ms."
+                  width="514"
+                  height="276"
+                  hidden
+                />
+              </figure>
             </li>
           </ol>
+          <p>¿Prefieres no armarlo? <a href="#descargar-proyecto">Descarga el proyecto terminado</a></p>
         </section>
         <section>
           <h2>Pruébalo</h2>
