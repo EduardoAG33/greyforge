@@ -1,0 +1,268 @@
+{
+  "formatVersion": 4,
+  "irVersion": 2,
+  "id": "3-1-boton-arduino-giga-r1",
+  "name": "3.1 Botón: leer un pin digital",
+  "board": {
+    "definitionId": "org.robotblocks.arduino-giga-r1:board",
+    "bindings": {}
+  },
+  "devices": [],
+  "programs": [
+    {
+      "id": "main",
+      "name": "Programa principal",
+      "processes": [
+        {
+          "id": "inicio",
+          "trigger": {
+            "blockId": "core:start",
+            "operation": "core:start",
+            "fields": {}
+          },
+          "body": {
+            "id": "basico-5",
+            "blockId": "core:forever",
+            "operation": "core:forever",
+            "fields": {},
+            "inputs": {
+              "BODY": {
+                "id": "basico-2",
+                "blockId": "core:serial-println",
+                "operation": "core:serial-println",
+                "fields": {},
+                "inputs": {
+                  "VALUE": {
+                    "id": "basico-1",
+                    "blockId": "org.robotblocks.demo-board-io:digital-read",
+                    "operation": "org.robotblocks.demo-board-io:digital-read",
+                    "fields": {
+                      "PIN": "d2"
+                    },
+                    "inputs": {},
+                    "next": null
+                  }
+                },
+                "next": {
+                  "id": "basico-4",
+                  "blockId": "core:wait-ms",
+                  "operation": "core:wait-ms",
+                  "fields": {},
+                  "inputs": {
+                    "MS": {
+                      "id": "basico-3",
+                      "blockId": "core:number",
+                      "operation": "core:number",
+                      "fields": {
+                        "NUMBER": 500
+                      },
+                      "inputs": {},
+                      "next": null
+                    }
+                  },
+                  "next": null
+                }
+              }
+            },
+            "next": null
+          }
+        }
+      ],
+      "detachedNodes": []
+    }
+  ],
+  "variables": [],
+  "lists": [],
+  "projectSettings": {
+    "locale": "es",
+    "units": "metric"
+  },
+  "extensions": [
+    {
+      "id": "org.robotblocks.arduino-giga-r1",
+      "version": "0.3.0"
+    },
+    {
+      "id": "org.robotblocks.demo-board-io",
+      "version": "1.3.0"
+    }
+  ],
+  "editor": {
+    "adapter": "scratch-blocks",
+    "positions": {
+      "inicio": {
+        "x": 52,
+        "y": 64
+      }
+    },
+    "blockDefinitions": [
+      {
+        "id": "core:start",
+        "category": "core:events",
+        "label": {
+          "es": "al iniciar",
+          "en": "when started"
+        },
+        "kind": "event",
+        "fields": [],
+        "inputs": [],
+        "operation": "core:start",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:forever",
+        "category": "core:control",
+        "label": {
+          "es": "por siempre %BODY",
+          "en": "forever %BODY"
+        },
+        "kind": "loop",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "BODY",
+            "type": "statement"
+          }
+        ],
+        "operation": "core:forever",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:number",
+        "category": "core:operators",
+        "label": {
+          "es": "%NUMBER",
+          "en": "%NUMBER"
+        },
+        "kind": "reporter",
+        "output": "number",
+        "fields": [
+          {
+            "name": "NUMBER",
+            "type": "number",
+            "default": 50
+          }
+        ],
+        "inputs": [],
+        "operation": "core:number",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:serial-println",
+        "category": "core:serial",
+        "label": {
+          "es": "imprimir %VALUE con salto de línea",
+          "en": "print %VALUE with newline"
+        },
+        "kind": "command",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "VALUE",
+            "type": "value",
+            "default": "hola"
+          }
+        ],
+        "operation": "core:serial-println",
+        "tooltip": {
+          "es": "Código experimental. Consulta el contrato de serie, tiempo y eventos en el catálogo de bloques.",
+          "en": "Experimental code. See serial, time and event conventions in the block catalog."
+        },
+        "requiredCapabilities": [],
+        "generators": {
+          "micropython": {
+            "canFail": false,
+            "statement": "print({VALUE})"
+          },
+          "arduino": {
+            "canFail": false,
+            "statement": "Serial.println({VALUE});"
+          },
+          "pybricks": {
+            "canFail": false,
+            "statement": "print({VALUE})"
+          }
+        }
+      },
+      {
+        "id": "core:wait-ms",
+        "category": "core:time",
+        "label": {
+          "es": "esperar %MS ms",
+          "en": "wait %MS ms"
+        },
+        "kind": "command",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "MS",
+            "type": "number",
+            "default": 100,
+            "min": 0,
+            "max": 2147483647,
+            "integer": true
+          }
+        ],
+        "operation": "core:wait-ms",
+        "tooltip": {
+          "es": "Código experimental. Consulta el contrato de serie, tiempo y eventos en el catálogo de bloques.",
+          "en": "Experimental code. See serial, time and event conventions in the block catalog."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "org.robotblocks.demo-board-io:digital-read",
+        "category": "org.robotblocks.demo-board-io:pins",
+        "label": {
+          "es": "pin digital %PIN está alto",
+          "en": "digital pin %PIN is high"
+        },
+        "kind": "boolean",
+        "output": "boolean",
+        "fields": [
+          {
+            "name": "PIN",
+            "type": "string",
+            "default": "",
+            "reference": {
+              "kind": "resource",
+              "capabilities": ["digitalInput"]
+            }
+          }
+        ],
+        "inputs": [],
+        "operation": "org.robotblocks.demo-board-io:digital-read",
+        "tooltip": {
+          "es": "MicroPython ESP32 experimental. Revisa las capacidades y las notas del pin antes de cargar. Arduino experimental: API del core, sin librerías externas.",
+          "en": "Experimental ESP32 MicroPython. Check pin capabilities and notes before uploading. Experimental Arduino: core API, no external libraries."
+        },
+        "requiredCapabilities": ["digitalInput"],
+        "generators": {
+          "micropython": {
+            "canFail": false,
+            "imports": ["from machine import Pin, PWM"],
+            "setup": ["input_pin_{PIN} = Pin({PIN}, Pin.IN)"],
+            "expression": "input_pin_{PIN}.value() != 0"
+          },
+          "arduino": {
+            "canFail": false,
+            "setup": ["pinMode({PIN}, INPUT);"],
+            "expression": "digitalRead({PIN}) != 0"
+          }
+        }
+      }
+    ]
+  }
+}

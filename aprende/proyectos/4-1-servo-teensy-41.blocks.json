@@ -1,0 +1,327 @@
+{
+  "formatVersion": 4,
+  "irVersion": 2,
+  "id": "4-1-servo-teensy-41",
+  "name": "4.1 Servo: prueba tres posiciones",
+  "board": {
+    "definitionId": "org.robotblocks.teensy-41:board",
+    "bindings": {}
+  },
+  "devices": [],
+  "programs": [
+    {
+      "id": "main",
+      "name": "Programa principal",
+      "processes": [
+        {
+          "id": "inicio",
+          "trigger": {
+            "blockId": "core:start",
+            "operation": "core:start",
+            "fields": {}
+          },
+          "body": {
+            "id": "basico-409",
+            "blockId": "core:forever",
+            "operation": "core:forever",
+            "fields": {},
+            "inputs": {
+              "BODY": {
+                "id": "basico-398",
+                "blockId": "org.robotblocks.servos:move",
+                "operation": "org.robotblocks.servos:move",
+                "fields": {
+                  "PIN": "d9"
+                },
+                "inputs": {
+                  "ANGLE": {
+                    "id": "basico-397",
+                    "blockId": "core:number",
+                    "operation": "core:number",
+                    "fields": {
+                      "NUMBER": 0
+                    },
+                    "inputs": {},
+                    "next": null
+                  }
+                },
+                "next": {
+                  "id": "basico-400",
+                  "blockId": "core:wait-ms",
+                  "operation": "core:wait-ms",
+                  "fields": {},
+                  "inputs": {
+                    "MS": {
+                      "id": "basico-399",
+                      "blockId": "core:number",
+                      "operation": "core:number",
+                      "fields": {
+                        "NUMBER": 500
+                      },
+                      "inputs": {},
+                      "next": null
+                    }
+                  },
+                  "next": {
+                    "id": "basico-402",
+                    "blockId": "org.robotblocks.servos:move",
+                    "operation": "org.robotblocks.servos:move",
+                    "fields": {
+                      "PIN": "d9"
+                    },
+                    "inputs": {
+                      "ANGLE": {
+                        "id": "basico-401",
+                        "blockId": "core:number",
+                        "operation": "core:number",
+                        "fields": {
+                          "NUMBER": 90
+                        },
+                        "inputs": {},
+                        "next": null
+                      }
+                    },
+                    "next": {
+                      "id": "basico-404",
+                      "blockId": "core:wait-ms",
+                      "operation": "core:wait-ms",
+                      "fields": {},
+                      "inputs": {
+                        "MS": {
+                          "id": "basico-403",
+                          "blockId": "core:number",
+                          "operation": "core:number",
+                          "fields": {
+                            "NUMBER": 500
+                          },
+                          "inputs": {},
+                          "next": null
+                        }
+                      },
+                      "next": {
+                        "id": "basico-406",
+                        "blockId": "org.robotblocks.servos:move",
+                        "operation": "org.robotblocks.servos:move",
+                        "fields": {
+                          "PIN": "d9"
+                        },
+                        "inputs": {
+                          "ANGLE": {
+                            "id": "basico-405",
+                            "blockId": "core:number",
+                            "operation": "core:number",
+                            "fields": {
+                              "NUMBER": 180
+                            },
+                            "inputs": {},
+                            "next": null
+                          }
+                        },
+                        "next": {
+                          "id": "basico-408",
+                          "blockId": "core:wait-ms",
+                          "operation": "core:wait-ms",
+                          "fields": {},
+                          "inputs": {
+                            "MS": {
+                              "id": "basico-407",
+                              "blockId": "core:number",
+                              "operation": "core:number",
+                              "fields": {
+                                "NUMBER": 500
+                              },
+                              "inputs": {},
+                              "next": null
+                            }
+                          },
+                          "next": null
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "next": null
+          }
+        }
+      ],
+      "detachedNodes": []
+    }
+  ],
+  "variables": [],
+  "lists": [],
+  "projectSettings": {
+    "locale": "es",
+    "units": "metric"
+  },
+  "extensions": [
+    {
+      "id": "org.robotblocks.servos",
+      "version": "1.2.0"
+    },
+    {
+      "id": "org.robotblocks.teensy-41",
+      "version": "0.3.0"
+    }
+  ],
+  "editor": {
+    "adapter": "scratch-blocks",
+    "positions": {
+      "inicio": {
+        "x": 52,
+        "y": 64
+      }
+    },
+    "blockDefinitions": [
+      {
+        "id": "core:start",
+        "category": "core:events",
+        "label": {
+          "es": "al iniciar",
+          "en": "when started"
+        },
+        "kind": "event",
+        "fields": [],
+        "inputs": [],
+        "operation": "core:start",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:forever",
+        "category": "core:control",
+        "label": {
+          "es": "por siempre %BODY",
+          "en": "forever %BODY"
+        },
+        "kind": "loop",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "BODY",
+            "type": "statement"
+          }
+        ],
+        "operation": "core:forever",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:number",
+        "category": "core:operators",
+        "label": {
+          "es": "%NUMBER",
+          "en": "%NUMBER"
+        },
+        "kind": "reporter",
+        "output": "number",
+        "fields": [
+          {
+            "name": "NUMBER",
+            "type": "number",
+            "default": 50
+          }
+        ],
+        "inputs": [],
+        "operation": "core:number",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:wait-ms",
+        "category": "core:time",
+        "label": {
+          "es": "esperar %MS ms",
+          "en": "wait %MS ms"
+        },
+        "kind": "command",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "MS",
+            "type": "number",
+            "default": 100,
+            "min": 0,
+            "max": 2147483647,
+            "integer": true
+          }
+        ],
+        "operation": "core:wait-ms",
+        "tooltip": {
+          "es": "Código experimental. Consulta el contrato de serie, tiempo y eventos en el catálogo de bloques.",
+          "en": "Experimental code. See serial, time and event conventions in the block catalog."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "org.robotblocks.servos:move",
+        "category": "org.robotblocks.servos:servos",
+        "label": {
+          "es": "servo en pin %PIN a %ANGLE grados",
+          "en": "servo on pin %PIN to %ANGLE degrees"
+        },
+        "kind": "command",
+        "fields": [
+          {
+            "name": "PIN",
+            "type": "string",
+            "default": "",
+            "reference": {
+              "kind": "resource",
+              "capabilities": ["pwm"]
+            }
+          }
+        ],
+        "inputs": [
+          {
+            "name": "ANGLE",
+            "type": "number",
+            "default": 90,
+            "slider": {
+              "min": 0,
+              "max": 180
+            }
+          }
+        ],
+        "operation": "org.robotblocks.servos:move",
+        "tooltip": {
+          "es": "Ángulo de 0 a 180; valores fuera de rango se limitan. Servo de 50 Hz (SG90, MG90S, MG996R). Aliméntalo con 5 V externos y une las tierras.",
+          "en": "Angle from 0 to 180; out-of-range values are clamped. 50 Hz servo (SG90, MG90S, MG996R). Supply external 5 V and connect the grounds."
+        },
+        "requiredCapabilities": ["pwm"],
+        "generators": {
+          "micropython": {
+            "canFail": false,
+            "imports": ["from machine import Pin, PWM"],
+            "globals": [
+              "def servos_mover(servo, angulo):\n    angulo = max(0, min(180, angulo))\n    # Pulso de 0.5 ms (0°) a 2.5 ms (180°) cada 20 ms.\n    servo.duty_ns(int(500000 + angulo * 2000000 / 180))\n"
+            ],
+            "setup": ["servo_{PIN} = PWM(Pin({PIN}), freq=50, duty_u16=0)"],
+            "statement": "servos_mover(servo_{PIN}, {ANGLE})"
+          },
+          "arduino": {
+            "hardware": {
+              "features": ["servo"]
+            },
+            "includes": ["#if defined(ESP32)\n#else\n#include <Servo.h>\n#endif"],
+            "globals": [
+              "#if defined(ESP32)\nstruct servos_canal { bool activo; };\ninline void servos_mover(servos_canal& servo, int pin, float angulo, const char* bloque) {\n    if (!servo.activo) {\n        if (!ledcAttach(pin, 50, 14)) { rb_fail(bloque, \"No se pudo activar el servo\"); return; }\n        servo.activo = true;\n    }\n    angulo = fmaxf(0, fminf(180, rb_finite(angulo, bloque)));\n    int pulso = int(500 + angulo * 2000 / 180);\n    ledcWrite(pin, uint32_t(pulso) * 16383UL / 20000UL);\n}\n#else\ninline void servos_mover(Servo& servo, int pin, float angulo, const char* bloque) {\n    if (!servo.attached()) servo.attach(pin, 500, 2500);\n    if (!servo.attached()) { rb_fail(bloque, \"No se pudo activar Servo.h\"); return; }\n    angulo = fmaxf(0, fminf(180, rb_finite(angulo, bloque)));\n    servo.writeMicroseconds(int(500 + angulo * 2000 / 180));\n}\n#endif",
+              "#if defined(ESP32)\nstatic servos_canal servo_{PIN} = {};\n#else\nstatic Servo servo_{PIN};\n#endif"
+            ],
+            "statement": "servos_mover(servo_{PIN}, {PIN}, {ANGLE}, {BLOCK_ID});"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "lenguaje": "python",
+  "codigo": "import asyncio\nfrom robotblocks_runtime import *\nfrom machine import Pin, PWM\n\ndef servos_mover(servo, angulo):\n    angulo = max(0, min(180, angulo))\n    # Pulso de 0.5 ms (0°) a 2.5 ms (180°) cada 20 ms.\n    servo.duty_ns(int(500000 + angulo * 2000000 / 180))\n\n\nservo_25 = PWM(Pin(25), freq=50, duty_u16=0)\n\nasync def proceso_1():\n    while True:\n        servos_mover(servo_25, 0)\n        await rb_wait(0.5)\n        servos_mover(servo_25, 90)\n        await rb_wait(0.5)\n        servos_mover(servo_25, 180)\n        await rb_wait(0.5)\n        await rb_yield()\n\nasync def main():\n    await rb_run(proceso_1)\n\nasyncio.run(main())\n"
+}

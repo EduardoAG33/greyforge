@@ -1,0 +1,357 @@
+{
+  "formatVersion": 4,
+  "irVersion": 2,
+  "id": "2-2-decisiones-seeed-xiao-esp32s3",
+  "name": "2.2 Tomar decisiones",
+  "board": {
+    "definitionId": "org.robotblocks.seeed-xiao-esp32s3:board",
+    "bindings": {}
+  },
+  "devices": [],
+  "programs": [
+    {
+      "id": "main",
+      "name": "Programa principal",
+      "processes": [
+        {
+          "id": "inicio",
+          "trigger": {
+            "blockId": "core:start",
+            "operation": "core:start",
+            "fields": {}
+          },
+          "body": {
+            "id": "aprende-941",
+            "blockId": "core:forever",
+            "operation": "core:forever",
+            "fields": {},
+            "inputs": {
+              "BODY": {
+                "id": "aprende-938",
+                "blockId": "core:if",
+                "operation": "core:if",
+                "fields": {},
+                "inputs": {
+                  "CONDITION": {
+                    "id": "aprende-933",
+                    "blockId": "core:less",
+                    "operation": "core:less",
+                    "fields": {},
+                    "inputs": {
+                      "LEFT": {
+                        "id": "aprende-931",
+                        "blockId": "core:number",
+                        "operation": "core:number",
+                        "fields": {
+                          "NUMBER": 3
+                        },
+                        "inputs": {},
+                        "next": null
+                      },
+                      "RIGHT": {
+                        "id": "aprende-932",
+                        "blockId": "core:number",
+                        "operation": "core:number",
+                        "fields": {
+                          "NUMBER": 5
+                        },
+                        "inputs": {},
+                        "next": null
+                      }
+                    },
+                    "next": null
+                  },
+                  "BODY": {
+                    "id": "aprende-935",
+                    "blockId": "core:serial-println",
+                    "operation": "core:serial-println",
+                    "fields": {},
+                    "inputs": {
+                      "VALUE": {
+                        "id": "aprende-934",
+                        "blockId": "core:text",
+                        "operation": "core:text",
+                        "fields": {
+                          "TEXT": "Es menor"
+                        },
+                        "inputs": {},
+                        "next": null
+                      }
+                    },
+                    "next": null
+                  },
+                  "ELSE": {
+                    "id": "aprende-937",
+                    "blockId": "core:serial-println",
+                    "operation": "core:serial-println",
+                    "fields": {},
+                    "inputs": {
+                      "VALUE": {
+                        "id": "aprende-936",
+                        "blockId": "core:text",
+                        "operation": "core:text",
+                        "fields": {
+                          "TEXT": "No es menor"
+                        },
+                        "inputs": {},
+                        "next": null
+                      }
+                    },
+                    "next": null
+                  }
+                },
+                "next": {
+                  "id": "aprende-940",
+                  "blockId": "core:wait-value",
+                  "operation": "core:wait-value",
+                  "fields": {},
+                  "inputs": {
+                    "SECONDS": {
+                      "id": "aprende-939",
+                      "blockId": "core:number",
+                      "operation": "core:number",
+                      "fields": {
+                        "NUMBER": 1
+                      },
+                      "inputs": {},
+                      "next": null
+                    }
+                  },
+                  "next": null
+                }
+              }
+            },
+            "next": null
+          }
+        }
+      ],
+      "detachedNodes": []
+    }
+  ],
+  "variables": [],
+  "lists": [],
+  "projectSettings": {
+    "locale": "es",
+    "units": "metric"
+  },
+  "extensions": [
+    {
+      "id": "org.robotblocks.seeed-xiao-esp32s3",
+      "version": "0.3.0"
+    }
+  ],
+  "editor": {
+    "adapter": "scratch-blocks",
+    "positions": {
+      "inicio": {
+        "x": 52,
+        "y": 64
+      }
+    },
+    "blockDefinitions": [
+      {
+        "id": "core:start",
+        "category": "core:events",
+        "label": {
+          "es": "al iniciar",
+          "en": "when started"
+        },
+        "kind": "event",
+        "fields": [],
+        "inputs": [],
+        "operation": "core:start",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:forever",
+        "category": "core:control",
+        "label": {
+          "es": "por siempre %BODY",
+          "en": "forever %BODY"
+        },
+        "kind": "loop",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "BODY",
+            "type": "statement"
+          }
+        ],
+        "operation": "core:forever",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:if",
+        "category": "core:control",
+        "label": {
+          "es": "si %CONDITION entonces %BODY",
+          "en": "if %CONDITION then %BODY"
+        },
+        "kind": "loop",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "CONDITION",
+            "type": "boolean"
+          },
+          {
+            "name": "BODY",
+            "type": "statement"
+          }
+        ],
+        "operation": "core:if",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:number",
+        "category": "core:operators",
+        "label": {
+          "es": "%NUMBER",
+          "en": "%NUMBER"
+        },
+        "kind": "reporter",
+        "output": "number",
+        "fields": [
+          {
+            "name": "NUMBER",
+            "type": "number",
+            "default": 50
+          }
+        ],
+        "inputs": [],
+        "operation": "core:number",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:text",
+        "category": "core:operators",
+        "label": {
+          "es": "%TEXT",
+          "en": "%TEXT"
+        },
+        "kind": "reporter",
+        "output": "string",
+        "fields": [
+          {
+            "name": "TEXT",
+            "type": "string",
+            "default": "hola"
+          }
+        ],
+        "inputs": [],
+        "operation": "core:text",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:less",
+        "category": "core:operators",
+        "label": {
+          "es": "%LEFT < %RIGHT",
+          "en": "%LEFT < %RIGHT"
+        },
+        "kind": "boolean",
+        "output": "boolean",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "LEFT",
+            "type": "number",
+            "default": 0
+          },
+          {
+            "name": "RIGHT",
+            "type": "number",
+            "default": 0
+          }
+        ],
+        "operation": "core:less",
+        "tooltip": {
+          "es": "Expresión del programa generado. Consulta sus convenciones en el catálogo de bloques.",
+          "en": "Expression in the generated program. See conventions in the block catalog."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:wait-value",
+        "category": "core:control",
+        "label": {
+          "es": "esperar %SECONDS segundos",
+          "en": "wait %SECONDS seconds"
+        },
+        "kind": "command",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "SECONDS",
+            "type": "number",
+            "default": 1,
+            "min": 0
+          }
+        ],
+        "operation": "core:wait-value",
+        "tooltip": {
+          "es": "Estructura de control del programa. No ejecuta ni bloquea el navegador.",
+          "en": "Program control structure. Does not execute or block the browser."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:serial-println",
+        "category": "core:serial",
+        "label": {
+          "es": "imprimir %VALUE con salto de línea",
+          "en": "print %VALUE with newline"
+        },
+        "kind": "command",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "VALUE",
+            "type": "value",
+            "default": "hola"
+          }
+        ],
+        "operation": "core:serial-println",
+        "tooltip": {
+          "es": "Código experimental. Consulta el contrato de serie, tiempo y eventos en el catálogo de bloques.",
+          "en": "Experimental code. See serial, time and event conventions in the block catalog."
+        },
+        "requiredCapabilities": [],
+        "generators": {
+          "micropython": {
+            "canFail": false,
+            "statement": "print({VALUE})"
+          },
+          "arduino": {
+            "canFail": false,
+            "statement": "Serial.println({VALUE});"
+          },
+          "pybricks": {
+            "canFail": false,
+            "statement": "print({VALUE})"
+          }
+        }
+      }
+    ]
+  }
+}

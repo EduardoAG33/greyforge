@@ -1,0 +1,4 @@
+{
+  "lenguaje": "python",
+  "codigo": "import asyncio\nfrom robotblocks_runtime import *\n\n\n\nasync def proceso_1():\n    while True:\n        if 3 < 5:\n            print(\"Es menor\")\n        else:\n            print(\"No es menor\")\n        await rb_wait(1)\n        await rb_yield()\n\nasync def main():\n    await rb_run(proceso_1)\n\nasyncio.run(main())\n"
+}

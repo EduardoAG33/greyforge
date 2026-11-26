@@ -1,0 +1,4 @@
+{
+  "lenguaje": "python",
+  "codigo": "import asyncio\nfrom robotblocks_runtime import *\n\n\n\ndef fn_saludar():\n    print(\"¡Hola!\")\n\nasync def proceso_1():\n    while True:\n        fn_saludar()\n        await rb_wait(0.5)\n        fn_saludar()\n        await rb_wait(2)\n        await rb_yield()\n\nasync def main():\n    await rb_run(proceso_1)\n\nasyncio.run(main())\n"
+}

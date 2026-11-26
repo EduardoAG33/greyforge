@@ -1,0 +1,267 @@
+{
+  "formatVersion": 4,
+  "irVersion": 2,
+  "id": "6-2-matriz-lego-spike-prime",
+  "name": "6.2 Números en la matriz",
+  "board": {
+    "definitionId": "org.robotblocks.lego-spike-prime:board",
+    "bindings": {}
+  },
+  "devices": [],
+  "programs": [
+    {
+      "id": "main",
+      "name": "Programa principal",
+      "processes": [
+        {
+          "id": "start",
+          "trigger": {
+            "blockId": "core:start",
+            "operation": "core:start",
+            "fields": {}
+          },
+          "body": {
+            "id": "spike-8",
+            "blockId": "core:forever",
+            "operation": "core:forever",
+            "fields": {},
+            "inputs": {
+              "BODY": {
+                "id": "spike-2",
+                "blockId": "org.robotblocks.lego-spike:display-number",
+                "operation": "org.robotblocks.lego-spike:display-number",
+                "fields": {},
+                "inputs": {
+                  "NUMBER": {
+                    "id": "spike-1",
+                    "blockId": "core:number",
+                    "operation": "core:number",
+                    "fields": {
+                      "NUMBER": 1
+                    },
+                    "inputs": {},
+                    "next": null
+                  }
+                },
+                "next": {
+                  "id": "spike-4",
+                  "blockId": "core:wait-ms",
+                  "operation": "core:wait-ms",
+                  "fields": {},
+                  "inputs": {
+                    "MS": {
+                      "id": "spike-3",
+                      "blockId": "core:number",
+                      "operation": "core:number",
+                      "fields": {
+                        "NUMBER": 500
+                      },
+                      "inputs": {},
+                      "next": null
+                    }
+                  },
+                  "next": {
+                    "id": "spike-5",
+                    "blockId": "org.robotblocks.lego-spike:display-off",
+                    "operation": "org.robotblocks.lego-spike:display-off",
+                    "fields": {},
+                    "inputs": {},
+                    "next": {
+                      "id": "spike-7",
+                      "blockId": "core:wait-ms",
+                      "operation": "core:wait-ms",
+                      "fields": {},
+                      "inputs": {
+                        "MS": {
+                          "id": "spike-6",
+                          "blockId": "core:number",
+                          "operation": "core:number",
+                          "fields": {
+                            "NUMBER": 500
+                          },
+                          "inputs": {},
+                          "next": null
+                        }
+                      },
+                      "next": null
+                    }
+                  }
+                }
+              }
+            },
+            "next": null
+          }
+        }
+      ],
+      "detachedNodes": []
+    }
+  ],
+  "variables": [],
+  "lists": [],
+  "projectSettings": {
+    "locale": "es",
+    "units": "metric"
+  },
+  "extensions": [
+    {
+      "id": "org.robotblocks.lego-spike",
+      "version": "0.1.0"
+    },
+    {
+      "id": "org.robotblocks.lego-spike-prime",
+      "version": "0.1.1"
+    }
+  ],
+  "editor": {
+    "adapter": "scratch-blocks",
+    "positions": {
+      "start": {
+        "x": 52,
+        "y": 64
+      }
+    },
+    "blockDefinitions": [
+      {
+        "id": "core:start",
+        "category": "core:events",
+        "label": {
+          "es": "al iniciar",
+          "en": "when started"
+        },
+        "kind": "event",
+        "fields": [],
+        "inputs": [],
+        "operation": "core:start",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:forever",
+        "category": "core:control",
+        "label": {
+          "es": "por siempre %BODY",
+          "en": "forever %BODY"
+        },
+        "kind": "loop",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "BODY",
+            "type": "statement"
+          }
+        ],
+        "operation": "core:forever",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:number",
+        "category": "core:operators",
+        "label": {
+          "es": "%NUMBER",
+          "en": "%NUMBER"
+        },
+        "kind": "reporter",
+        "output": "number",
+        "fields": [
+          {
+            "name": "NUMBER",
+            "type": "number",
+            "default": 50
+          }
+        ],
+        "inputs": [],
+        "operation": "core:number",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:wait-ms",
+        "category": "core:time",
+        "label": {
+          "es": "esperar %MS ms",
+          "en": "wait %MS ms"
+        },
+        "kind": "command",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "MS",
+            "type": "number",
+            "default": 100,
+            "min": 0,
+            "max": 2147483647,
+            "integer": true
+          }
+        ],
+        "operation": "core:wait-ms",
+        "tooltip": {
+          "es": "Código experimental. Consulta el contrato de serie, tiempo y eventos en el catálogo de bloques.",
+          "en": "Experimental code. See serial, time and event conventions in the block catalog."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "org.robotblocks.lego-spike:display-number",
+        "category": "org.robotblocks.lego-spike:hub",
+        "label": {
+          "es": "matriz mostrar número %NUMBER",
+          "en": "matrix display number %NUMBER"
+        },
+        "kind": "command",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "NUMBER",
+            "type": "number",
+            "default": 1,
+            "min": -2147483648,
+            "max": 2147483647
+          }
+        ],
+        "operation": "org.robotblocks.lego-spike:display-number",
+        "tooltip": {
+          "es": "Pybricks 3.6.1+ / 4.0 experimental. Unidades indicadas en el bloque. Comprueba conexiones y calibración antes de ejecutar.",
+          "en": "Experimental Pybricks 3.6.1+ / 4.0. Units shown in the block. Check connections and calibration before running."
+        },
+        "requiredCapabilities": ["hubDisplay"],
+        "generators": {
+          "pybricks": {
+            "statement": "rb_hub.display.number(int({NUMBER}))"
+          }
+        }
+      },
+      {
+        "id": "org.robotblocks.lego-spike:display-off",
+        "category": "org.robotblocks.lego-spike:hub",
+        "label": {
+          "es": "matriz apagar",
+          "en": "matrix off"
+        },
+        "kind": "command",
+        "fields": [],
+        "inputs": [],
+        "operation": "org.robotblocks.lego-spike:display-off",
+        "tooltip": {
+          "es": "Pybricks 3.6.1+ / 4.0 experimental. Unidades indicadas en el bloque. Comprueba conexiones y calibración antes de ejecutar.",
+          "en": "Experimental Pybricks 3.6.1+ / 4.0. Units shown in the block. Check connections and calibration before running."
+        },
+        "requiredCapabilities": ["hubDisplay"],
+        "generators": {
+          "pybricks": {
+            "statement": "rb_hub.display.off()"
+          }
+        }
+      }
+    ]
+  }
+}

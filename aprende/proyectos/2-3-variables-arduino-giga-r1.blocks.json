@@ -1,0 +1,380 @@
+{
+  "formatVersion": 4,
+  "irVersion": 2,
+  "id": "2-3-variables-arduino-giga-r1",
+  "name": "2.3 Variables: guardar y cambiar un valor",
+  "board": {
+    "definitionId": "org.robotblocks.arduino-giga-r1:board",
+    "bindings": {}
+  },
+  "devices": [],
+  "programs": [
+    {
+      "id": "main",
+      "name": "Programa principal",
+      "processes": [
+        {
+          "id": "inicio",
+          "trigger": {
+            "blockId": "core:start",
+            "operation": "core:start",
+            "fields": {}
+          },
+          "body": {
+            "id": "aprende-579",
+            "blockId": "core:set",
+            "operation": "core:set",
+            "fields": {
+              "VARIABLE": "contador"
+            },
+            "inputs": {
+              "VALUE": {
+                "id": "aprende-578",
+                "blockId": "core:number",
+                "operation": "core:number",
+                "fields": {
+                  "NUMBER": 0
+                },
+                "inputs": {},
+                "next": null
+              }
+            },
+            "next": {
+              "id": "aprende-588",
+              "blockId": "core:forever",
+              "operation": "core:forever",
+              "fields": {},
+              "inputs": {
+                "BODY": {
+                  "id": "aprende-583",
+                  "blockId": "core:set",
+                  "operation": "core:set",
+                  "fields": {
+                    "VARIABLE": "contador"
+                  },
+                  "inputs": {
+                    "VALUE": {
+                      "id": "aprende-582",
+                      "blockId": "core:add",
+                      "operation": "core:add",
+                      "fields": {},
+                      "inputs": {
+                        "LEFT": {
+                          "id": "aprende-580",
+                          "blockId": "core:variable",
+                          "operation": "core:variable",
+                          "fields": {
+                            "VARIABLE": "contador"
+                          },
+                          "inputs": {},
+                          "next": null
+                        },
+                        "RIGHT": {
+                          "id": "aprende-581",
+                          "blockId": "core:number",
+                          "operation": "core:number",
+                          "fields": {
+                            "NUMBER": 1
+                          },
+                          "inputs": {},
+                          "next": null
+                        }
+                      },
+                      "next": null
+                    }
+                  },
+                  "next": {
+                    "id": "aprende-585",
+                    "blockId": "core:serial-println",
+                    "operation": "core:serial-println",
+                    "fields": {},
+                    "inputs": {
+                      "VALUE": {
+                        "id": "aprende-584",
+                        "blockId": "core:variable",
+                        "operation": "core:variable",
+                        "fields": {
+                          "VARIABLE": "contador"
+                        },
+                        "inputs": {},
+                        "next": null
+                      }
+                    },
+                    "next": {
+                      "id": "aprende-587",
+                      "blockId": "core:wait-value",
+                      "operation": "core:wait-value",
+                      "fields": {},
+                      "inputs": {
+                        "SECONDS": {
+                          "id": "aprende-586",
+                          "blockId": "core:number",
+                          "operation": "core:number",
+                          "fields": {
+                            "NUMBER": 1
+                          },
+                          "inputs": {},
+                          "next": null
+                        }
+                      },
+                      "next": null
+                    }
+                  }
+                }
+              },
+              "next": null
+            }
+          }
+        }
+      ],
+      "detachedNodes": []
+    }
+  ],
+  "variables": [
+    {
+      "id": "contador",
+      "name": "contador",
+      "type": "number",
+      "initialValue": 0,
+      "scope": "project"
+    }
+  ],
+  "lists": [],
+  "projectSettings": {
+    "locale": "es",
+    "units": "metric"
+  },
+  "extensions": [
+    {
+      "id": "org.robotblocks.arduino-giga-r1",
+      "version": "0.3.0"
+    }
+  ],
+  "editor": {
+    "adapter": "scratch-blocks",
+    "positions": {
+      "inicio": {
+        "x": 52,
+        "y": 64
+      }
+    },
+    "blockDefinitions": [
+      {
+        "id": "core:start",
+        "category": "core:events",
+        "label": {
+          "es": "al iniciar",
+          "en": "when started"
+        },
+        "kind": "event",
+        "fields": [],
+        "inputs": [],
+        "operation": "core:start",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:forever",
+        "category": "core:control",
+        "label": {
+          "es": "por siempre %BODY",
+          "en": "forever %BODY"
+        },
+        "kind": "loop",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "BODY",
+            "type": "statement"
+          }
+        ],
+        "operation": "core:forever",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:set",
+        "category": "core:variables",
+        "label": {
+          "es": "fijar %VARIABLE a %VALUE",
+          "en": "set %VARIABLE to %VALUE"
+        },
+        "kind": "command",
+        "fields": [
+          {
+            "name": "VARIABLE",
+            "type": "string",
+            "default": "speed",
+            "reference": {
+              "kind": "variable"
+            }
+          }
+        ],
+        "inputs": [
+          {
+            "name": "VALUE",
+            "type": "number"
+          }
+        ],
+        "operation": "core:set",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": [],
+        "inputTypeFromField": {
+          "input": "VALUE",
+          "field": "VARIABLE"
+        }
+      },
+      {
+        "id": "core:variable",
+        "category": "core:variables",
+        "label": {
+          "es": "valor de %VARIABLE",
+          "en": "value of %VARIABLE"
+        },
+        "kind": "reporter",
+        "output": "number",
+        "fields": [
+          {
+            "name": "VARIABLE",
+            "type": "string",
+            "default": "speed",
+            "reference": {
+              "kind": "variable"
+            }
+          }
+        ],
+        "inputs": [],
+        "operation": "core:variable",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": [],
+        "outputFromField": "VARIABLE"
+      },
+      {
+        "id": "core:number",
+        "category": "core:operators",
+        "label": {
+          "es": "%NUMBER",
+          "en": "%NUMBER"
+        },
+        "kind": "reporter",
+        "output": "number",
+        "fields": [
+          {
+            "name": "NUMBER",
+            "type": "number",
+            "default": 50
+          }
+        ],
+        "inputs": [],
+        "operation": "core:number",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:add",
+        "category": "core:operators",
+        "label": {
+          "es": "%LEFT + %RIGHT",
+          "en": "%LEFT + %RIGHT"
+        },
+        "kind": "reporter",
+        "output": "number",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "LEFT",
+            "type": "number",
+            "default": 0
+          },
+          {
+            "name": "RIGHT",
+            "type": "number",
+            "default": 1
+          }
+        ],
+        "operation": "core:add",
+        "tooltip": {
+          "es": "Expresión del programa generado. Consulta sus convenciones en el catálogo de bloques.",
+          "en": "Expression in the generated program. See conventions in the block catalog."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:wait-value",
+        "category": "core:control",
+        "label": {
+          "es": "esperar %SECONDS segundos",
+          "en": "wait %SECONDS seconds"
+        },
+        "kind": "command",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "SECONDS",
+            "type": "number",
+            "default": 1,
+            "min": 0
+          }
+        ],
+        "operation": "core:wait-value",
+        "tooltip": {
+          "es": "Estructura de control del programa. No ejecuta ni bloquea el navegador.",
+          "en": "Program control structure. Does not execute or block the browser."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:serial-println",
+        "category": "core:serial",
+        "label": {
+          "es": "imprimir %VALUE con salto de línea",
+          "en": "print %VALUE with newline"
+        },
+        "kind": "command",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "VALUE",
+            "type": "value",
+            "default": "hola"
+          }
+        ],
+        "operation": "core:serial-println",
+        "tooltip": {
+          "es": "Código experimental. Consulta el contrato de serie, tiempo y eventos en el catálogo de bloques.",
+          "en": "Experimental code. See serial, time and event conventions in the block catalog."
+        },
+        "requiredCapabilities": [],
+        "generators": {
+          "micropython": {
+            "canFail": false,
+            "statement": "print({VALUE})"
+          },
+          "arduino": {
+            "canFail": false,
+            "statement": "Serial.println({VALUE});"
+          },
+          "pybricks": {
+            "canFail": false,
+            "statement": "print({VALUE})"
+          }
+        }
+      }
+    ]
+  }
+}

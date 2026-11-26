@@ -1,0 +1,4 @@
+{
+  "lenguaje": "cpp",
+  "codigo": "#include \"robotblocks_runtime.h\"\n\n\nstatic void proceso_1() {\n    static RbProcessState s;\n    PT_BEGIN(s);\n    while (true) {\n        if (3 < 5) {\n            Serial.println(String(\"Es menor\"));\n        }\n        else {\n            Serial.println(String(\"No es menor\"));\n        }\n        PT_SLEEP(s, 1000);\n        PT_YIELD(s);\n    }\n    PT_END(s);\n}\n\nvoid setup() { Serial.begin(115200); }\n\nvoid loop() { rb_error_repeat(); proceso_1(); }\n"
+}

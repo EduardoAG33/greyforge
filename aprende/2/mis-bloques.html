@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>2.5 · Mis Bloques: crea un bloque propio | GreyForge</title>
+    <link rel="icon" href="../../img/greyforge-icono.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../aprende.css" />
+    <script src="../aprende.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#contenido">Saltar al contenido</a>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="simbolo" viewBox="-15 -28 600 600">
+        <g
+          transform="translate(8 6)"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="30"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M315,155 L315,30 A228,228 0 0 1 349.1,32.6 L354.5,72.2 A190,190 0 0 1 418.5,98.7 L450.3,74.5 A228,228 0 0 1 498.5,122.7 L474.3,154.5 A190,190 0 0 1 500.8,218.5 L540.4,223.9 A228,228 0 0 1 540.4,292.1 L500.8,297.5 A190,190 0 0 1 474.3,361.5 L498.5,393.3 A228,228 0 0 1 450.3,441.5 L418.5,417.3 A190,190 0 0 1 354.5,443.8 L349.1,483.4 A228,228 0 0 1 315,486 L315,361 A103,103 0 0 0 315,155 Z"
+          />
+          <path
+            d="M270,262 L270,72 C270,40 248,22 220,22 C192,22 172,40 166,64 C146,58 96,64 84,118 C82,140 84,152 90,162 C40,172 14,205 14,248 C14,272 22,292 40,304 C18,320 10,345 14,372 C18,402 46,424 78,424 C80,456 108,482 142,482 C152,482 160,480 166,476 C178,500 200,512 226,510 C252,508 270,486 270,456 L270,320 L188,238 L188,186"
+          />
+          <path d="M82,243 L190,243" />
+          <path d="M40,304 L120,304 C140,304 152,318 152,356" />
+          <circle cx="186" cy="160" r="24" />
+          <circle cx="154" cy="382" r="24" />
+        </g>
+      </symbol>
+      <symbol id="descarga" viewBox="0 0 24 24">
+        <path
+          d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+    </svg>
+    <header>
+      <div class="wrap">
+        <a class="brand" href="../../" aria-label="GreyForge, inicio"
+          ><svg aria-hidden="true"><use href="#simbolo" /></svg><span>Grey<b>Forge</b></span></a
+        >
+        <nav aria-label="Secciones de GreyForge">
+          <a href="../../#tarjetas">Tarjetas</a>
+          <a href="../../#instalar">Cómo instalar</a>
+          <a href="../../#lego">SPIKE y EV3</a>
+          <a href="../" data-learn>Aprende</a>
+          <a href="../../#actualizaciones">Actualizaciones</a>
+          <a href="../../#novedades">Novedades</a>
+        </nav>
+      </div>
+    </header>
+    <div class="wrap layout">
+      <aside class="sidebar">
+        <nav class="curriculum" aria-label="Temario">
+          <strong>Temario</strong>
+          <details>
+            <summary>Introducción</summary>
+            <ul>
+              <li><a href="../index.html">Bienvenida</a></li>
+              <li><a href="../que-necesitas.html">¿Qué necesitas?</a></li>
+              <li><a href="../conoce-el-editor.html">Conoce el editor</a></li>
+            </ul>
+          </details>
+          <details>
+            <summary>1 · Primeros pasos</summary>
+            <ul>
+              <li><a href="../1/primer-programa.html">1.1 · Tu primer programa</a></li>
+              <li><a href="../1/cargar.html">1.2 · Cargar el programa a tu tarjeta</a></li>
+              <li><a href="../1/monitor.html">1.3 · Mensajes en el Monitor</a></li>
+            </ul>
+          </details>
+          <details open>
+            <summary>2 · Control del programa</summary>
+            <ul>
+              <li><a href="../2/esperar-y-repetir.html">2.1 · Esperar y repetir</a></li>
+              <li><a href="../2/decisiones.html">2.2 · Tomar decisiones</a></li>
+              <li><a href="../2/variables.html">2.3 · Variables: guardar y cambiar un valor</a></li>
+              <li><a href="../2/operaciones.html">2.4 · Operaciones con números</a></li>
+              <li><a href="../2/mis-bloques.html" aria-current="page">2.5 · Mis Bloques: crea un bloque propio</a></li>
+            </ul>
+          </details>
+          <details>
+            <summary>3 · Leer sensores</summary>
+            <ul>
+              <li><a href="../3/boton.html">3.1 · Botón: leer un pin digital</a></li>
+              <li><a href="../3/potenciometro.html">3.2 · Potenciómetro: leer un pin analógico</a></li>
+              <li><a href="../3/ultrasonico.html">3.3 · Ultrasónico HC-SR04: medir distancia</a></li>
+              <li><a href="../3/laser.html">3.4 · Láser VL53L0X (opcional)</a></li>
+              <li><a href="../3/responder-a-un-sensor.html">3.5 · Responder a un sensor</a></li>
+            </ul>
+          </details>
+          <details>
+            <summary>4 · Mover cosas</summary>
+            <ul>
+              <li><a href="../4/servo.html">4.1 · Servo: prueba tres posiciones</a></li>
+              <li><a href="../4/servo-con-potenciometro.html">4.2 · Controla el servo con un potenciómetro</a></li>
+              <li><a href="../4/motores.html">4.3 · Motores con puente H</a></li>
+            </ul>
+          </details>
+          <details>
+            <summary>5 · Tu primer robot</summary>
+            <ul>
+              <li><a href="../5/avanzar-y-girar.html">5.1 · Avanzar y girar por tiempo</a></li>
+              <li><a href="../5/evitar-obstaculos.html">5.2 · Evitar obstáculos con el ultrasónico</a></li>
+            </ul>
+          </details>
+          <details>
+            <summary>6 · LEGO SPIKE Prime</summary>
+            <ul>
+              <li><a href="../6/motor-grados.html">6.1 · Motor por grados</a></li>
+              <li><a href="../6/matriz.html">6.2 · Números en la matriz</a></li>
+              <li><a href="../6/color.html">6.3 · Sensor de color: mide la reflexión</a></li>
+              <li><a href="../6/distancia.html">6.4 · Sensor de distancia: mide en milímetros</a></li>
+            </ul>
+          </details>
+          <details>
+            <summary>7 · LEGO EV3</summary>
+            <ul>
+              <li><a href="../7/motor-grados.html">7.1 · Motor por grados</a></li>
+              <li><a href="../7/luz-pantalla.html">7.2 · Luz y pantalla del EV3</a></li>
+              <li><a href="../7/color.html">7.3 · Sensor de color: mide la reflexión</a></li>
+              <li><a href="../7/distancia.html">7.4 · Sensor de distancia: mide en milímetros</a></li>
+            </ul>
+          </details>
+          <details>
+            <summary>8 · Más extensiones (opcional)</summary>
+            <ul>
+              <li><a href="../8/tira-rgb.html">8.1 · Tira de LEDs WS2812 (opcional)</a></li>
+              <li><a href="../8/pantalla-oled.html">8.2 · Pantalla OLED (opcional)</a></li>
+            </ul>
+          </details>
+        </nav>
+      </aside>
+      <details class="mobile-menu">
+        <summary>Temario</summary>
+        <nav class="curriculum" aria-label="Temario">
+          <strong>Temario</strong>
+          <details>
+            <summary>Introducción</summary>
+            <ul>
+              <li><a href="../index.html">Bienvenida</a></li>
+              <li><a href="../que-necesitas.html">¿Qué necesitas?</a></li>
+              <li><a href="../conoce-el-editor.html">Conoce el editor</a></li>
+            </ul>
+          </details>
+          <details>
+            <summary>1 · Primeros pasos</summary>
+            <ul>
+              <li><a href="../1/primer-programa.html">1.1 · Tu primer programa</a></li>
+              <li><a href="../1/cargar.html">1.2 · Cargar el programa a tu tarjeta</a></li>
+              <li><a href="../1/monitor.html">1.3 · Mensajes en el Monitor</a></li>
+            </ul>
+          </details>
+          <details open>
+            <summary>2 · Control del programa</summary>
+            <ul>
+              <li><a href="../2/esperar-y-repetir.html">2.1 · Esperar y repetir</a></li>
+              <li><a href="../2/decisiones.html">2.2 · Tomar decisiones</a></li>
+              <li><a href="../2/variables.html">2.3 · Variables: guardar y cambiar un valor</a></li>
+              <li><a href="../2/operaciones.html">2.4 · Operaciones con números</a></li>
+              <li><a href="../2/mis-bloques.html" aria-current="page">2.5 · Mis Bloques: crea un bloque propio</a></li>
+            </ul>
+          </details>
+          <details>
+            <summary>3 · Leer sensores</summary>
+            <ul>
+              <li><a href="../3/boton.html">3.1 · Botón: leer un pin digital</a></li>
+              <li><a href="../3/potenciometro.html">3.2 · Potenciómetro: leer un pin analógico</a></li>
+              <li><a href="../3/ultrasonico.html">3.3 · Ultrasónico HC-SR04: medir distancia</a></li>
+              <li><a href="../3/laser.html">3.4 · Láser VL53L0X (opcional)</a></li>
+              <li><a href="../3/responder-a-un-sensor.html">3.5 · Responder a un sensor</a></li>
+            </ul>
+          </details>
+          <details>
+            <summary>4 · Mover cosas</summary>
+            <ul>
+              <li><a href="../4/servo.html">4.1 · Servo: prueba tres posiciones</a></li>
+              <li><a href="../4/servo-con-potenciometro.html">4.2 · Controla el servo con un potenciómetro</a></li>
+              <li><a href="../4/motores.html">4.3 · Motores con puente H</a></li>
+            </ul>
+          </details>
+          <details>
+            <summary>5 · Tu primer robot</summary>
+            <ul>
+              <li><a href="../5/avanzar-y-girar.html">5.1 · Avanzar y girar por tiempo</a></li>
+              <li><a href="../5/evitar-obstaculos.html">5.2 · Evitar obstáculos con el ultrasónico</a></li>
+            </ul>
+          </details>
+          <details>
+            <summary>6 · LEGO SPIKE Prime</summary>
+            <ul>
+              <li><a href="../6/motor-grados.html">6.1 · Motor por grados</a></li>
+              <li><a href="../6/matriz.html">6.2 · Números en la matriz</a></li>
+              <li><a href="../6/color.html">6.3 · Sensor de color: mide la reflexión</a></li>
+              <li><a href="../6/distancia.html">6.4 · Sensor de distancia: mide en milímetros</a></li>
+            </ul>
+          </details>
+          <details>
+            <summary>7 · LEGO EV3</summary>
+            <ul>
+              <li><a href="../7/motor-grados.html">7.1 · Motor por grados</a></li>
+              <li><a href="../7/luz-pantalla.html">7.2 · Luz y pantalla del EV3</a></li>
+              <li><a href="../7/color.html">7.3 · Sensor de color: mide la reflexión</a></li>
+              <li><a href="../7/distancia.html">7.4 · Sensor de distancia: mide en milímetros</a></li>
+            </ul>
+          </details>
+          <details>
+            <summary>8 · Más extensiones (opcional)</summary>
+            <ul>
+              <li><a href="../8/tira-rgb.html">8.1 · Tira de LEDs WS2812 (opcional)</a></li>
+              <li><a href="../8/pantalla-oled.html">8.2 · Pantalla OLED (opcional)</a></li>
+            </ul>
+          </details>
+        </nav>
+      </details>
+      <main id="contenido" tabindex="-1">
+        <p class="chapter-name">2 · Control del programa</p>
+        <h1>2.5 Mis Bloques: crea un bloque propio</h1>
+        <section>
+          <h2>Lo que vas a aprender</h2>
+          <p class="lead">Dale un nombre a una tarea y ejecútala dos veces sin repetir sus instrucciones.</p>
+        </section>
+        <section>
+          <h2>Qué necesitas</h2>
+          <ul>
+            <li>Tu tarjeta y un cable USB de datos.</li>
+            <li>Una computadora con GreyForge instalado.</li>
+          </ul>
+          <div class="board-picker" hidden>
+            <label for="tarjeta">Tu tarjeta</label
+            ><select id="tarjeta">
+              <option value="uno" data-project="../proyectos/2-5-mis-bloques-arduino-uno.blocks.json">
+                Arduino UNO R3
+              </option>
+              <option value="r4" data-project="../proyectos/2-5-mis-bloques-arduino-uno-r4-minima.blocks.json">
+                Arduino UNO R4 Minima
+              </option>
+              <option value="nano" data-project="../proyectos/2-5-mis-bloques-arduino-nano.blocks.json">
+                Arduino Nano (ATmega328P)
+              </option>
+              <option value="giga" data-project="../proyectos/2-5-mis-bloques-arduino-giga-r1.blocks.json">
+                Arduino GIGA R1 WiFi
+              </option>
+              <option
+                value="firebeetle"
+                data-project="../proyectos/2-5-mis-bloques-dfrobot-firebeetle-esp32.blocks.json"
+              >
+                FireBeetle ESP32
+              </option>
+              <option value="xiao" data-project="../proyectos/2-5-mis-bloques-seeed-xiao-esp32s3.blocks.json">
+                Seeed Studio XIAO ESP32-S3
+              </option>
+              <option value="teensy40" data-project="../proyectos/2-5-mis-bloques-teensy-40.blocks.json">
+                Teensy 4.0
+              </option>
+              <option value="teensy41" data-project="../proyectos/2-5-mis-bloques-teensy-41.blocks.json">
+                Teensy 4.1
+              </option>
+            </select>
+          </div>
+        </section>
+        <section>
+          <h2>Pasos</h2>
+          <p><span class="muted">La imagen muestra el programa de la Arduino UNO R3.</span></p>
+          <figure class="program">
+            <figcaption>
+              La definición de saludar imprime ¡Hola! El programa principal llama a saludar dos veces con una espera
+              entre llamadas.
+            </figcaption>
+            <img
+              src="../img/2-5-mis-bloques-arduino-uno.png"
+              alt="La definición de saludar imprime ¡Hola! El programa principal llama a saludar dos veces con una espera entre llamadas."
+              width="685"
+              height="369"
+              hidden
+            />
+          </figure>
+          <ol class="steps">
+            <li>
+              <h3>Crea una tarea</h3>
+              <p>
+                En un proyecto nuevo para tu tarjeta, abre <strong>Mis Bloques → Crear un bloque</strong>. Pon saludar
+                en «Nombre del bloque», deja «Devuelve» en «nada» y pulsa «Crear bloque».
+              </p>
+            </li>
+            <li>
+              <h3>Define qué hace</h3>
+              <p>
+                Debajo de la definición de saludar, agrega «imprimir ¡Hola! con salto de línea» de
+                <strong>Serie</strong>. Descarga el proyecto al final de la página y ábrelo con
+                <strong>Archivo → Abrir</strong>. Ahí puedes ver la definición junto al programa terminado.
+              </p>
+            </li>
+            <li>
+              <h3>Llama tu bloque dos veces</h3>
+              <p>
+                En <strong>Mis Bloques</strong>, busca el bloque saludar y úsalo dos veces dentro de «por siempre». Las
+                esperas se quedan junto a las llamadas.
+              </p>
+            </li>
+          </ol>
+        </section>
+        <section>
+          <h2>Pruébalo</h2>
+          <p>
+            Carga el ejemplo y abre Monitor. Lee dos saludos separados por medio segundo, seguidos de una pausa de dos
+            segundos.
+          </p>
+        </section>
+        <section>
+          <h2>¿Cómo funciona?</h2>
+          <p>
+            La definición dice qué hace la tarea. Cada bloque saludar realiza esa tarea en ese momento. Luego el
+            programa sigue con lo que hay debajo.
+          </p>
+        </section>
+        <details class="code-panel" data-code-panel>
+          <summary>Ver el código (opcional)</summary>
+          <p data-code-status role="status">
+            También puedes ver el código al abrir el proyecto en GreyForge y elegir Código.
+          </p>
+          <pre tabindex="0" aria-label="Código generado" hidden><code data-code></code></pre>
+        </details>
+        <section>
+          <h2>Si algo falla</h2>
+          <ul>
+            <li>Si no aparece el mensaje, revisa que la llamada esté conectada al programa de «al iniciar».</li>
+            <li>Si quieres una espera, colócala entre las llamadas en el programa principal.</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Retos</h2>
+          <div class="challenge">
+            <h3>Reto 2.5.A</h3>
+            <p>Cambia ambos saludos editando un solo texto.</p>
+            <details>
+              <summary>Pista</summary>
+              <p>Edita la impresión dentro de la definición.</p>
+            </details>
+          </div>
+          <div class="challenge">
+            <h3>Reto 2.5.B</h3>
+            <p>Agrega un tercer saludo antes de la pausa larga.</p>
+            <details>
+              <summary>Pista</summary>
+              <p>Arrastra otra llamada desde Mis Bloques.</p>
+            </details>
+          </div>
+        </section>
+        <section id="descargar-proyecto">
+          <h2>Descargar proyecto</h2>
+          <p>Abre el archivo <code>.blocks.json</code> en GreyForge con <strong>Archivo → Abrir</strong>.</p>
+          <p data-project-notice role="status" hidden>Esta lección no tiene proyecto para la tarjeta seleccionada.</p>
+          <a class="button" data-download href="../proyectos/2-5-mis-bloques-arduino-uno.blocks.json" download
+            >Descargar proyecto</a
+          >
+        </section>
+        <nav class="lesson-nav" aria-label="Recorrido">
+          <a href="../2/operaciones.html" rel="prev"><span>Anterior</span>2.4 · Operaciones con números</a>
+          <a href="../3/boton.html" rel="next"><span>Siguiente</span>3.1 · Botón: leer un pin digital</a>
+        </nav>
+      </main>
+    </div>
+    <footer>
+      <div class="wrap">
+        <span>GreyForge · Equipo de robótica Los Grises</span>
+        <span>¿Dudas o ideas? Usa el botón <strong>Sugerencias</strong> dentro de la app o pregúntale a tu profe.</span>
+      </div>
+    </footer>
+  </body>
+</html>

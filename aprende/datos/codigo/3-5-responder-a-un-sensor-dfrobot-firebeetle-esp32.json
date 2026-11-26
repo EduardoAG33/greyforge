@@ -1,0 +1,4 @@
+{
+  "lenguaje": "python",
+  "codigo": "import asyncio\nfrom robotblocks_runtime import *\nfrom machine import Pin, time_pulse_us\nimport time\nfrom machine import Pin, PWM\n\ndef ultrasonico_cm(trig, echo):\n    trig.value(0)\n    time.sleep_us(2)\n    trig.value(1)\n    time.sleep_us(10)\n    trig.value(0)\n    duracion = time_pulse_us(echo, 1, 30000)\n    if duracion < 0:\n        return 400  # Sin eco: fuera de alcance.\n    return round(duracion / 58, 1)\n\n\nultra_trig_25 = Pin(25, Pin.OUT, value=0)\nultra_echo_27 = Pin(27, Pin.IN)\npin_2 = Pin(2, Pin.OUT)\n\nasync def proceso_1():\n    while True:\n        rb_t1 = ultrasonico_cm(ultra_trig_25, ultra_echo_27)\n        if rb_t1 < 20:\n            pin_2.value(1)\n        else:\n            pin_2.value(0)\n        await rb_wait(0.1)\n        await rb_yield()\n\nasync def main():\n    await rb_run(proceso_1)\n\nasyncio.run(main())\n"
+}

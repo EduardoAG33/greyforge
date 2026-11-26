@@ -7,3 +7,5 @@ Editor de bloques del equipo de robótica **Los Grises** para programar Arduino,
 
 Este repositorio solo guarda las versiones publicadas y la página. La app instalada busca aquí sus actualizaciones
 (`latest.json` de la última versión).
+
+`aprende/` contiene la guía, sus proyectos y su código generado. Desde el repositorio privado de la app, ejecuta `node scripts/create-aprende.mjs ../sitio` para regenerar los proyectos y el código.

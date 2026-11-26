@@ -1,0 +1,261 @@
+{
+  "formatVersion": 4,
+  "irVersion": 2,
+  "id": "6-3-color-lego-spike-prime",
+  "name": "6.3 Sensor de color: mide la reflexión",
+  "board": {
+    "definitionId": "org.robotblocks.lego-spike-prime:board",
+    "bindings": {}
+  },
+  "devices": [],
+  "programs": [
+    {
+      "id": "main",
+      "name": "Programa principal",
+      "processes": [
+        {
+          "id": "inicio",
+          "trigger": {
+            "blockId": "core:start",
+            "operation": "core:start",
+            "fields": {}
+          },
+          "body": {
+            "id": "basico-463",
+            "blockId": "core:forever",
+            "operation": "core:forever",
+            "fields": {},
+            "inputs": {
+              "BODY": {
+                "id": "basico-460",
+                "blockId": "core:serial-println",
+                "operation": "core:serial-println",
+                "fields": {},
+                "inputs": {
+                  "VALUE": {
+                    "id": "basico-459",
+                    "blockId": "org.robotblocks.lego-spike:reflection",
+                    "operation": "org.robotblocks.lego-spike:reflection",
+                    "fields": {
+                      "PORT": "c"
+                    },
+                    "inputs": {},
+                    "next": null
+                  }
+                },
+                "next": {
+                  "id": "basico-462",
+                  "blockId": "core:wait-ms",
+                  "operation": "core:wait-ms",
+                  "fields": {},
+                  "inputs": {
+                    "MS": {
+                      "id": "basico-461",
+                      "blockId": "core:number",
+                      "operation": "core:number",
+                      "fields": {
+                        "NUMBER": 500
+                      },
+                      "inputs": {},
+                      "next": null
+                    }
+                  },
+                  "next": null
+                }
+              }
+            },
+            "next": null
+          }
+        }
+      ],
+      "detachedNodes": []
+    }
+  ],
+  "variables": [],
+  "lists": [],
+  "projectSettings": {
+    "locale": "es",
+    "units": "metric"
+  },
+  "extensions": [
+    {
+      "id": "org.robotblocks.lego-spike",
+      "version": "0.1.0"
+    },
+    {
+      "id": "org.robotblocks.lego-spike-prime",
+      "version": "0.1.1"
+    }
+  ],
+  "editor": {
+    "adapter": "scratch-blocks",
+    "positions": {
+      "inicio": {
+        "x": 52,
+        "y": 64
+      }
+    },
+    "blockDefinitions": [
+      {
+        "id": "core:start",
+        "category": "core:events",
+        "label": {
+          "es": "al iniciar",
+          "en": "when started"
+        },
+        "kind": "event",
+        "fields": [],
+        "inputs": [],
+        "operation": "core:start",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:forever",
+        "category": "core:control",
+        "label": {
+          "es": "por siempre %BODY",
+          "en": "forever %BODY"
+        },
+        "kind": "loop",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "BODY",
+            "type": "statement"
+          }
+        ],
+        "operation": "core:forever",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:number",
+        "category": "core:operators",
+        "label": {
+          "es": "%NUMBER",
+          "en": "%NUMBER"
+        },
+        "kind": "reporter",
+        "output": "number",
+        "fields": [
+          {
+            "name": "NUMBER",
+            "type": "number",
+            "default": 50
+          }
+        ],
+        "inputs": [],
+        "operation": "core:number",
+        "tooltip": {
+          "es": "Genera código del programa. Consulta el resultado en la vista Código.",
+          "en": "Generates program code. See the result in the Code view."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "core:serial-println",
+        "category": "core:serial",
+        "label": {
+          "es": "imprimir %VALUE con salto de línea",
+          "en": "print %VALUE with newline"
+        },
+        "kind": "command",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "VALUE",
+            "type": "value",
+            "default": "hola"
+          }
+        ],
+        "operation": "core:serial-println",
+        "tooltip": {
+          "es": "Código experimental. Consulta el contrato de serie, tiempo y eventos en el catálogo de bloques.",
+          "en": "Experimental code. See serial, time and event conventions in the block catalog."
+        },
+        "requiredCapabilities": [],
+        "generators": {
+          "micropython": {
+            "canFail": false,
+            "statement": "print({VALUE})"
+          },
+          "arduino": {
+            "canFail": false,
+            "statement": "Serial.println({VALUE});"
+          },
+          "pybricks": {
+            "canFail": false,
+            "statement": "print({VALUE})"
+          }
+        }
+      },
+      {
+        "id": "core:wait-ms",
+        "category": "core:time",
+        "label": {
+          "es": "esperar %MS ms",
+          "en": "wait %MS ms"
+        },
+        "kind": "command",
+        "fields": [],
+        "inputs": [
+          {
+            "name": "MS",
+            "type": "number",
+            "default": 100,
+            "min": 0,
+            "max": 2147483647,
+            "integer": true
+          }
+        ],
+        "operation": "core:wait-ms",
+        "tooltip": {
+          "es": "Código experimental. Consulta el contrato de serie, tiempo y eventos en el catálogo de bloques.",
+          "en": "Experimental code. See serial, time and event conventions in the block catalog."
+        },
+        "requiredCapabilities": []
+      },
+      {
+        "id": "org.robotblocks.lego-spike:reflection",
+        "category": "org.robotblocks.lego-spike:sensors",
+        "label": {
+          "es": "reflexión del sensor %PORT (%)",
+          "en": "sensor %PORT reflection (%)"
+        },
+        "kind": "reporter",
+        "output": "number",
+        "fields": [
+          {
+            "name": "PORT",
+            "type": "string",
+            "default": "c",
+            "reference": {
+              "kind": "resource",
+              "capabilities": ["poweredUpPort"]
+            }
+          }
+        ],
+        "inputs": [],
+        "operation": "org.robotblocks.lego-spike:reflection",
+        "tooltip": {
+          "es": "Pybricks 3.6.1+ / 4.0 experimental. Unidades indicadas en el bloque. Comprueba conexiones y calibración antes de ejecutar.",
+          "en": "Experimental Pybricks 3.6.1+ / 4.0. Units shown in the block. Check connections and calibration before running."
+        },
+        "requiredCapabilities": ["poweredUpPort"],
+        "generators": {
+          "pybricks": {
+            "cooperative": true,
+            "expression": "await rb_device({PORT}, ColorSensor, {BLOCK_ID}).reflection()"
+          }
+        }
+      }
+    ]
+  }
+}

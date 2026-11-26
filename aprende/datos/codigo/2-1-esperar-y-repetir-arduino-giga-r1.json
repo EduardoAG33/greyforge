@@ -1,0 +1,4 @@
+{
+  "lenguaje": "cpp",
+  "codigo": "#include \"robotblocks_runtime.h\"\n\n\nstatic void proceso_1() {\n    static struct : RbProcessState {\n        int32_t rb_repeticiones1{};\n    } s;\n    PT_BEGIN(s);\n    while (true) {\n        for (s.rb_repeticiones1 = 3; s.rb_repeticiones1 > 0; --s.rb_repeticiones1) {\n            digitalWrite(LEDG, 1);\n            PT_SLEEP(s, 200);\n            digitalWrite(LEDG, 0);\n            PT_SLEEP(s, 200);\n            PT_YIELD(s);\n        }\n        PT_SLEEP(s, 1000);\n        PT_YIELD(s);\n    }\n    PT_END(s);\n}\n\nvoid setup() { Serial.begin(115200); pinMode(LEDG, OUTPUT); }\n\nvoid loop() { rb_error_repeat(); proceso_1(); }\n"
+}
